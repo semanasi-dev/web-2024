@@ -12,139 +12,48 @@ class Formulario extends StatefulWidget {
 class FformularioState extends State<Formulario> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFbc3764), Color.fromARGB(255, 122, 119, 216)],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-          ),
-        ),
-        child: SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: size.height,
-            ),
-            child: IntrinsicHeight(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        top: size.height * 0.04, bottom: size.height * 0.03),
-                    child: Container(
-                      height: size.height * 0.3,
-                      width: size.width * 0.8,
-                      decoration: BoxDecoration(
-                          image: const DecorationImage(
-                              opacity: 0.5,
-                              image: AssetImage(
-                                './lib/assets/andinho.jpg',
-                              ),
-                              fit: BoxFit.fill),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Image.asset(
-                        'lib/assets/logo.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: size.width * 0.4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              verticalDirection: VerticalDirection.down,
-                              children: [
-                                const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Semana Acadêmica',
-                                    style: TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                ),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    containerPergunta(
-                                        'Nome', 'Digite seu nome', size),
-                                    containerPergunta(
-                                        'CPF', 'Digite seu CPF', size),
-                                    containerPergunta('Linkedin',
-                                        'Digite seu Linkedin', size),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget containerPergunta(String nomeDoCampo, String hint, Size size) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20, top: 20),
-      child: Container(
-        height: size.height * 0.15,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.5),
-              spreadRadius: 3,
-              blurRadius: 7,
-              offset: const Offset(0, 3),
-            ),
-          ],
-          borderRadius: BorderRadius.circular(15),
-          gradient: const LinearGradient(
-            colors: [Color(0xFF352841), Color(0xFF5b4770)],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        color: Color.fromARGB(255, 105, 140, 156),
+        child: Column(
+          children: [
+            Row(
               children: [
                 Text(
-                  nomeDoCampo,
-                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                  'Unimater',
+                  style: TextStyle(color: Colors.white),
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: hint,
-                    hintStyle: const TextStyle(color: Colors.grey),
-                    filled: true,
-                    fillColor: const Color(0xFF64527a),
-                    border:
-                        const OutlineInputBorder(borderSide: BorderSide.none),
-                  ),
+                SizedBox(
+                  width: 50,
                 ),
-              ]),
+                Text(
+                  'Sistemas da informação',
+                  style: TextStyle(color: Colors.white),
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                Text(
+                  'Informações da faculdade/curso',
+                  style: TextStyle(color: Colors.white),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 500,
+                  width: 500,
+                  color: Colors.black,
+                ),
+                //Inserir um pageview
+              ],
+            ),
+          ],
         ),
       ),
     );

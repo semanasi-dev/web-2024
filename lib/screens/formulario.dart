@@ -1,151 +1,175 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+
+import 'widgets/nav_bar.dart';
 
 class Formulario extends StatefulWidget {
   const Formulario({super.key});
 
   @override
-  State<Formulario> createState() => FformularioState();
+  State<Formulario> createState() => FormularioState();
 }
 
-class FformularioState extends State<Formulario> {
+class FormularioState extends State<Formulario> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFbc3764), Color.fromARGB(255, 122, 119, 216)],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-          ),
-        ),
-        child: SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: size.height,
-            ),
-            child: IntrinsicHeight(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        top: size.height * 0.04, bottom: size.height * 0.03),
-                    child: Container(
-                      height: size.height * 0.3,
-                      width: size.width * 0.8,
-                      decoration: BoxDecoration(
-                          image: const DecorationImage(
-                              opacity: 0.5,
-                              image: AssetImage(
-                                './lib/assets/andinho.jpg',
-                              ),
-                              fit: BoxFit.fill),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Image.asset(
-                        'lib/assets/logo.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: size.width * 0.4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              verticalDirection: VerticalDirection.down,
-                              children: [
-                                const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Semana Acadêmica',
-                                    style: TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                ),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    containerPergunta(
-                                        'Nome', 'Digite seu nome', size),
-                                    containerPergunta(
-                                        'CPF', 'Digite seu CPF', size),
-                                    containerPergunta('Linkedin',
-                                        'Digite seu Linkedin', size),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60.0),
+        child: NavBar(),
+      ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth > 1200) {
+            return telaTamanhoMaximo();
+          } else if (constraints.maxWidth > 800 &&
+              constraints.maxWidth <= 1200) {
+            return telaTamnhoMedio();
+          } else {
+            return telaTamanhoPequeno();
+          }
+        },
+      ),
+    );
+  }
+
+  Widget telaTamanhoMaximo() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(40),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Flexible(flex: 1, child: leftColumn()),
+            const SizedBox(width: 20),
+            Flexible(flex: 1, child: rightContainer()),
+          ],
         ),
       ),
     );
   }
 
-  Widget containerPergunta(String nomeDoCampo, String hint, Size size) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20, top: 20),
-      child: Container(
-        height: size.height * 0.15,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.5),
-              spreadRadius: 3,
-              blurRadius: 7,
-              offset: const Offset(0, 3),
+  Widget telaTamnhoMedio() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(child: leftColumn()),
+                const SizedBox(width: 20),
+                Expanded(child: rightContainer()),
+              ],
             ),
           ],
-          borderRadius: BorderRadius.circular(15),
-          gradient: const LinearGradient(
-            colors: [Color(0xFF352841), Color(0xFF5b4770)],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
+        ),
+      ),
+    );
+  }
+
+  Widget telaTamanhoPequeno() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            leftColumn(),
+            const SizedBox(height: 20),
+            rightContainer(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget leftColumn() {
+    return Column(
+      children: [
+        Container(
+          height: 700,
+          width: double.infinity,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: Colors.grey,
+              border: Border.all(color: Colors.black, width: 2.0),
+              borderRadius: BorderRadius.circular(10)),
+          child: const Text(
+            'Área de texto sobre a semana academica',
+            style: TextStyle(color: Colors.black, fontSize: 30),
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  nomeDoCampo,
-                  style: const TextStyle(color: Colors.white, fontSize: 20),
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: hint,
-                    hintStyle: const TextStyle(color: Colors.grey),
-                    filled: true,
-                    fillColor: const Color(0xFF64527a),
-                    border:
-                        const OutlineInputBorder(borderSide: BorderSide.none),
-                  ),
-                ),
-              ]),
+        const SizedBox(height: 20),
+        SizedBox(
+          height: 50,
+          width: 300,
+          child: GestureDetector(
+            onTap: () {},
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.grey,
+                  border: Border.all(color: Colors.black, width: 2.0),
+                  borderRadius: BorderRadius.circular(10)),
+              alignment: Alignment.center,
+              child: const Text(
+                'Quero participar',
+                style: TextStyle(color: Colors.white, fontSize: 18.0),
+              ),
+            ),
+          ),
         ),
+        const SizedBox(height: 20),
+        SizedBox(
+          height: 50,
+          width: 300,
+          child: GestureDetector(
+            onTap: () {},
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.grey,
+                  border: Border.all(color: Colors.black, width: 2.0),
+                  borderRadius: BorderRadius.circular(10)),
+              alignment: Alignment.center,
+              child: const Text(
+                'Ver mais',
+                style: TextStyle(color: Colors.white, fontSize: 18.0),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget rightContainer() {
+    return Container(
+      height: 800,
+      width: double.infinity,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          color: Colors.grey,
+          border: Border.all(color: Colors.black, width: 2.0),
+          borderRadius: BorderRadius.circular(10)),
+      child: const Text(
+        'fodaseeeeeeeeeee',
+        style: TextStyle(color: Colors.black),
+      ),
+    );
+  }
+}
+
+class NotFoundPage extends StatelessWidget {
+  const NotFoundPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(60.0),
+        child: NavBar(),
+      ),
+      body: Center(
+        child: Text('404 Page Not Found'),
       ),
     );
   }

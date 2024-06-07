@@ -75,6 +75,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   leak_tracker:
     dependency: transitive
     description:
@@ -208,5 +213,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "13.0.0"
+  window_style_dropdown_menu:
+    dependency: "direct main"
+    description:
+      name: window_style_dropdown_menu
+      sha256: ef356f416fc14267b530a0dbfc33147a1323c88cf66aac424bd6eec677fc3e6f
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0+3"
 sdks:
   dart: ">=3.3.0 <4.0.0"
+  flutter: ">=1.17.0"

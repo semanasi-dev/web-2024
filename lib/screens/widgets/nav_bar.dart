@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:window_style_dropdown_menu/window_style_dropdown_menu.dart';
+import 'dart:async';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -11,60 +11,68 @@ class NavBar extends StatelessWidget {
       color: Colors.blue,
       child: Row(
         children: [
-          Row(
+          const Row(
             children: [
-              WindowStyleDropdownMenu(
-                buttonTitleStyle: const TextStyle(color: Colors.black),
+              DropdownMenu(
+                buttonTitleStyle: TextStyle(color: Colors.black),
                 dropdownWidth: 300,
-                buttonTitle: 'File',
-                dropdownItems: const [
+                buttonTitle: 'Menu 1',
+                dropdownItems: [
                   ListTile(
                     mouseCursor: SystemMouseCursors.click,
-                    trailing:
-                        Text('Ctrl + O', style: TextStyle(color: Colors.white)),
-                    title: Text(
-                      'Open',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    title: Text('Open', style: TextStyle(color: Colors.white)),
                   ),
                   ListTile(
                     mouseCursor: SystemMouseCursors.click,
-                    trailing:
-                        Text('Ctrl + N', style: TextStyle(color: Colors.white)),
-                    title: Text(
-                      'New',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    title: Text('New', style: TextStyle(color: Colors.white)),
                   )
                 ],
               ),
-              const VerticalDivider(
-                width: 2,
-                thickness: 1,
-                color: Colors.white,
-              ),
-              WindowStyleDropdownMenu(
-                buttonTitleStyle: const TextStyle(color: Colors.black),
+              DropdownMenu(
+                buttonTitleStyle: TextStyle(color: Colors.black),
                 dropdownWidth: 300,
-                buttonTitle: 'Save',
-                dropdownItems: const [
+                buttonTitle: 'Menu 2',
+                dropdownItems: [
                   ListTile(
                     mouseCursor: SystemMouseCursors.click,
-                    trailing:
-                        Text('Ctrl + S', style: TextStyle(color: Colors.white)),
-                    title: Text(
-                      'Save',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    title: Text('Save', style: TextStyle(color: Colors.white)),
                   ),
                   ListTile(
                     mouseCursor: SystemMouseCursors.click,
-                    trailing: Text('Ctrl + K + S',
-                        style: TextStyle(color: Colors.white)),
-                    title: Text(
-                      'Save All',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    title:
+                        Text('Save All', style: TextStyle(color: Colors.white)),
+                  )
+                ],
+              ),
+              DropdownMenu(
+                buttonTitleStyle: TextStyle(color: Colors.black),
+                dropdownWidth: 300,
+                buttonTitle: 'Menu 3',
+                dropdownItems: [
+                  ListTile(
+                    mouseCursor: SystemMouseCursors.click,
+                    title: Text('Save', style: TextStyle(color: Colors.white)),
+                  ),
+                  ListTile(
+                    mouseCursor: SystemMouseCursors.click,
+                    title:
+                        Text('Save All', style: TextStyle(color: Colors.white)),
+                  )
+                ],
+              ),
+              DropdownMenu(
+                buttonTitleStyle: TextStyle(color: Colors.black),
+                dropdownWidth: 300,
+                buttonTitle: 'menu 4',
+                dropdownItems: [
+                  ListTile(
+                    mouseCursor: SystemMouseCursors.click,
+                    title: Text('Save', style: TextStyle(color: Colors.white)),
+                  ),
+                  ListTile(
+                    mouseCursor: SystemMouseCursors.click,
+                    title:
+                        Text('Save All', style: TextStyle(color: Colors.white)),
                   )
                 ],
               ),
@@ -127,6 +135,83 @@ class NavBar extends StatelessWidget {
               )),
         ],
       ),
+    );
+  }
+}
+
+class DropdownMenu extends StatefulWidget {
+  final TextStyle buttonTitleStyle;
+  final double dropdownWidth;
+  final String buttonTitle;
+  final List<ListTile> dropdownItems;
+
+  const DropdownMenu({
+    super.key,
+    required this.buttonTitleStyle,
+    required this.dropdownWidth,
+    required this.buttonTitle,
+    required this.dropdownItems,
+  });
+
+  @override
+  DropdownMenuState createState() => DropdownMenuState();
+}
+
+class DropdownMenuState extends State<DropdownMenu> {
+  bool isDropdownVisible = false;
+  Timer? hideTimer;
+
+  void showDropdown() {
+    hideTimer?.cancel();
+    setState(() {
+      isDropdownVisible = true;
+    });
+  }
+
+  void startHideDropdownTimer() {
+    hideTimer = Timer(const Duration(milliseconds: 200), () {
+      setState(() {
+        isDropdownVisible = false;
+      });
+    });
+  }
+
+  void cancelHideDropdownTimer() {
+    hideTimer?.cancel();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        MouseRegion(
+          onEnter: (_) => showDropdown(),
+          onExit: (_) => startHideDropdownTimer(),
+          child: SizedBox(
+            width: 100,
+            child: GestureDetector(
+              onTap: () {},
+              child: Text(widget.buttonTitle, style: widget.buttonTitleStyle),
+            ),
+          ),
+        ),
+        if (isDropdownVisible)
+          Positioned(
+            top: 50,
+            child: MouseRegion(
+              onEnter: (_) => cancelHideDropdownTimer(),
+              onExit: (_) => startHideDropdownTimer(),
+              child: Container(
+                width: widget.dropdownWidth,
+                color: Colors.black,
+                child: Column(
+                  children: widget.dropdownItems,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }

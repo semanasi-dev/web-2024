@@ -117,7 +117,9 @@ class NavBar extends StatelessWidget {
               height: 60,
               width: 150,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/inscricoes');
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.grey,

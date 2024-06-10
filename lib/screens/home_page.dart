@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'widgets/nav_bar.dart';
 
-class Formulario extends StatefulWidget {
-  const Formulario({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<Formulario> createState() => FormularioState();
+  State<HomePage> createState() => HomePageState();
 }
 
-class FormularioState extends State<Formulario> {
+class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

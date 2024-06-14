@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
                 Positioned.fill(
                   top: 450,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
@@ -32,7 +32,6 @@ class MyApp extends StatelessWidget {
                 ),
               ],
             ),
-            // Segundo bloco com gradiente e imagem
             Container(
               height: 200,
               decoration: BoxDecoration(
@@ -44,6 +43,10 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Container(
+              height: 500,
+              color: Colors.white,
+            ),
+            Container(
               height: 200,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -53,24 +56,15 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Colors.white, Colors.transparent],
-                ),
-              ),
-            ),
             Stack(children: [
               Image.asset(
-                './lib/assets/background-purple.jpg', // Substitua pelo caminho da sua segunda imagem
-                height: 400,
+                './lib/assets/background-purple.jpg',
+                width: double.infinity,
                 fit: BoxFit.cover,
               ),
               Positioned.fill(
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,

@@ -32,6 +32,8 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
+  parallax: ^1.0.3
+  
 
 
 dev_dependencies:
@@ -59,25 +61,15 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - ./lib/assets/background.png
-    - ./lib/assets/logo.png
-    - ./lib/assets/andinho.jpg
-
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+    - ./lib/assets/parallax-top.jpeg
+    - ./lib/assets/white.jpg
+    - ./lib/assets/background-purple.jpg
+    - ./lib/assets/back.jpg
+ 
+  fonts:
+    - family: PressStart2P
+      fonts:
+        - asset: ./lib/fonts/PressStart2P-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

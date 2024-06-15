@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:semanaacademica2024/screens/container_home.dart';
+import 'package:semanaacademica2024/screens/nav_bar.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,7 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(60.0),
+          child: NavBarHome(),
+        ),
         body: ListView(
           children: <Widget>[
             Stack(
@@ -17,9 +24,14 @@ class MyApp extends StatelessWidget {
                   './lib/assets/parallax-top.jpeg',
                   fit: BoxFit.cover,
                   width: double.infinity,
+                  height: 1000,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 30, right: 40, left: 40),
+                  child: ContainerHome(),
                 ),
                 Positioned.fill(
-                  top: 450,
+                  top: 750,
                   child: Container(
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(

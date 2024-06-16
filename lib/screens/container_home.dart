@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:semanaacademica2024/screens/foguete_animado.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContainerHome extends StatefulWidget {
   const ContainerHome({super.key});
@@ -18,163 +20,231 @@ class ContainerHomeState extends State<ContainerHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 870,
-      color: Colors.transparent,
-      padding: const EdgeInsets.all(15),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(left: 70),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          textoComBorda(
-                            '3',
-                            fontSize: 70,
-                            textColor: Colors.white,
-                            borderColor: const Color(0xFF935CAB),
-                          ),
-                          const SizedBox(
-                            width: 50,
-                          ),
-                          textoComBorda(
-                            'SEMANA\nACADEMICA',
-                            fontSize: 35,
-                            textColor: Colors.white,
-                            borderColor: const Color(0xFF935CAB),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      textoComBorda(
-                        'O QUE NUNCA TE CONTARAM',
-                        fontSize: 18,
-                        textColor: Colors.white,
-                        borderColor: const Color(0xFF935CAB),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10, left: 30),
-                        child: textoComBorda(
-                          'SOBRE A SUA CARREIRA',
-                          fontSize: 18,
-                          textColor: Colors.white,
-                          borderColor: const Color(0xFF935CAB),
-                        ),
-                      ),
-                    ],
+    var screenSize = MediaQuery.of(context).size;
+    bool isSmallScreen = screenSize.width < 800;
+
+    return SingleChildScrollView(
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          children: [
+            if (!isSmallScreen)
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: buildLeftColumn(context, screenSize),
                   ),
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                const Text(
-                  'Bem vindo á semana acadêmica 2024!',
-                  style: TextStyle(color: Colors.white, fontSize: 32),
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                const Text(
-                  'Já pensou em estar na vanguarda das próximas grandes\ninovações tecnológicas? Prepare-se para uma semana que vai\ndespertar sua curiosidade e expandir seus horizontes com:',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                Expanded(
-                  child: Column(
-                    children: items.map((item) {
-                      return ListTile(
-                        leading: const Icon(
-                          Icons.circle,
-                          size: 8,
-                          color: Colors.white,
-                        ),
-                        title: Text(
-                          item,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                      );
-                    }).toList(),
+                  const SizedBox(width: 20),
+                  Expanded(
+                    child: buildRightColumn(context),
                   ),
-                ),
-                Container(
-                    padding: const EdgeInsets.only(left: 45),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          width: 250,
-                          height: 50,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(context, '/inscricoes');
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                gradient: const LinearGradient(
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                  colors: [Colors.blue, Colors.purple],
-                                ),
-                                color: Colors.grey,
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              alignment: Alignment.center,
-                              child: const Text(
-                                'Inscreva-se!',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        SizedBox(
-                          width: 250,
-                          height: 50,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(context, '/inscricoes');
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              alignment: Alignment.center,
-                              child: const Text(
-                                'Inscreva-se!',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ))
-              ],
-            ),
-          ),
-        ],
+                ],
+              ),
+            if (isSmallScreen)
+              Column(
+                children: [
+                  buildLeftColumn(context, screenSize),
+                  const SizedBox(height: 20),
+                  buildRightColumn(context),
+                ],
+              ),
+          ],
+        ),
       ),
     );
+  }
+
+  Widget buildLeftColumn(BuildContext context, Size screenSize) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: EdgeInsets.only(left: screenSize.width * 0.05),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  textoComBorda(
+                    '3',
+                    fontSize: screenSize.width * 0.06,
+                    textColor: Colors.white,
+                    borderColor: const Color(0xFF935CAB),
+                  ),
+                  SizedBox(
+                    width: screenSize.width * 0.03,
+                  ),
+                  textoComBorda(
+                    'SEMANA\nACADEMICA',
+                    fontSize: screenSize.width * 0.025,
+                    textColor: Colors.white,
+                    borderColor: const Color(0xFF935CAB),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              textoComBorda(
+                'O QUE NUNCA TE CONTARAM',
+                fontSize: screenSize.width * 0.015,
+                textColor: Colors.white,
+                borderColor: const Color(0xFF935CAB),
+              ),
+              Padding(
+                padding:
+                    EdgeInsets.only(top: 10, left: screenSize.width * 0.02),
+                child: textoComBorda(
+                  'SOBRE A SUA CARREIRA',
+                  fontSize: screenSize.width * 0.015,
+                  textColor: Colors.white,
+                  borderColor: const Color(0xFF935CAB),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          'Bem vindo á semana acadêmica 2024!',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: screenSize.width * 0.02,
+            fontFamily: 'Jura',
+          ),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          'Já pensou em estar na vanguarda das próximas grandes\ninovações tecnológicas? Prepare-se para uma semana que vai\ndespertar sua curiosidade e expandir seus horizontes com:',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: screenSize.width * 0.015,
+            fontFamily: 'Jura',
+          ),
+        ),
+        const SizedBox(height: 20),
+        Column(
+          children: items.map((item) {
+            return ListTile(
+              leading: const Icon(
+                Icons.circle,
+                size: 8,
+                color: Colors.white,
+              ),
+              title: Text(
+                item,
+                style: TextStyle(
+                  fontSize: screenSize.width * 0.015,
+                  color: Colors.white,
+                  fontFamily: 'Jura',
+                ),
+              ),
+            );
+          }).toList(),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: screenSize.width * 0.03),
+          child: Column(
+            children: [
+              SizedBox(
+                width: 300,
+                height: 50,
+                child: GestureDetector(
+                  onTap: () {
+                    _launchURL(
+                        'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [
+                          Color(0xFF4CC9F0),
+                          Color(0xFF5458FE),
+                          Color(0xFF853BF7),
+                        ],
+                      ),
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(8.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Quero participar',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: screenSize.width * 0.015,
+                        fontFamily: 'Jura',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: 300,
+                height: 50,
+                child: GestureDetector(
+                  onTap: () {
+                    //Navigator.pushNamed(context, '/inscricoes');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF4CC9F0),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Ver mais',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: screenSize.width * 0.015,
+                        fontFamily: 'Jura',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget buildRightColumn(BuildContext context) {
+    return Stack(
+      children: [
+        Align(
+          alignment: Alignment.topRight,
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width * 0.15,
+            child: Image.asset('./lib/assets/Estrelas.png'),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 150),
+          child: FogueteAnimado(),
+        ),
+      ],
+    );
+  }
+
+  void _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   Widget textoComBorda(String text,

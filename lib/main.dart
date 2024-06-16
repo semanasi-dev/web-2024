@@ -24,11 +24,7 @@ class MyApp extends StatelessWidget {
                   './lib/assets/parallax-top.jpeg',
                   fit: BoxFit.cover,
                   width: double.infinity,
-                  height: 1000,
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 30, right: 40, left: 40),
-                  child: ContainerHome(),
+                  height: 1050,
                 ),
                 Positioned.fill(
                   top: 750,
@@ -41,6 +37,10 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                   ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 30, right: 40, left: 40),
+                  child: ContainerHome(),
                 ),
               ],
             ),

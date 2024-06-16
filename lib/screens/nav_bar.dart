@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:url_launcher/url_launcher.dart';
+
 class NavBarHome extends StatelessWidget {
   const NavBarHome({super.key});
 
@@ -47,7 +49,8 @@ class NavBarHome extends StatelessWidget {
               width: 180,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/inscricoes');
+                  _launchURL(
+                      'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -72,6 +75,15 @@ class NavBarHome extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
 

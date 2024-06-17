@@ -27,7 +27,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
     return SingleChildScrollView(
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
         child: Column(
           children: [
             if (!isSmallScreen)

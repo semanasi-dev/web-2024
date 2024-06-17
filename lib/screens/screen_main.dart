@@ -26,10 +26,10 @@ class ScreenMainState extends State<ScreenMain> {
                 './lib/assets/poligonos.jpeg',
                 fit: BoxFit.cover,
                 width: double.infinity,
-                height: 1050,
+                height: 900,
               ),
               Positioned.fill(
-                top: 750,
+                top: 500,
                 child: Container(
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
@@ -47,7 +47,7 @@ class ScreenMainState extends State<ScreenMain> {
             ],
           ),
           Container(
-            height: 200,
+            height: 120,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,

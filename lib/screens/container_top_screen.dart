@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/foguete_animado.dart';
+import 'package:semanaacademica2024/screens/widgets/foguete_animado.dart';
+import 'package:semanaacademica2024/screens/widgets/hover_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ContainerHome extends StatefulWidget {
-  const ContainerHome({super.key});
+class ContainerHomeTop extends StatefulWidget {
+  const ContainerHomeTop({super.key});
 
   @override
-  ContainerHomeState createState() => ContainerHomeState();
+  ContainerHomeTopState createState() => ContainerHomeTopState();
 }
 
-class ContainerHomeState extends State<ContainerHome> {
+class ContainerHomeTopState extends State<ContainerHomeTop> {
   final List<String> items = [
     'Palestras de quem domina o assunto',
     'Troca de Ideias',
@@ -143,50 +144,19 @@ class ContainerHomeState extends State<ContainerHome> {
           }).toList(),
         ),
         Container(
-          padding: EdgeInsets.only(left: screenSize.width * 0.03),
+          padding: EdgeInsets.only(
+              left: screenSize.width * 0.03, top: screenSize.height * 0.01),
           child: Column(
             children: [
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: GestureDetector(
-                  onTap: () {
-                    _launchURL(
-                        'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [
-                          Color(0xFF4CC9F0),
-                          Color(0xFF5458FE),
-                          Color(0xFF853BF7),
-                        ],
-                      ),
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(8.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.white.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: const Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Quero participar',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: screenSize.width * 0.015,
-                        fontFamily: 'Jura',
-                      ),
-                    ),
-                  ),
-                ),
+              HoverButton(
+                texto: 'Quero participar',
+                cores: const [
+                  Color(0xFF4CC9F0),
+                  Color(0xFF5458FE),
+                  Color(0xFF853BF7),
+                ],
+                bold: true,
+                fonte: 'Jura',
               ),
               const SizedBox(height: 20),
               SizedBox(
@@ -238,7 +208,7 @@ class ContainerHomeState extends State<ContainerHome> {
     );
   }
 
-  void _launchURL(String url) async {
+  void launchURL(String url) async {
     Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);

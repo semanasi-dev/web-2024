@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:semanaacademica2024/screens/widgets/hover_button.dart';
 import 'dart:async';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -45,39 +46,25 @@ class NavBarHome extends StatelessWidget {
             ],
           ),
           SizedBox(
-              height: 40,
-              width: 180,
-              child: GestureDetector(
-                onTap: () {
-                  _launchURL(
-                      'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [Colors.blue, Colors.purple],
-                    ),
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Inscreva-se!',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                    ),
-                  ),
-                ),
-              )),
+            height: 40,
+            width: 180,
+            child: HoverButton(
+              texto: 'Inscreva-se!',
+              cores: const [
+                Color(0xFF4CC9F0),
+                Color(0xFF5458FE),
+                Color(0xFF853BF7),
+              ],
+              bold: true,
+              size: 0.010,
+            ),
+          ),
         ],
       ),
     );
   }
 
-  _launchURL(String url) async {
+  launchURL(String url) async {
     Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);

@@ -20,7 +20,7 @@ class FogueteAnimadoState extends State<FogueteAnimado>
       vsync: this,
     )..repeat(reverse: true);
 
-    animation = Tween<double>(begin: 0, end: 20).animate(
+    animation = Tween<double>(begin: 0, end: 40).animate(
       CurvedAnimation(
         parent: controller,
         curve: Curves.easeInOut,
@@ -43,7 +43,7 @@ class FogueteAnimadoState extends State<FogueteAnimado>
           offset: Offset(0, animation.value),
           child: SizedBox(
             height: MediaQuery.of(context).size.height * 0.7,
-            child: Image.asset('./lib/assets/Icones-Foguete.png'),
+            child: Image.asset('./lib/assets/Foguete.png'),
           ),
         );
       },

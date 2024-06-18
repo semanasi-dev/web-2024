@@ -1,14 +1,20 @@
 import 'package:flutter/widgets.dart';
 
 class FogueteAnimado extends StatefulWidget {
-  const FogueteAnimado({super.key});
+  final double mult;
+  final bool isSmallScreen;
+  const FogueteAnimado(
+      {super.key, required this.mult, required this.isSmallScreen});
 
   @override
-  FogueteAnimadoState createState() => FogueteAnimadoState();
+  FogueteAnimadoState createState() => FogueteAnimadoState(mult, isSmallScreen);
 }
 
 class FogueteAnimadoState extends State<FogueteAnimado>
     with SingleTickerProviderStateMixin {
+  double mult;
+  bool isSmallScreen;
+  FogueteAnimadoState(this.mult, this.isSmallScreen);
   late AnimationController controller;
   late Animation<double> animation;
 
@@ -20,7 +26,7 @@ class FogueteAnimadoState extends State<FogueteAnimado>
       vsync: this,
     )..repeat(reverse: true);
 
-    animation = Tween<double>(begin: 0, end: 40).animate(
+    animation = Tween<double>(begin: isSmallScreen ? 0 : -25, end: 40).animate(
       CurvedAnimation(
         parent: controller,
         curve: Curves.easeInOut,
@@ -42,7 +48,7 @@ class FogueteAnimadoState extends State<FogueteAnimado>
         return Transform.translate(
           offset: Offset(0, animation.value),
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.7,
+            height: MediaQuery.of(context).size.height * mult,
             child: Image.asset('./lib/assets/Foguete.png'),
           ),
         );

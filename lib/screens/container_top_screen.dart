@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:semanaacademica2024/screens/widgets/foguete_animado.dart';
 import 'package:semanaacademica2024/screens/widgets/hover_button.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -27,7 +28,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
     return SingleChildScrollView(
       child: Container(
         width: double.infinity,
-          padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         child: Column(
           children: [
             if (!isSmallScreen)
@@ -61,49 +62,61 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          padding: EdgeInsets.only(left: screenSize.width * 0.05),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
+        Row(
+          children: [
+            Container(
+              padding: EdgeInsets.only(left: screenSize.width * 0.05),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    children: [
+                      textoComBorda(
+                        '3',
+                        fontSize: screenSize.width * 0.06,
+                        textColor: Colors.white,
+                        borderColor: const Color(0xFF935CAB),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.03,
+                      ),
+                      textoComBorda(
+                        'SEMANA\nACADEMICA',
+                        fontSize: screenSize.width * 0.025,
+                        textColor: Colors.white,
+                        borderColor: const Color(0xFF935CAB),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
                   textoComBorda(
-                    '3',
-                    fontSize: screenSize.width * 0.06,
+                    'O QUE NUNCA TE CONTARAM',
+                    fontSize: screenSize.width * 0.015,
                     textColor: Colors.white,
                     borderColor: const Color(0xFF935CAB),
                   ),
-                  SizedBox(
-                    width: screenSize.width * 0.03,
-                  ),
-                  textoComBorda(
-                    'SEMANA\nACADEMICA',
-                    fontSize: screenSize.width * 0.025,
-                    textColor: Colors.white,
-                    borderColor: const Color(0xFF935CAB),
+                  Padding(
+                    padding:
+                        EdgeInsets.only(top: 10, left: screenSize.width * 0.02),
+                    child: textoComBorda(
+                      'SOBRE A SUA CARREIRA',
+                      fontSize: screenSize.width * 0.015,
+                      textColor: Colors.white,
+                      borderColor: const Color(0xFF935CAB),
+                    ),
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
-              textoComBorda(
-                'O QUE NUNCA TE CONTARAM',
-                fontSize: screenSize.width * 0.015,
-                textColor: Colors.white,
-                borderColor: const Color(0xFF935CAB),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(top: 10, left: screenSize.width * 0.02),
-                child: textoComBorda(
-                  'SOBRE A SUA CARREIRA',
-                  fontSize: screenSize.width * 0.015,
-                  textColor: Colors.white,
-                  borderColor: const Color(0xFF935CAB),
-                ),
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(
+              width: 50,
+            ),
+            if (MediaQuery.of(context).size.width < 800)
+              FogueteAnimado(
+                mult: 0.05,
+                isSmallScreen: screenSize.width < 800,
+              )
+          ],
         ),
         const SizedBox(height: 20),
         Text(
@@ -200,9 +213,12 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
             child: Image.asset('./lib/assets/Estrelas.png'),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 150),
-          child: FogueteAnimado(),
+        Padding(
+          padding: const EdgeInsets.only(top: 150),
+          child: FogueteAnimado(
+            mult: 0.7,
+            isSmallScreen: MediaQuery.of(context).size.width < 800,
+          ),
         ),
       ],
     );

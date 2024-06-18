@@ -16,9 +16,6 @@ class QrCodeContainerState extends State<QrCodeContainer> {
     final List<String> detalhes = [
       'Locais',
       'Horário de inicio',
-      'Enchendo linguiça',
-      'Enchendo linguiça',
-      'Enchendo linguiça',
     ];
 
     return SingleChildScrollView(
@@ -91,7 +88,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                         textoComBorda(
                           'COMPETIÇÃO\nMATER CODE',
                           fontSize: constraints.maxWidth * 0.03,
-                          textColor: Colors.white,
+                          textColor: Color(0xFF853BF7),
                           borderColor: const Color(0xFF8E99CE),
                         ),
                         const SizedBox(height: 20),

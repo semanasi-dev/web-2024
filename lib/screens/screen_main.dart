@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/screens/container_qr_code_screen.dart';
 import 'package:semanaacademica2024/screens/container_top_screen.dart';
 import 'package:semanaacademica2024/screens/palestrantes_screen.dart';
+import 'package:semanaacademica2024/screens/patrocinadores_screen.dart';
 import 'package:semanaacademica2024/widgets/nav_bar.dart';
 
 class ScreenMain extends StatefulWidget {
@@ -15,7 +16,7 @@ class ScreenMainState extends State<ScreenMain> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    bool isSmallScreen = screenSize.width < 800;
+    //bool isSmallScreen = screenSize.width < 800;
 
     return Scaffold(
       appBar: const PreferredSize(
@@ -30,7 +31,7 @@ class ScreenMainState extends State<ScreenMain> {
                 './lib/assets/poligonos.jpeg',
                 fit: BoxFit.cover,
                 width: double.infinity,
-                height: screenSize.height * 1.3,
+                height: screenSize.height * 1.1,
               ),
               Positioned.fill(
                 top: screenSize.height / 5,
@@ -65,53 +66,56 @@ class ScreenMainState extends State<ScreenMain> {
             child: QrCodeContainer(),
           ),
           Container(
-            height: 200,
+            height: screenSize.height * 0.18,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.white, Colors.blue.withOpacity(0.9)],
+                colors: [
+                  Colors.white,
+                  const Color(0xFF4BC8EF).withOpacity(0.9)
+                ],
               ),
             ),
           ),
           Stack(
             children: [
-              Positioned.fill(
-                child: Container(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [Colors.blue, Colors.transparent],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                height: 200,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Colors.blue, Colors.transparent],
-                  ),
-                ),
-              ),
               Container(
                 height: screenSize.height * 1.2,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Color(0xFF4BC8EF), Color(0xFF13A1A2)],
+                    colors: [
+                      const Color(0xFF4BC8EF).withOpacity(0.9),
+                      const Color(0xFF13A1A2),
+                    ],
                   ),
                 ),
                 child: Container(
-                    padding: const EdgeInsets.only(top: 40, bottom: 40),
-                    child: const PatrocinadoresPage()),
+                  padding: const EdgeInsets.only(top: 0, bottom: 40),
+                  child: const PalestrantesPage(),
+                ),
               ),
             ],
           ),
+          Container(
+            height: screenSize.height * 1.1,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  const Color(0xFF13A1A2).withOpacity(0.9),
+                  const Color(0xFF6761DC),
+                ],
+              ),
+            ),
+            child: Container(
+              padding: const EdgeInsets.only(top: 0, bottom: 40),
+              child: const PatrocinadoresPage(),
+            ),
+          )
         ],
       ),
     );

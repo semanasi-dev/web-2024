@@ -69,26 +69,24 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
+                  Container(
+                    padding: EdgeInsets.only(left: screenSize.width * 0.07),
+                    child: Column(children: [
                       TextoComBorda(
-                        text: '3',
+                        text: 'SEMANA',
                         fontFamily: 'Cristik',
-                        fontSize: screenSize.width * 0.06,
+                        fontSize: screenSize.width * 0.035,
                         textColor: Colors.white,
                         borderColor: const Color(0xFF935CAB),
                       ),
-                      SizedBox(
-                        width: screenSize.width * 0.03,
-                      ),
                       TextoComBorda(
-                        text: 'SEMANA\nACADEMICA',
+                        text: 'ACADEMICA',
                         fontFamily: 'Cristik',
-                        fontSize: screenSize.width * 0.025,
+                        fontSize: screenSize.width * 0.035,
                         textColor: Colors.white,
                         borderColor: const Color(0xFF935CAB),
                       ),
-                    ],
+                    ]),
                   ),
                   const SizedBox(height: 10),
                   TextoComBorda(

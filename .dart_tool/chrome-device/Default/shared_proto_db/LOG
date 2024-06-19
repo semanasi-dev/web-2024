@@ -1,24 +1,36 @@
-2024/06/18-21:12:54.903 2cac Reusing MANIFEST C:\Users\danie\AppData\Local\Temp\flutter_tools.4a194304\flutter_tools_chrome_device.23cf6cf\Default\shared_proto_db/MANIFEST-000001
-2024/06/18-21:12:54.903 2cac Recovering log #42
-2024/06/18-21:12:54.904 2cac Reusing old log C:\Users\danie\AppData\Local\Temp\flutter_tools.4a194304\flutter_tools_chrome_device.23cf6cf\Default\shared_proto_db/000042.log 
-2024/06/18-21:12:54.905 2cac Delete type=0 #3
-2024/06/18-21:12:54.905 2cac Delete type=0 #4
-2024/06/18-21:12:54.905 2cac Delete type=0 #7
-2024/06/18-21:12:54.905 2cac Delete type=2 #8
-2024/06/18-21:12:54.905 2cac Delete type=0 #10
-2024/06/18-21:12:54.905 2cac Delete type=2 #11
-2024/06/18-21:12:54.905 2cac Delete type=0 #13
-2024/06/18-21:12:54.905 2cac Delete type=2 #14
-2024/06/18-21:12:54.905 2cac Delete type=0 #16
-2024/06/18-21:12:54.905 2cac Delete type=2 #17
-2024/06/18-21:12:54.905 2cac Delete type=0 #19
-2024/06/18-21:12:54.905 2cac Delete type=2 #21
-2024/06/18-21:12:54.905 2cac Delete type=0 #23
-2024/06/18-21:12:54.905 2cac Delete type=2 #24
-2024/06/18-21:12:54.905 2cac Delete type=0 #26
-2024/06/18-21:12:54.905 2cac Delete type=2 #27
-2024/06/18-21:12:54.906 2cac Delete type=0 #29
-2024/06/18-21:12:54.906 2cac Delete type=2 #30
-2024/06/18-21:12:54.906 2cac Delete type=0 #32
-2024/06/18-21:12:54.906 2cac Delete type=0 #36
-2024/06/18-21:12:54.906 2cac Delete type=0 #39
+2024/06/18-23:34:17.091 3ba0 Reusing MANIFEST C:\Users\danie\AppData\Local\Temp\flutter_tools.148a3818\flutter_tools_chrome_device.4aa8fd9a\Default\shared_proto_db/MANIFEST-000001
+2024/06/18-23:34:17.092 3ba0 Recovering log #42
+2024/06/18-23:34:17.093 3ba0 Reusing old log C:\Users\danie\AppData\Local\Temp\flutter_tools.148a3818\flutter_tools_chrome_device.4aa8fd9a\Default\shared_proto_db/000042.log 
+2024/06/18-23:34:17.093 3ba0 Delete type=0 #3
+2024/06/18-23:34:17.093 3ba0 Delete type=0 #4
+2024/06/18-23:34:17.093 3ba0 Delete type=0 #7
+2024/06/18-23:34:17.093 3ba0 Delete type=2 #8
+2024/06/18-23:34:17.093 3ba0 Delete type=0 #10
+2024/06/18-23:34:17.093 3ba0 Delete type=2 #11
+2024/06/18-23:34:17.093 3ba0 Delete type=0 #13
+2024/06/18-23:34:17.093 3ba0 Delete type=2 #14
+2024/06/18-23:34:17.257 3ba0 Delete type=0 #16
+2024/06/18-23:34:17.258 3ba0 Delete type=2 #17
+2024/06/18-23:34:17.258 3ba0 Delete type=0 #19
+2024/06/18-23:34:17.258 3ba0 Delete type=2 #21
+2024/06/18-23:34:17.258 3ba0 Delete type=0 #23
+2024/06/18-23:34:17.258 3ba0 Delete type=2 #24
+2024/06/18-23:34:17.258 3ba0 Delete type=0 #26
+2024/06/18-23:34:17.258 3ba0 Delete type=2 #27
+2024/06/18-23:34:17.258 3ba0 Delete type=0 #29
+2024/06/18-23:34:17.258 3ba0 Delete type=2 #30
+2024/06/18-23:34:17.258 3ba0 Delete type=0 #32
+2024/06/18-23:34:17.258 3ba0 Delete type=0 #36
+2024/06/18-23:34:17.258 3ba0 Delete type=0 #39
+2024/06/18-23:37:18.132 3ce8 Level-0 table #46: started
+2024/06/18-23:37:18.135 3ce8 Level-0 table #46: 138472 bytes OK
+2024/06/18-23:37:18.136 3ce8 Delete type=0 #42
+2024/06/18-23:37:18.136 3ce8 Compacting 4@0 + 1@1 files
+2024/06/18-23:37:18.144 3ce8 Generated table #47@0: 3209 keys, 320510 bytes
+2024/06/18-23:37:18.144 3ce8 Compacted 4@0 + 1@1 files => 320510 bytes
+2024/06/18-23:37:18.145 3ce8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/06/18-23:37:18.145 3ce8 Delete type=2 #34
+2024/06/18-23:37:18.145 3ce8 Delete type=2 #37
+2024/06/18-23:37:18.145 3ce8 Delete type=2 #40
+2024/06/18-23:37:18.145 3ce8 Delete type=2 #43
+2024/06/18-23:37:18.145 3ce8 Delete type=2 #46

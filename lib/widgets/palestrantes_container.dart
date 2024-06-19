@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:semanaacademica2024/model/palestrantes_model.dart';
+import 'package:semanaacademica2024/widgets/container_palestrante.dart';
 import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 
-// ignore: must_be_immutable
 class PalestrantesContainer extends StatefulWidget {
-  String? dirAsset;
+  final String diaDaSemana;
+  final String ddMMyyyy;
+  final List<Palestrante> palestrantes;
 
-  PalestrantesContainer({super.key, this.dirAsset});
+  const PalestrantesContainer(
+      {super.key,
+      required this.diaDaSemana,
+      required this.ddMMyyyy,
+      required this.palestrantes});
 
   @override
   State<PalestrantesContainer> createState() => PalestrantesContainerState();
@@ -15,12 +22,12 @@ class PalestrantesContainerState extends State<PalestrantesContainer> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    bool isSmallScreen = screenSize.width < 800;
+    //bool isSmallScreen = screenSize.width < 800;
 
     final double radius = screenSize.width * 0.075;
 
     return SizedBox(
-      height: screenSize.height * 0.9,
+      height: screenSize.height * 0.85,
       width: double.infinity,
       child: Container(
         decoration: BoxDecoration(
@@ -41,14 +48,14 @@ class PalestrantesContainerState extends State<PalestrantesContainer> {
               child: Column(
                 children: [
                   TextoComBorda(
-                    text: 'Segunda feira',
+                    text: widget.diaDaSemana,
                     fontFamily: 'Cristik',
                     borderColor: const Color(0xFF5C8ED3),
                     textColor: Colors.white,
                     fontSize: 40,
                   ),
                   TextoComBorda(
-                    text: '02/02/2024',
+                    text: widget.ddMMyyyy,
                     fontFamily: 'Jura',
                     borderColor: const Color(0xFF5C8ED3),
                     textColor: Colors.white,
@@ -60,104 +67,15 @@ class PalestrantesContainerState extends State<PalestrantesContainer> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  height: screenSize.height * 0.65,
-                  width: screenSize.width * 0.23,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    gradient: const LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Color(0xFF4D86F4),
-                        Color(0xFF9980D9),
-                      ],
-                    ),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        height: screenSize.height * 0.01,
-                      ),
-                      Container(
-                        width: radius * 2,
-                        height: radius * 2,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [Colors.orange, Colors.pink, Colors.purple],
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.topRight,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                            ),
-                            child: CircleAvatar(
-                              radius: radius - 3,
-                              backgroundImage:
-                                  const AssetImage('./lib/assets/Celular.png'),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Nome do',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: screenSize.width * 0.012,
-                              fontFamily: 'Jura',
-                            ),
-                          ),
-                          Text(
-                            'palestrante',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: screenSize.width * 0.012,
-                              fontFamily: 'Jura',
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'MENTORIA DE',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: screenSize.width * 0.015,
-                              fontFamily: 'Jura',
-                            ),
-                          ),
-                          Text(
-                            'CARREIRA',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: screenSize.width * 0.015,
-                              fontFamily: 'Jura',
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        '19:30PM até 20:20PM',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: screenSize.width * 0.011,
-                          fontFamily: 'Jura',
-                        ),
-                      ),
-                    ],
-                  ),
+                ContainerPalestrante(
+                  palestrante: widget.palestrantes[0],
+                  radius: radius,
+                  screenSize: screenSize,
+                ),
+                ContainerPalestrante(
+                  palestrante: widget.palestrantes[1],
+                  radius: radius,
+                  screenSize: screenSize,
                 ),
               ],
             ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/widgets/hover_button.dart';
+import 'package:semanaacademica2024/widgets/hover_button.dart';
 import 'dart:async';
 
 import 'package:url_launcher/url_launcher.dart';

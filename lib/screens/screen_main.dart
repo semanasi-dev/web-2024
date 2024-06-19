@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/screens/container_qr_code_screen.dart';
 import 'package:semanaacademica2024/screens/container_top_screen.dart';
-import 'package:semanaacademica2024/screens/widgets/nav_bar.dart';
+import 'package:semanaacademica2024/screens/palestrantes_screen.dart';
+import 'package:semanaacademica2024/widgets/nav_bar.dart';
 
 class ScreenMain extends StatefulWidget {
   const ScreenMain({super.key});
@@ -13,23 +14,26 @@ class ScreenMain extends StatefulWidget {
 class ScreenMainState extends State<ScreenMain> {
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    bool isSmallScreen = screenSize.width < 800;
+
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: NavBarHome(),
       ),
       body: ListView(
-        children: <Widget>[
+        children: [
           Stack(
             children: [
               Image.asset(
                 './lib/assets/poligonos.jpeg',
                 fit: BoxFit.cover,
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 1.2,
+                height: screenSize.height * 1.3,
               ),
               Positioned.fill(
-                top: MediaQuery.of(context).size.height / 5,
+                top: screenSize.height / 5,
                 child: Container(
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
@@ -70,14 +74,21 @@ class ScreenMainState extends State<ScreenMain> {
               ),
             ),
           ),
-          Stack(children: [
-            Image.asset(
-              './lib/assets/background-purple.jpg',
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-            Positioned.fill(
-              child: Container(
+          Stack(
+            children: [
+              Positioned.fill(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Colors.blue, Colors.transparent],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: 200,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
@@ -86,8 +97,21 @@ class ScreenMainState extends State<ScreenMain> {
                   ),
                 ),
               ),
-            ),
-          ]),
+              Container(
+                height: screenSize.height * 1.2,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Color(0xFF4BC8EF), Color(0xFF13A1A2)],
+                  ),
+                ),
+                child: Container(
+                    padding: const EdgeInsets.only(top: 40, bottom: 40),
+                    child: const PatrocinadoresPage()),
+              ),
+            ],
+          ),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/widgets/hover_button.dart';
+import 'package:semanaacademica2024/widgets/hover_button.dart';
+import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 
 class QrCodeContainer extends StatefulWidget {
   const QrCodeContainer({super.key});
@@ -32,50 +33,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                 Expanded(
                   flex: 3,
                   child: Center(
-                    child: FractionallySizedBox(
-                      widthFactor: constraints.maxWidth > 800 ? 0.7 : 0.9,
-                      heightFactor: constraints.maxWidth > 800 ? 0.9 : 0.7,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          AspectRatio(
-                            aspectRatio: 1,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: const Color(0xFF98FFFF),
-                                borderRadius: BorderRadius.circular(500),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: constraints.maxHeight * 0.1,
-                            right: constraints.maxWidth * 0.15,
-                            child: Image.asset(
-                              './lib/assets/qrcode.png',
-                              height: constraints.maxHeight * 0.2,
-                              width: constraints.maxWidth * 0.2,
-                            ),
-                          ),
-                          Positioned(
-                            left: constraints.maxWidth * 0.1,
-                            bottom: constraints.maxHeight * 0.28,
-                            child: Image.asset(
-                              './lib/assets/Celular.png',
-                              height: constraints.maxHeight * 0.8,
-                              width: constraints.maxWidth * 0.8,
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 0,
-                            child: Image.asset(
-                              './lib/assets/tesouro.png',
-                              height: constraints.maxHeight * 0.15,
-                              width: constraints.maxWidth * 0.3,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: Image.asset('./lib/assets/Componentes-Banner.png'),
                   ),
                 ),
                 Expanded(
@@ -85,10 +43,10 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        textoComBorda(
-                          'COMPETIÇÃO\nMATER CODE',
+                        TextoComBorda(
+                          text: 'COMPETIÇÃO\nMATER CODE',
                           fontSize: constraints.maxWidth * 0.03,
-                          textColor: Color(0xFF853BF7),
+                          textColor: const Color(0xFF853BF7),
                           borderColor: const Color(0xFF8E99CE),
                         ),
                         const SizedBox(height: 20),
@@ -165,35 +123,6 @@ class QrCodeContainerState extends State<QrCodeContainer> {
           },
         ),
       ),
-    );
-  }
-
-  Widget textoComBorda(String text,
-      {double? fontSize, Color? textColor, Color? borderColor}) {
-    return Stack(
-      children: [
-        Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'PressStart2P',
-            fontSize: fontSize,
-            foreground: Paint()
-              ..style = PaintingStyle.stroke
-              ..strokeWidth = 4
-              ..color = borderColor!,
-          ),
-          textAlign: TextAlign.start,
-        ),
-        Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'PressStart2P',
-            fontSize: fontSize,
-            color: textColor,
-          ),
-          textAlign: TextAlign.start,
-        ),
-      ],
     );
   }
 }

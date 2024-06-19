@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:semanaacademica2024/screens/widgets/foguete_animado.dart';
-import 'package:semanaacademica2024/screens/widgets/hover_button.dart';
+import 'package:semanaacademica2024/widgets/foguete_animado.dart';
+import 'package:semanaacademica2024/widgets/hover_button.dart';
+import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContainerHomeTop extends StatefulWidget {
@@ -71,8 +71,9 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                 children: [
                   Row(
                     children: [
-                      textoComBorda(
-                        '3',
+                      TextoComBorda(
+                        text: '3',
+                        fontFamily: 'Cristik',
                         fontSize: screenSize.width * 0.06,
                         textColor: Colors.white,
                         borderColor: const Color(0xFF935CAB),
@@ -80,8 +81,9 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                       SizedBox(
                         width: screenSize.width * 0.03,
                       ),
-                      textoComBorda(
-                        'SEMANA\nACADEMICA',
+                      TextoComBorda(
+                        text: 'SEMANA\nACADEMICA',
+                        fontFamily: 'Cristik',
                         fontSize: screenSize.width * 0.025,
                         textColor: Colors.white,
                         borderColor: const Color(0xFF935CAB),
@@ -89,8 +91,8 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  textoComBorda(
-                    'O QUE NUNCA TE CONTARAM',
+                  TextoComBorda(
+                    text: 'O QUE NUNCA TE CONTARAM',
                     fontSize: screenSize.width * 0.015,
                     textColor: Colors.white,
                     borderColor: const Color(0xFF935CAB),
@@ -98,8 +100,8 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                   Padding(
                     padding:
                         EdgeInsets.only(top: 10, left: screenSize.width * 0.02),
-                    child: textoComBorda(
-                      'SOBRE A SUA CARREIRA',
+                    child: TextoComBorda(
+                      text: 'SOBRE A SUA CARREIRA',
                       fontSize: screenSize.width * 0.015,
                       textColor: Colors.white,
                       borderColor: const Color(0xFF935CAB),
@@ -231,34 +233,5 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
     } else {
       throw 'Could not launch $url';
     }
-  }
-
-  Widget textoComBorda(String text,
-      {double? fontSize, Color? textColor, Color? borderColor}) {
-    return Stack(
-      children: [
-        Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'PressStart2P',
-            fontSize: fontSize,
-            foreground: Paint()
-              ..style = PaintingStyle.stroke
-              ..strokeWidth = 4
-              ..color = borderColor!,
-          ),
-          textAlign: TextAlign.start,
-        ),
-        Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'PressStart2P',
-            fontSize: fontSize,
-            color: textColor,
-          ),
-          textAlign: TextAlign.start,
-        ),
-      ],
-    );
   }
 }

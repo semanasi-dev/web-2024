@@ -35,6 +35,8 @@ dependencies:
   url_launcher: ^6.1.8
   flutter_hooks: ^0.20.5
   flutter_screenutil: ^5.9.3
+  smooth_page_indicator: ^1.1.0
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,7 @@ flutter:
     - ./lib/assets/tesouro.png
     - ./lib/assets/Celular.png
     - ./lib/assets/Celular_small.png
+    - ./lib/assets/Componentes-Banner.png
  
   fonts:
     - family: PressStart2P
@@ -77,6 +80,9 @@ flutter:
     - family: Jura
       fonts:
         - asset: ./lib/fonts/Jura-VariableFont_wght.ttf
+    - family: Cristik
+      fonts:
+        - asset: ./lib/fonts/Cristik.ttf
         
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic

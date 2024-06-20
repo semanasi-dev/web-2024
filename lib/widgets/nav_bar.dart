@@ -4,6 +4,8 @@ import 'dart:async';
 
 import 'package:url_launcher/url_launcher.dart';
 
+import '../utils/Utils.dart';
+
 class NavBarHome extends StatelessWidget {
   const NavBarHome({super.key});
 
@@ -11,11 +13,14 @@ class NavBarHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 42.0, vertical: 8.0),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [Colors.grey, Colors.black],
+          colors: [
+            Colors.transparent.withOpacity(0.02),
+            Colors.black.withOpacity(0.9)
+          ],
         ),
       ),
       child: Row(
@@ -56,7 +61,9 @@ class NavBarHome extends StatelessWidget {
                 Color(0xFF853BF7),
               ],
               bold: true,
-              size: 0.010,
+              fontSize: Utils.isMobile(context)
+                  ? MediaQuery.of(context).size.width * 0.027
+                  : MediaQuery.of(context).size.width * 0.014,
             ),
           ),
         ],

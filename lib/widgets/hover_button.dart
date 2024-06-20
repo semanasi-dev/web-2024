@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:semanaacademica2024/utils/utils.dart';
 
 // ignore: must_be_immutable
 class HoverButton extends StatefulWidget {
@@ -7,14 +7,14 @@ class HoverButton extends StatefulWidget {
   final String texto;
   String? fonte;
   bool? bold;
-  double? size;
+  double? fontSize;
   Color? shadowColor;
 
   HoverButton({
     super.key,
     this.fonte,
     this.bold,
-    this.size,
+    this.fontSize,
     this.shadowColor,
     required this.cores,
     required this.texto,
@@ -46,7 +46,7 @@ class HoverButtonState extends State<HoverButton> {
       onExit: _onExit,
       child: GestureDetector(
         onTap: () {
-          _launchURL(
+          Utils.launchURL(
               'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
         },
         child: AnimatedContainer(
@@ -78,8 +78,7 @@ class HoverButtonState extends State<HoverButton> {
             widget.texto,
             style: TextStyle(
               color: Colors.white,
-              fontSize:
-                  MediaQuery.of(context).size.width * (widget.size ?? 0.015),
+              fontSize: widget.fontSize ?? 0.015,
               fontFamily: widget.fonte,
               fontWeight:
                   widget.bold != null ? FontWeight.bold : FontWeight.normal,
@@ -88,14 +87,5 @@ class HoverButtonState extends State<HoverButton> {
         ),
       ),
     );
-  }
-}
-
-void _launchURL(String url) async {
-  Uri uri = Uri.parse(url);
-  if (await canLaunchUrl(uri)) {
-    await launchUrl(uri);
-  } else {
-    throw 'Could not launch $url';
   }
 }

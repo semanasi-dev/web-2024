@@ -67,11 +67,8 @@ flutter:
     - ./lib/assets/background-purple.jpg
     - ./lib/assets/Estrelas.png
     - ./lib/assets/Foguete.png
-    - ./lib/assets/qrcode.png
-    - ./lib/assets/tesouro.png
-    - ./lib/assets/Celular.png
     - ./lib/assets/Celular_small.png
-    - ./lib/assets/Componentes-Banner.png
+    - ./lib/assets/Componentes-Banner-MaterCode.png
  
   fonts:
     - family: PressStart2P

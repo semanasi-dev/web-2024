@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/screen_main.dart';
+import 'package:semanaacademica2024/screens/main_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -9,6 +9,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: ScreenMain());
+      debugShowCheckedModeBanner: false,
+      home: ScreenMain(),
+    );
   }
 }

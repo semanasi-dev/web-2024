@@ -18,26 +18,22 @@ class ContainerPalestrante extends StatefulWidget {
 class ContainerPalestranteState extends State<ContainerPalestrante> {
   @override
   Widget build(BuildContext context) {
+    double fontSize = widget.screenSize.width * 0.012;
+
     return Container(
       height: widget.screenSize.height * 0.65,
-      width: widget.screenSize.width * 0.23,
+      width: widget.screenSize.width * 0.24,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(widget.screenSize.height * 0.02),
         gradient: const LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
-          colors: [
-            Color(0xFF4D86F4),
-            Color(0xFF9980D9),
-          ],
+          colors: [Color(0xFF4D86F4), Color(0xFF9980D9)],
         ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(
-            height: widget.screenSize.height * 0.01,
-          ),
           Container(
             width: widget.radius * 2,
             height: widget.radius * 2,
@@ -63,39 +59,29 @@ class ContainerPalestranteState extends State<ContainerPalestrante> {
               ),
             ),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                widget.palestrante.nome,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: widget.screenSize.width * 0.012,
-                  fontFamily: 'Jura',
-                ),
-              ),
-              Text(
-                widget.palestrante.sobreNome,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: widget.screenSize.width * 0.012,
-                  fontFamily: 'Jura',
-                ),
-              ),
-            ],
+          Text(
+            widget.palestrante.nome,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: fontSize,
+              fontFamily: 'Jura',
+            ),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                widget.palestrante.tema,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: widget.screenSize.width * 0.015,
-                  fontFamily: 'Jura',
-                ),
-              ),
-            ],
+          Text(
+            widget.palestrante.sobreNome,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: fontSize,
+              fontFamily: 'Jura',
+            ),
+          ),
+          Text(
+            widget.palestrante.tema,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: widget.screenSize.width * 0.015,
+              fontFamily: 'Jura',
+            ),
           ),
           Text(
             widget.palestrante.horarios,

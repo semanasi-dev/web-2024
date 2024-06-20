@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/model/palestrantes_model.dart';
-import 'package:semanaacademica2024/widgets/palestrantes_container.dart';
+import 'package:semanaacademica2024/widgets/gradient_container.dart';
 import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 
 class PalestrantesPage extends StatefulWidget {
@@ -73,48 +73,58 @@ class PalestrantesPageState extends State<PalestrantesPage> {
 
   @override
   Widget build(BuildContext context) {
-    //var screenSize = MediaQuery.of(context).size;
+    var screenSize = MediaQuery.of(context).size;
     //bool isSmallScreen = screenSize.width < 800;
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const TextoComBorda(
-          text: 'CONFIRA A PROGRAMAÇÃO',
-          fontSize: 50,
-          textColor: Colors.white,
-          borderColor: Color(0xFF5886E0),
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            const Color(0xFF4BC8EF).withOpacity(0.9),
+            const Color(0xFF13A1A2),
+          ],
         ),
-        Expanded(
-          child: SizedBox(
-            width: double.infinity,
-            child: CarouselSlider(
-              items: listaPalestrantes
-                  .map(
-                    (e) => Center(
-                      child: Container(
-                        child: e,
-                      ),
-                    ),
-                  )
-                  .toList(),
-              options: CarouselOptions(
-                initialPage: 0,
-                autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 5),
-                enlargeCenterPage: true,
-                viewportFraction: 0.7,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentPage = index;
-                  });
-                },
+      ),
+      height: screenSize.height * 0.95,
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextoComBorda(
+            text: 'CONFIRA A PROGRAMAÇÃO',
+            fontSize: screenSize.width * 0.045,
+            textColor: Colors.white,
+            borderColor: const Color(0xFF5886E0),
+          ),
+          Expanded(
+            child: SizedBox(
+              width: double.infinity,
+              child: CarouselSlider(
+                items: listaPalestrantes
+                    .map(
+                      (e) => e,
+                    )
+                    .toList(),
+                options: CarouselOptions(
+                  initialPage: 0,
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 5),
+                  enlargeCenterPage: true,
+                  viewportFraction: 0.7,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      currentPage = index;
+                    });
+                  },
+                ),
               ),
             ),
           ),
-        ),
-        buildCarouselIndicators(),
-      ],
+          buildCarouselIndicators(),
+        ],
+      ),
     );
   }
 

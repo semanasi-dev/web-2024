@@ -24,48 +24,62 @@ class _PatrocinadoresPageState extends State<PatrocinadoresPage> {
     var screenSize = MediaQuery.of(context).size;
     // bool isSmallScreen = screenSize.width < 800;
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        SizedBox(
-          height: screenSize.height * 0.07,
+    return Container(
+      height: screenSize.height * 1.5,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            const Color(0xFF13A1A2).withOpacity(0.9),
+            const Color(0xFF6761DC),
+          ],
         ),
-        const TextoComBorda(
-          text: 'PATROCINADORES',
-          fontSize: 50,
-          textColor: Colors.white,
-          borderColor: Color(0xFF5886E0),
-        ),
-        Expanded(
-          child: SizedBox(
-            width: double.infinity,
-            child: CarouselSlider(
-              items: listaPatrocinadores
-                  .map(
-                    (e) => Center(
-                      child: Container(
-                        child: e,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          SizedBox(
+            height: screenSize.height * 0.07,
+          ),
+          const TextoComBorda(
+            text: 'PATROCINADORES',
+            fontSize: 50,
+            textColor: Colors.white,
+            borderColor: Color(0xFF5886E0),
+          ),
+          Expanded(
+            child: SizedBox(
+              width: double.infinity,
+              child: CarouselSlider(
+                items: listaPatrocinadores
+                    .map(
+                      (e) => Center(
+                        child: Container(
+                          child: e,
+                        ),
                       ),
-                    ),
-                  )
-                  .toList(),
-              options: CarouselOptions(
-                initialPage: 0,
-                autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 5),
-                enlargeCenterPage: true,
-                viewportFraction: 0.7,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentPage = index;
-                  });
-                },
+                    )
+                    .toList(),
+                options: CarouselOptions(
+                  initialPage: 0,
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 5),
+                  enlargeCenterPage: true,
+                  viewportFraction: 0.7,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      currentPage = index;
+                    });
+                  },
+                ),
               ),
             ),
           ),
-        ),
-        buildCarouselIndicators()
-      ],
+          buildCarouselIndicators()
+        ],
+      ),
     );
   }
 

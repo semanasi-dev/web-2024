@@ -24,42 +24,37 @@ class _PatrocinadoresPageState extends State<PatrocinadoresPage> {
     var screenSize = MediaQuery.of(context).size;
     // bool isSmallScreen = screenSize.width < 800;
 
-    return Container(
-      height: screenSize.height * 1.5,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            const Color(0xFF13A1A2).withOpacity(0.9),
-            const Color(0xFF6761DC),
-          ],
+    return Expanded(
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              const Color(0xFF13A1A2).withOpacity(0.9),
+              const Color(0xFF6761DC),
+            ],
+          ),
         ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          SizedBox(
-            height: screenSize.height * 0.07,
-          ),
-          const TextoComBorda(
-            text: 'PATROCINADORES',
-            fontSize: 50,
-            textColor: Colors.white,
-            borderColor: Color(0xFF5886E0),
-          ),
-          Expanded(
-            child: SizedBox(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: screenSize.height * 0.07,
+            ),
+            const TextoComBorda(
+              text: 'PATROCINADORES',
+              fontSize: 50,
+              textColor: Colors.white,
+              borderColor: Color(0xFF5886E0),
+            ),
+            SizedBox(
               width: double.infinity,
               child: CarouselSlider(
                 items: listaPatrocinadores
                     .map(
-                      (e) => Center(
-                        child: Container(
-                          child: e,
-                        ),
-                      ),
+                      (e) => e,
                     )
                     .toList(),
                 options: CarouselOptions(
@@ -76,9 +71,9 @@ class _PatrocinadoresPageState extends State<PatrocinadoresPage> {
                 ),
               ),
             ),
-          ),
-          buildCarouselIndicators()
-        ],
+            buildCarouselIndicators()
+          ],
+        ),
       ),
     );
   }

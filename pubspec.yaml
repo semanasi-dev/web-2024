@@ -69,6 +69,7 @@ flutter:
     - ./lib/assets/Foguete.png
     - ./lib/assets/Celular_small.png
     - ./lib/assets/Componentes-Banner-MaterCode.png
+    - ./lib/assets/competicao.png
  
   fonts:
     - family: PressStart2P

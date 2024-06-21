@@ -7,6 +7,7 @@ class FogueteAnimado extends StatefulWidget {
       {super.key, required this.mult, required this.isSmallScreen});
 
   @override
+  // ignore: no_logic_in_create_state
   FogueteAnimadoState createState() => FogueteAnimadoState(mult, isSmallScreen);
 }
 

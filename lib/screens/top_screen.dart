@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:semanaacademica2024/utils/utils.dart';
 import 'package:semanaacademica2024/widgets/foguete_animado.dart';
 import 'package:semanaacademica2024/widgets/hover_button.dart';
@@ -26,7 +24,6 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    //bool isSmallScreen = screenSize.width < 800;
 
     return Stack(
       children: [
@@ -80,7 +77,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
 
   Widget mobileScreen(Size screenSize) {
     return Padding(
-      padding: const EdgeInsets.all(40),
+      padding: const EdgeInsets.all(30),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -123,6 +120,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
               ],
             ),
           ),
+          const SizedBox(height: 1),
           TextoComBorda(
             text: 'O QUE NUNCA TE CONTARAM',
             fontSize: screenSize.width * 0.030,
@@ -190,7 +188,6 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                 ],
                 bold: true,
                 fonte: 'Jura',
-                fontSize: screenSize.width * 0.040,
               ),
               const SizedBox(height: 20),
               HoverButton(
@@ -201,7 +198,6 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                 ],
                 bold: true,
                 fonte: 'Jura',
-                fontSize: screenSize.width * 0.040,
               ),
             ],
           ),

@@ -87,38 +87,41 @@ class PalestrantesPageState extends State<PalestrantesPage> {
           ],
         ),
       ),
-      height: screenSize.height * 0.95,
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(
+            height: screenSize.height * 0.050,
+          ),
           TextoComBorda(
             text: 'CONFIRA A PROGRAMAÇÃO',
-            fontSize: screenSize.width * 0.045,
+            fontSize: screenSize.width * 0.025,
             textColor: Colors.white,
             borderColor: const Color(0xFF5886E0),
           ),
-          Expanded(
-            child: SizedBox(
-              width: double.infinity,
-              child: CarouselSlider(
-                items: listaPalestrantes
-                    .map(
-                      (e) => e,
-                    )
-                    .toList(),
-                options: CarouselOptions(
-                  initialPage: 0,
-                  autoPlay: true,
-                  autoPlayInterval: const Duration(seconds: 5),
-                  enlargeCenterPage: true,
-                  viewportFraction: 0.7,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      currentPage = index;
-                    });
-                  },
-                ),
+          SizedBox(
+            height: screenSize.height * 0.030,
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: CarouselSlider(
+              items: listaPalestrantes
+                  .map(
+                    (e) => e,
+                  )
+                  .toList(),
+              options: CarouselOptions(
+                initialPage: 0,
+                autoPlay: true,
+                autoPlayInterval: const Duration(seconds: 5),
+                enlargeCenterPage: true,
+                viewportFraction: 0.7,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    currentPage = index;
+                  });
+                },
               ),
             ),
           ),

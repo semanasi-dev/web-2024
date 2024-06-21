@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:semanaacademica2024/model/palestrantes_model.dart';
+import 'package:semanaacademica2024/utils/utils.dart';
 import 'package:semanaacademica2024/widgets/container_palestrante.dart';
 import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 
@@ -26,13 +25,31 @@ class PalestrantesContainerState extends State<PalestrantesContainer> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     double radius = screenSize.width * 0.075;
-    double fontSizeSmall = screenSize.width * 0.012;
     double fontSizeMedium = screenSize.width * 0.015;
     double fontSizeLarge = screenSize.width * 0.02;
 
+    return !Utils.isMobile(context)
+        ? desktopScreen(screenSize, radius, fontSizeMedium, fontSizeLarge)
+        : mobileScreen();
+  }
+
+  mobileScreen() {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(15),
+        gradient: const LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: [Color(0xFF8554D2), Color(0xFF3070F4)],
+        ),
+      ),
+    );
+  }
+
+  desktopScreen(screenSize, radius, fontSizeMedium, fontSizeLarge) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
         gradient: const LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
@@ -57,23 +74,20 @@ class PalestrantesContainerState extends State<PalestrantesContainer> {
             fontSize: fontSizeMedium,
           ),
           Expanded(
-            child: SizedBox(
-              height: screenSize.height * 0.4,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ContainerPalestrante(
-                    palestrante: widget.palestrantes[0],
-                    radius: radius,
-                    screenSize: screenSize,
-                  ),
-                  ContainerPalestrante(
-                    palestrante: widget.palestrantes[1],
-                    radius: radius,
-                    screenSize: screenSize,
-                  ),
-                ],
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ContainerPalestrante(
+                  palestrante: widget.palestrantes[0],
+                  radius: radius,
+                  screenSize: screenSize,
+                ),
+                ContainerPalestrante(
+                  palestrante: widget.palestrantes[1],
+                  radius: radius,
+                  screenSize: screenSize,
+                ),
+              ],
             ),
           ),
         ],

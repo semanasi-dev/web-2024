@@ -7,14 +7,12 @@ class HoverButton extends StatefulWidget {
   final String texto;
   String? fonte;
   bool? bold;
-  double? fontSize;
   Color? shadowColor;
 
   HoverButton({
     super.key,
     this.fonte,
     this.bold,
-    this.fontSize,
     this.shadowColor,
     required this.cores,
     required this.texto,
@@ -41,6 +39,8 @@ class HoverButtonState extends State<HoverButton> {
 
   @override
   Widget build(BuildContext context) {
+    double screenSize = MediaQuery.of(context).size.width;
+
     return MouseRegion(
       onEnter: _onEnter,
       onExit: _onExit,
@@ -60,7 +60,7 @@ class HoverButtonState extends State<HoverButton> {
               colors: widget.cores!,
             ),
             color: Colors.grey,
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(7),
             boxShadow: isHovered
                 ? [
                     BoxShadow(
@@ -78,7 +78,7 @@ class HoverButtonState extends State<HoverButton> {
             widget.texto,
             style: TextStyle(
               color: Colors.white,
-              fontSize: widget.fontSize ?? 0.015,
+              fontSize: Utils.getResponsiveFontSize(screenSize),
               fontFamily: widget.fonte,
               fontWeight:
                   widget.bold != null ? FontWeight.bold : FontWeight.normal,

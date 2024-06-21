@@ -11,29 +11,40 @@ class NavBarHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 42.0, vertical: 8.0),
+      padding: EdgeInsets.symmetric(
+          vertical: Utils.isMobile(context)
+              ? screenSize.height * 0.010
+              : screenSize.height * 0.014,
+          horizontal: Utils.isMobile(context)
+              ? screenSize.width * 0.040
+              : screenSize.width * 0.040),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [
-            Colors.transparent.withOpacity(0.02),
-            Colors.black.withOpacity(0.9)
-          ],
+          colors: [const Color(0xFF3B3959), Colors.black.withOpacity(0.9)],
         ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Row(
+          Row(
             children: [
               DropdownMenu(
-                buttonTitleStyle:
-                    TextStyle(color: Colors.white, fontSize: 18.0),
-                dropdownWidth: 300,
+                buttonTitleStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: Utils.isMobile(context)
+                      ? screenSize.height * 0.025
+                      : screenSize.height * 0.030,
+                ),
+                dropdownWidth: Utils.isMobile(context)
+                    ? screenSize.height * 0.2
+                    : screenSize.height * 0.3,
                 buttonTitle: 'Navegação',
-                dropdownItems: [
+                dropdownItems: const [
                   ListTile(
                     mouseCursor: SystemMouseCursors.click,
                     title: Text('Open', style: TextStyle(color: Colors.white)),
@@ -44,7 +55,7 @@ class NavBarHome extends StatelessWidget {
                   )
                 ],
               ),
-              Icon(
+              const Icon(
                 Icons.keyboard_arrow_down_outlined,
                 color: Colors.white,
               )
@@ -61,9 +72,6 @@ class NavBarHome extends StatelessWidget {
                 Color(0xFF853BF7),
               ],
               bold: true,
-              fontSize: Utils.isMobile(context)
-                  ? MediaQuery.of(context).size.width * 0.027
-                  : MediaQuery.of(context).size.width * 0.014,
             ),
           ),
         ],

@@ -4,14 +4,9 @@ import 'package:semanaacademica2024/utils/utils.dart';
 
 class PalestranteContainer extends StatefulWidget {
   final Palestrante palestrante;
-
-  final Size screenSize;
   final bool? temaGrande;
   const PalestranteContainer(
-      {super.key,
-      required this.screenSize,
-      required this.palestrante,
-      this.temaGrande});
+      {super.key, required this.palestrante, this.temaGrande});
 
   @override
   State<PalestranteContainer> createState() => PalestranteContainerState();
@@ -20,7 +15,7 @@ class PalestranteContainer extends StatefulWidget {
 class PalestranteContainerState extends State<PalestranteContainer> {
   @override
   Widget build(BuildContext context) {
-    Size screenSize = widget.screenSize;
+    Size screenSize = MediaQuery.of(context).size;
 
     return Utils.isMobile(context)
         ? mobileScreen(screenSize)
@@ -28,80 +23,76 @@ class PalestranteContainerState extends State<PalestranteContainer> {
   }
 
   mobileScreen(Size screenSize) {
-    return Container(
-      width: widget.screenSize.width * 25,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-        gradient: const LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [Color(0xFF4D86F4), Color(0xFF9980D9)],
+    return Expanded(
+      child: Container(
+        width: screenSize.width * 0.5,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          gradient: const LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [Color(0xFF4D86F4), Color(0xFF9980D9)],
+          ),
         ),
-      ),
-      child: Column(
-        children: [
-          SizedBox(height: screenSize.height * 0.9),
-          SizedBox(
-            height: widget.screenSize.height * 8,
-            child: Container(
-              padding: const EdgeInsets.all(6),
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF8F07FC),
-                    Color(0xFFE15C32),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            SizedBox(
+              child: Container(
+                padding: const EdgeInsets.all(5),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xFF8F07FC),
+                      Color(0xFFE15C32),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),
+                child: CircleAvatar(
+                  radius: screenSize.width * 0.1,
+                  backgroundImage: AssetImage(widget.palestrante.assetImage),
                 ),
               ),
-              child: CircleAvatar(
-                radius: widget.screenSize.width * 7 - 4,
-                backgroundImage: AssetImage(widget.palestrante.assetImage),
+            ),
+            Text(
+              widget.palestrante.nome,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: screenSize.width * 0.040,
+                fontFamily: 'Jura',
               ),
             ),
-          ),
-          SizedBox(height: screenSize.height * 0.9),
-          Text(
-            widget.palestrante.nome,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: screenSize.width * 1.9,
-              fontFamily: 'Jura',
+            Text(
+              widget.palestrante.tema,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: screenSize.width * 0.030,
+                fontFamily: 'Jura',
+              ),
             ),
-          ),
-          SizedBox(height: screenSize.height * 0.9),
-          Text(
-            widget.palestrante.tema,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: (widget.temaGrande ?? false)
-                  ? widget.screenSize.width * 1
-                  : widget.screenSize.width * 1.7,
-              fontFamily: 'Jura',
+            Text(
+              widget.palestrante.horarios,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: screenSize.width * 0.025,
+                fontFamily: 'Jura',
+              ),
             ),
-          ),
-          SizedBox(height: screenSize.height * 0.9),
-          Text(
-            widget.palestrante.horarios,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: widget.screenSize.width * 1.5,
-              fontFamily: 'Jura',
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
-  desktopSreen(fontSize) {
+  desktopSreen(Size screenSize) {
     return Container(
-      height: widget.screenSize.height * 0.65,
-      width: widget.screenSize.width * 0.24,
+      height: screenSize.height * 0.65,
+      width: screenSize.width * 0.24,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(widget.screenSize.height * 0.02),
+        borderRadius: BorderRadius.circular(screenSize.height * 0.02),
         gradient: const LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
@@ -127,7 +118,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
                 widget.palestrante.nome,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: fontSize,
+                  //fontSize: fontSize,
                   fontFamily: 'Jura',
                 ),
               ),
@@ -135,7 +126,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
                 widget.palestrante.tema,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: widget.screenSize.width,
+                  //fontSize: widget.screenSize.width,
                   fontFamily: 'Jura',
                 ),
               ),
@@ -143,7 +134,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
                 widget.palestrante.horarios,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: widget.screenSize.width,
+                  //fontSize: widget.screenSize.width,
                   fontFamily: 'Jura',
                 ),
               ),

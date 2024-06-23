@@ -37,18 +37,19 @@ class GradientContainerState extends State<GradientContainer> {
 
   mobileScreen(Size screenSize) {
     return Container(
-        width: screenSize.width * 0.65,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          gradient: const LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: [Color(0xFF8554D2), Color(0xFF3070F4)],
-          ),
+      width: screenSize.width * 0.65,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        gradient: const LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: [Color(0xFF8554D2), Color(0xFF3070F4)],
         ),
-        child: widget.tela == PalestrantesPatrocinadores.palestrantes
-            ? palestranteMobile(screenSize)
-            : patrocinadorMobile(screenSize));
+      ),
+      child: widget.tela == PalestrantesPatrocinadores.palestrantes
+          ? palestranteMobile(screenSize)
+          : patrocinadorMobile(screenSize),
+    );
   }
 
   desktopScreen(Size screenSize) {
@@ -84,13 +85,11 @@ class GradientContainerState extends State<GradientContainer> {
               children: [
                 PalestranteContainer(
                   palestrante: widget.palestrantes![0],
-                  screenSize: screenSize * 0.020,
                   temaGrande:
                       widget.palestrantes![0].tema.length > 20 ? true : false,
                 ),
                 PalestranteContainer(
                   palestrante: widget.palestrantes![1],
-                  screenSize: screenSize * 0.020,
                   temaGrande:
                       widget.palestrantes![1].tema.length > 20 ? true : false,
                 ),
@@ -117,54 +116,36 @@ class GradientContainerState extends State<GradientContainer> {
   }
 
   palestranteMobile(Size screenSize) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          height: screenSize.height * 0.03,
-        ),
-        TextoComBorda(
-          text: widget.diaDaSemana!,
-          fontFamily: 'Cristik',
-          borderColor: const Color(0xFF5C8ED3),
-          textColor: Colors.white,
-          fontSize: screenSize.width * 0.050,
-        ),
-        TextoComBorda(
-          text: widget.ddMMyyyy!,
-          fontFamily: 'Jura',
-          borderColor: const Color(0xFF5C8ED3),
-          textColor: Colors.white,
-          fontSize: screenSize.width * 0.040,
-        ),
-        SizedBox(
-          height: screenSize.height * 0.03,
-        ),
-        Expanded(
-          child: Column(
-            children: [
-              Expanded(
-                child: PalestranteContainer(
-                  palestrante: widget.palestrantes![0],
-                  screenSize: screenSize * 0.020,
-                ),
-              ),
-              SizedBox(
-                height: screenSize.height * 0.04,
-              ),
-              Expanded(
-                child: PalestranteContainer(
-                  palestrante: widget.palestrantes![1],
-                  screenSize: screenSize * 0.020,
-                ),
-              ),
-            ],
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(height: screenSize.height * 0.03),
+          TextoComBorda(
+            text: widget.diaDaSemana!,
+            fontFamily: 'Cristik',
+            borderColor: const Color(0xFF5C8ED3),
+            textColor: Colors.white,
+            fontSize: screenSize.width * 0.050,
           ),
-        ),
-        SizedBox(
-          height: screenSize.height * 0.03,
-        ),
-      ],
+          TextoComBorda(
+            text: widget.ddMMyyyy!,
+            fontFamily: 'Jura',
+            borderColor: const Color(0xFF5C8ED3),
+            textColor: Colors.white,
+            fontSize: screenSize.width * 0.040,
+          ),
+          SizedBox(height: screenSize.height * 0.03),
+          PalestranteContainer(
+            palestrante: widget.palestrantes![0],
+          ),
+          SizedBox(height: screenSize.height * 0.03),
+          PalestranteContainer(
+            palestrante: widget.palestrantes![1],
+          ),
+          SizedBox(height: screenSize.height * 0.03),
+        ],
+      ),
     );
   }
 }

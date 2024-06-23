@@ -78,54 +78,46 @@ class PalestrantesPageState extends State<PalestrantesPage> {
   }
 
   mobile(Size screenSize) {
-    return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              const Color(0xFF4BC8EF).withOpacity(0.9),
-              const Color(0xFF13A1A2),
-            ],
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('./lib/assets/confira.png'),
-            SizedBox(
-              height: screenSize.height * 0.03,
-            ),
-            SizedBox(
-              height: screenSize.height * 0.010,
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: CarouselSlider(
-                items: listaPalestrantes
-                    .map(
-                      (e) => e,
-                    )
-                    .toList(),
-                options: CarouselOptions(
-                  height: screenSize.height * 1.1,
-                  initialPage: 0,
-                  autoPlay: true,
-                  autoPlayInterval: const Duration(seconds: 5),
-                  enlargeCenterPage: true,
-                  viewportFraction: 0.7,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      currentPage = index;
-                    });
-                  },
-                ),
-              ),
-            ),
-            buildCarouselIndicators(),
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            const Color(0xFF4BC8EF).withOpacity(0.9),
+            const Color(0xFF13A1A2),
           ],
         ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset('./lib/assets/confira.png'),
+          SizedBox(height: screenSize.height * 0.03),
+          CarouselSlider(
+            items: listaPalestrantes
+                .map(
+                  (item) => item,
+                )
+                .toList(),
+            options: CarouselOptions(
+              height: screenSize.height * 0.80,
+              autoPlay: true,
+              autoPlayInterval: const Duration(seconds: 5),
+              enlargeCenterPage: true,
+              viewportFraction: 0.7,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  currentPage = index;
+                });
+              },
+            ),
+          ),
+          SizedBox(
+            height: screenSize.height * 0.02,
+          ),
+          buildCarouselIndicators(),
+        ],
       ),
     );
   }
@@ -167,9 +159,11 @@ class PalestrantesPageState extends State<PalestrantesPage> {
                   )
                   .toList(),
               options: CarouselOptions(
+                height: double.maxFinite,
                 initialPage: 0,
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 5),
+                autoPlayCurve: Curves.fastOutSlowIn,
                 enlargeCenterPage: true,
                 viewportFraction: 0.7,
                 onPageChanged: (index, reason) {
@@ -179,6 +173,9 @@ class PalestrantesPageState extends State<PalestrantesPage> {
                 },
               ),
             ),
+          ),
+          SizedBox(
+            height: screenSize.height * 0.030,
           ),
           buildCarouselIndicators(),
         ],

@@ -3,7 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Utils {
   static bool isMobile(BuildContext context) {
-    return MediaQuery.of(context).size.width < 800;
+    return MediaQuery.of(context).size.width < 600;
   }
 
   static launchURL(String url) async {

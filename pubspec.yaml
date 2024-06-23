@@ -64,12 +64,17 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - ./lib/assets/poligonos.jpeg
-    - ./lib/assets/background-purple.jpg
     - ./lib/assets/Estrelas.png
     - ./lib/assets/Foguete.png
     - ./lib/assets/Celular_small.png
     - ./lib/assets/Componentes-Banner-MaterCode.png
     - ./lib/assets/competicao.png
+    - ./lib/assets/alexandro.jpg
+    - ./lib/assets/thiago.jpg
+    - ./lib/assets/confira.png
+    - ./lib/assets/patrocinadores.png
+    - ./lib/assets/aiqfome.png
+    - ./lib/assets/softfocus.png
  
   fonts:
     - family: PressStart2P

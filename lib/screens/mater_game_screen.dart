@@ -19,9 +19,9 @@ class QrCodeContainerState extends State<QrCodeContainer> {
       'Horário de inicio',
     ];
 
-    return !Utils.isMobile(context)
-        ? desktopScreen(screenSize, detalhes)
-        : mobileScreen(screenSize, detalhes);
+    return Utils.isMobile(context)
+        ? mobileScreen(screenSize, detalhes)
+        : desktopScreen(screenSize, detalhes);
   }
 
   mobileScreen(Size screenSize, List<String> detalhes) {
@@ -42,10 +42,12 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                 alignment: Alignment.center,
                 children: [
                   Positioned.fill(
-                    child: Image.asset(
-                      './lib/assets/Componentes-Banner-MaterCode.png',
-                      fit: BoxFit.contain,
-                      opacity: const AlwaysStoppedAnimation(0.2),
+                    child: Opacity(
+                      opacity: 0.2,
+                      child: Image.asset(
+                        './lib/assets/Componentes-Banner-MaterCode.png',
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                   Column(

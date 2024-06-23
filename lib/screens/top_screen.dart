@@ -45,9 +45,10 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
           ),
         ),
         Center(
-            child: !Utils.isMobile(context)
-                ? desktopScreen(screenSize)
-                : mobileScreen(screenSize)),
+          child: Utils.isMobile(context)
+              ? mobileScreen(screenSize)
+              : desktopScreen(screenSize),
+        ),
       ],
     );
   }

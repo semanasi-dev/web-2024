@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/enum/enum.dart';
 import 'package:semanaacademica2024/utils/utils.dart';
 import 'package:semanaacademica2024/widgets/gradient_container.dart';
-import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 
 class PatrocinadoresPage extends StatefulWidget {
   const PatrocinadoresPage({super.key});
@@ -31,25 +30,26 @@ class _PatrocinadoresPageState extends State<PatrocinadoresPage> {
   mobile(Size screenSize) {
     return Expanded(
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              const Color(0xFF13A1A2).withOpacity(0.9),
-              const Color(0xFF6761DC),
+              Color(0xFF13A1A2),
+              Color(0xFF6761DC),
+              Color(0xFF8569DA),
             ],
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('./lib/assets/patrocinadores.png'),
             SizedBox(
-              height: screenSize.height * 0.03,
+              height: screenSize.height * 0.06,
             ),
+            Image.asset('./lib/assets/patrocinadores/patrocinadores.png'),
             SizedBox(
-              height: screenSize.height * 0.010,
+              height: screenSize.height * 0.06,
             ),
             SizedBox(
               width: double.infinity,
@@ -60,7 +60,7 @@ class _PatrocinadoresPageState extends State<PatrocinadoresPage> {
                     )
                     .toList(),
                 options: CarouselOptions(
-                  height: screenSize.height * 0.75,
+                  height: screenSize.height * 0.55,
                   initialPage: 0,
                   autoPlay: true,
                   autoPlayInterval: const Duration(seconds: 5),
@@ -74,7 +74,10 @@ class _PatrocinadoresPageState extends State<PatrocinadoresPage> {
                 ),
               ),
             ),
-            buildCarouselIndicators()
+            buildCarouselIndicators(),
+            SizedBox(
+              height: screenSize.height * 0.02,
+            ),
           ],
         ),
       ),
@@ -85,27 +88,23 @@ class _PatrocinadoresPageState extends State<PatrocinadoresPage> {
     return Expanded(
       child: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              const Color(0xFF13A1A2).withOpacity(0.9),
-              const Color(0xFF6761DC),
+              Color(0xFF13A1A2),
+              Color(0xFF6761DC),
+              Color(0xFF8569DA),
             ],
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: screenSize.height * 0.07,
-            ),
-            const TextoComBorda(
-              text: 'PATROCINADORES',
-              fontSize: 50,
-              textColor: Colors.white,
-              borderColor: Color(0xFF5886E0),
+            Image.asset(
+              './lib/assets/patrocinadores/patrocinadores.png',
+              width: screenSize.width * 0.50,
             ),
             SizedBox(
               width: double.infinity,
@@ -116,7 +115,7 @@ class _PatrocinadoresPageState extends State<PatrocinadoresPage> {
                     )
                     .toList(),
                 options: CarouselOptions(
-                  height: screenSize.height * 0.6,
+                  height: screenSize.height * 0.55,
                   initialPage: 0,
                   autoPlay: true,
                   autoPlayInterval: const Duration(seconds: 5),
@@ -130,7 +129,13 @@ class _PatrocinadoresPageState extends State<PatrocinadoresPage> {
                 ),
               ),
             ),
-            buildCarouselIndicators()
+            SizedBox(
+              height: screenSize.height * 0.02,
+            ),
+            buildCarouselIndicators(),
+            SizedBox(
+              height: screenSize.height * 0.02,
+            ),
           ],
         ),
       ),

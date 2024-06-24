@@ -72,6 +72,7 @@ class NavBarHome extends StatelessWidget {
                 Color(0xFF853BF7),
               ],
               bold: true,
+              onPressed: () {},
             ),
           ),
         ],

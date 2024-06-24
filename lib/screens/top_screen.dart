@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:semanaacademica2024/utils/utils.dart';
 import 'package:semanaacademica2024/widgets/foguete_animado.dart';
 import 'package:semanaacademica2024/widgets/hover_button.dart';
@@ -39,7 +40,13 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.transparent, Colors.blue],
+                colors: [
+                  Colors.transparent,
+                  Colors.transparent,
+                  Colors.transparent,
+                  Color(0xFF5AC7EE),
+                ],
+                stops: [0.0, 0.50, 0.65, 1],
               ),
             ),
           ),
@@ -55,8 +62,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
 
   Widget desktopScreen(Size screenSize) {
     return Padding(
-      padding:
-          const EdgeInsets.only(left: 100, right: 100, top: 50, bottom: 50),
+      padding: const EdgeInsets.all(50),
       child: Column(
         children: [
           Row(
@@ -71,6 +77,9 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
               ),
             ],
           ),
+          const SizedBox(
+            height: 80,
+          )
         ],
       ),
     );
@@ -83,7 +92,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: screenSize.height * 0.4,
+            height: screenSize.height * 0.3,
             child: Stack(
               children: [
                 const Align(
@@ -121,18 +130,21 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
               ],
             ),
           ),
-          const SizedBox(height: 1),
-          TextoComBorda(
-            text: 'O QUE NUNCA TE CONTARAM',
-            fontSize: screenSize.width * 0.030,
-            textColor: Colors.white,
-            borderColor: const Color(0xFF935CAB),
-          ),
-          TextoComBorda(
-            text: 'SOBRE A SUA CARREIRA',
-            fontSize: screenSize.width * 0.030,
-            textColor: Colors.white,
-            borderColor: const Color(0xFF935CAB),
+          Column(
+            children: [
+              TextoComBorda(
+                text: 'O QUE NUNCA TE CONTARAM',
+                fontSize: screenSize.width * 0.037,
+                textColor: Colors.white,
+                borderColor: const Color(0xFF935CAB),
+              ),
+              TextoComBorda(
+                text: 'SOBRE A SUA CARREIRA',
+                fontSize: screenSize.width * 0.037,
+                textColor: Colors.white,
+                borderColor: const Color(0xFF935CAB),
+              ),
+            ],
           ),
           const SizedBox(height: 20),
           Text(
@@ -171,6 +183,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                       fontSize: screenSize.width * 0.035,
                       color: Colors.white,
                       fontFamily: 'Jura',
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 );
@@ -189,6 +202,10 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                 ],
                 bold: true,
                 fonte: 'Jura',
+                onPressed: () {
+                  Utils.launchURL(
+                      'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+                },
               ),
               const SizedBox(height: 20),
               HoverButton(
@@ -199,6 +216,10 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                 ],
                 bold: true,
                 fonte: 'Jura',
+                onPressed: () {
+                  Utils.launchURL(
+                      'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+                },
               ),
             ],
           ),
@@ -209,59 +230,45 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
 
   Widget buildLeftColumnDesktop(BuildContext context, Size screenSize) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Row(
+        Column(
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(left: screenSize.width * 0.07),
-                    child: Column(
-                      children: [
-                        TextoComBorda(
-                          text: 'SEMANA',
-                          fontFamily: 'Cristik',
-                          fontSize: screenSize.width * 0.035,
-                          textColor: Colors.white,
-                          borderColor: const Color(0xFF935CAB),
-                        ),
-                        TextoComBorda(
-                          text: 'ACADEMICA',
-                          fontFamily: 'Cristik',
-                          fontSize: screenSize.width * 0.035,
-                          textColor: Colors.white,
-                          borderColor: const Color(0xFF935CAB),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  TextoComBorda(
-                    text: 'O QUE NUNCA TE CONTARAM',
-                    fontSize: screenSize.width * 0.015,
-                    textColor: Colors.white,
-                    borderColor: const Color(0xFF935CAB),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(top: 10, left: screenSize.width * 0.02),
-                    child: TextoComBorda(
-                      text: 'SOBRE A SUA CARREIRA',
-                      fontSize: screenSize.width * 0.015,
-                      textColor: Colors.white,
-                      borderColor: const Color(0xFF935CAB),
-                    ),
-                  ),
-                ],
-              ),
+            Column(
+              children: [
+                TextoComBorda(
+                  text: 'SEMANA',
+                  fontFamily: 'Cristik',
+                  fontSize: screenSize.width * 0.050,
+                  textColor: Colors.white,
+                  borderColor: const Color(0xFF935CAB),
+                ),
+                TextoComBorda(
+                  text: 'ACADEMICA',
+                  fontFamily: 'Cristik',
+                  fontSize: screenSize.width * 0.050,
+                  textColor: Colors.white,
+                  borderColor: const Color(0xFF935CAB),
+                ),
+              ],
             ),
-            const SizedBox(
-              width: 50,
+            const SizedBox(height: 10),
+            TextoComBorda(
+              text: 'O QUE NUNCA TE CONTARAM',
+              fontSize: screenSize.width * 0.015,
+              textColor: Colors.white,
+              borderColor: const Color(0xFF935CAB),
+            ),
+            TextoComBorda(
+              text: 'SOBRE A SUA CARREIRA',
+              fontSize: screenSize.width * 0.015,
+              textColor: Colors.white,
+              borderColor: const Color(0xFF935CAB),
             ),
           ],
+        ),
+        const SizedBox(
+          width: 50,
         ),
         const SizedBox(height: 20),
         Text(
@@ -274,7 +281,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
         ),
         const SizedBox(height: 20),
         Text(
-          'Já pensou em estar na vanguarda das próximas grandes\ninovações tecnológicas? Prepare-se para uma semana que vai\ndespertar sua curiosidade e expandir seus horizontes com:',
+          'Já pensou em estar na vanguarda das próximas grandes\ninovações tecnológicas? Prepare-se para uma semana que vai despertar sua curiosidade e expandir seus horizontes com:',
           style: TextStyle(
             color: Colors.white,
             fontSize: screenSize.width * 0.015,
@@ -302,8 +309,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
           }).toList(),
         ),
         Container(
-          padding: EdgeInsets.only(
-              left: screenSize.width * 0.03, top: screenSize.height * 0.01),
+          padding: EdgeInsets.only(right: screenSize.width * 0.26),
           child: Column(
             children: [
               HoverButton(
@@ -315,31 +321,24 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                 ],
                 bold: true,
                 fonte: 'Jura',
+                onPressed: () {
+                  Utils.launchURL(
+                      'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+                },
               ),
               const SizedBox(height: 20),
-              SizedBox(
-                width: 300,
-                height: 50,
-                child: GestureDetector(
-                  onTap: () {
-                    //Navigator.pushNamed(context, '/inscricoes');
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF4CC9F0),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Ver mais',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: screenSize.width * 0.015,
-                        fontFamily: 'Jura',
-                      ),
-                    ),
-                  ),
-                ),
+              HoverButton(
+                texto: 'Ver mais',
+                cores: const [
+                  Color(0xFF4CC9F0),
+                  Color(0xFF4CC9F0),
+                ],
+                bold: true,
+                fonte: 'Jura',
+                onPressed: () {
+                  Utils.launchURL(
+                      'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+                },
               ),
             ],
           ),

@@ -8,15 +8,16 @@ class HoverButton extends StatefulWidget {
   String? fonte;
   bool? bold;
   Color? shadowColor;
+  Function? onPressed;
 
-  HoverButton({
-    super.key,
-    this.fonte,
-    this.bold,
-    this.shadowColor,
-    required this.cores,
-    required this.texto,
-  });
+  HoverButton(
+      {super.key,
+      this.fonte,
+      this.bold,
+      this.shadowColor,
+      required this.cores,
+      required this.texto,
+      required this.onPressed});
 
   @override
   HoverButtonState createState() => HoverButtonState();
@@ -46,8 +47,7 @@ class HoverButtonState extends State<HoverButton> {
       onExit: _onExit,
       child: GestureDetector(
         onTap: () {
-          Utils.launchURL(
-              'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+          widget.onPressed!();
         },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),

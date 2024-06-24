@@ -4,7 +4,6 @@ import 'package:semanaacademica2024/enum/enum.dart';
 import 'package:semanaacademica2024/model/palestrantes_model.dart';
 import 'package:semanaacademica2024/utils/utils.dart';
 import 'package:semanaacademica2024/widgets/gradient_container.dart';
-import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 
 class PalestrantesPage extends StatefulWidget {
   const PalestrantesPage({super.key});
@@ -14,7 +13,7 @@ class PalestrantesPage extends StatefulWidget {
 }
 
 class PalestrantesPageState extends State<PalestrantesPage> {
-  List<GradientContainer> listaPalestrantes = [
+  List<Widget> listaPalestrantes = [
     GradientContainer(
       tela: PalestrantesPatrocinadores.palestrantes,
       diaDaSemana: 'Segunda-Feira',
@@ -46,7 +45,7 @@ class PalestrantesPageState extends State<PalestrantesPage> {
             nome: 'Thiago Reolon',
             tema: 'O Futuro da Análise de Dados:\n  Tendências e Oportunidade',
             horarios: '19:30 ás 20:10',
-            assetImage: './lib/assets/thiago.jpg'),
+            assetImage: './lib/assets/palestrantes/thiago.jpg'),
       ],
     ),
     GradientContainer(
@@ -58,7 +57,7 @@ class PalestrantesPageState extends State<PalestrantesPage> {
             nome: 'Alexandro Hervis',
             tema: 'Arquitetura de Projetos',
             horarios: '19:30 ás 20:10',
-            assetImage: './lib/assets/alexandro.jpg'),
+            assetImage: './lib/assets/palestrantes/alexandro.jpg'),
         Palestrante(
             nome: 'Nome6',
             tema: 'Dev. Full Stack',
@@ -92,7 +91,7 @@ class PalestrantesPageState extends State<PalestrantesPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('./lib/assets/confira.png'),
+          Image.asset('./lib/assets/palestrantes/confira_mobile.png'),
           SizedBox(height: screenSize.height * 0.03),
           CarouselSlider(
             items: listaPalestrantes
@@ -117,35 +116,35 @@ class PalestrantesPageState extends State<PalestrantesPage> {
             height: screenSize.height * 0.02,
           ),
           buildCarouselIndicators(),
+          SizedBox(
+            height: screenSize.height * 0.02,
+          ),
         ],
       ),
     );
   }
 
-  deskop(screenSize) {
+  deskop(Size screenSize) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            const Color(0xFF4BC8EF).withOpacity(0.9),
-            const Color(0xFF13A1A2),
+            Color(0xFF5AC7EE),
+            Color(0xFF13A1A2),
           ],
         ),
       ),
-      width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
             height: screenSize.height * 0.050,
           ),
-          TextoComBorda(
-            text: 'CONFIRA A PROGRAMAÇÃO',
-            fontSize: screenSize.width * 0.025,
-            textColor: Colors.white,
-            borderColor: const Color(0xFF5886E0),
+          Image.asset(
+            './lib/assets/palestrantes/confira_desktop.png',
+            width: screenSize.width * 0.40,
           ),
           SizedBox(
             height: screenSize.height * 0.030,
@@ -159,7 +158,7 @@ class PalestrantesPageState extends State<PalestrantesPage> {
                   )
                   .toList(),
               options: CarouselOptions(
-                height: double.maxFinite,
+                height: screenSize.height * 0.75,
                 initialPage: 0,
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 5),
@@ -175,9 +174,12 @@ class PalestrantesPageState extends State<PalestrantesPage> {
             ),
           ),
           SizedBox(
-            height: screenSize.height * 0.030,
+            height: screenSize.height * 0.02,
           ),
           buildCarouselIndicators(),
+          SizedBox(
+            height: screenSize.height * 0.02,
+          ),
         ],
       ),
     );

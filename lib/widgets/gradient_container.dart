@@ -43,7 +43,7 @@ class GradientContainerState extends State<GradientContainer> {
         gradient: const LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [Color(0xFF8554D2), Color(0xFF3070F4)],
+          colors: [Color(0xFFA64AE1), Color(0xFF3070F4)],
         ),
       ),
       child: widget.tela == PalestrantesPatrocinadores.palestrantes
@@ -54,64 +54,18 @@ class GradientContainerState extends State<GradientContainer> {
 
   desktopScreen(Size screenSize) {
     return Container(
+      width: screenSize.width * 0.57,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(30),
         gradient: const LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [Color(0xFF8554D2), Color(0xFF3070F4)],
+          colors: [Color(0xFFA64AE1), Color(0xFF3070F4)],
         ),
       ),
-      child: Column(
-        children: [
-          const SizedBox(height: 20),
-          TextoComBorda(
-            text: widget.diaDaSemana!,
-            fontFamily: 'Cristik',
-            borderColor: const Color(0xFF5C8ED3),
-            textColor: Colors.white,
-            fontSize: screenSize.width * 0.020,
-          ),
-          TextoComBorda(
-            text: widget.ddMMyyyy!,
-            fontFamily: 'Jura',
-            borderColor: const Color(0xFF5C8ED3),
-            textColor: Colors.white,
-            fontSize: screenSize.width * 0.020,
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                PalestranteContainer(
-                  palestrante: widget.palestrantes![0],
-                  temaGrande:
-                      widget.palestrantes![0].tema.length > 20 ? true : false,
-                ),
-                PalestranteContainer(
-                  palestrante: widget.palestrantes![1],
-                  temaGrande:
-                      widget.palestrantes![1].tema.length > 20 ? true : false,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  patrocinadorMobile(Size screenSize) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        PatrocinadoresContainer(
-          asset: './lib/assets/aiqfome.png',
-        ),
-        PatrocinadoresContainer(
-          asset: './lib/assets/softfocus.png',
-        )
-      ],
+      child: widget.tela == PalestrantesPatrocinadores.palestrantes
+          ? palestranteDesktop(screenSize)
+          : patrocinadorDesktop(screenSize),
     );
   }
 
@@ -146,6 +100,108 @@ class GradientContainerState extends State<GradientContainer> {
           SizedBox(height: screenSize.height * 0.03),
         ],
       ),
+    );
+  }
+
+  palestranteDesktop(Size screenSize) {
+    return Expanded(
+      child: Column(
+        children: [
+          const SizedBox(height: 20),
+          TextoComBorda(
+            text: widget.diaDaSemana!,
+            fontFamily: 'Cristik',
+            borderColor: const Color(0xFF5C8ED3),
+            textColor: Colors.white,
+            fontSize: screenSize.width * 0.020,
+          ),
+          TextoComBorda(
+            text: widget.ddMMyyyy!,
+            fontFamily: 'Jura',
+            borderColor: const Color(0xFF5C8ED3),
+            textColor: Colors.white,
+            fontSize: screenSize.width * 0.020,
+          ),
+          const SizedBox(height: 20),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                PalestranteContainer(
+                  palestrante: widget.palestrantes![0],
+                ),
+                PalestranteContainer(
+                  palestrante: widget.palestrantes![1],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+        ],
+      ),
+    );
+  }
+
+  patrocinadorMobile(Size screenSize) {
+    return Column(
+      children: [
+        Text(
+          'Senior',
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: screenSize.width * 0.06,
+            fontFamily: 'Jura',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(
+          height: screenSize.height * 0.01,
+        ),
+        const PatrocinadoresContainer(
+          asset: './lib/assets/patrocinadores/aiqfome.png',
+        ),
+        SizedBox(
+          height: screenSize.height * 0.03,
+        ),
+        const PatrocinadoresContainer(
+          asset: './lib/assets/patrocinadores/softfocus.png',
+        ),
+        SizedBox(
+          height: screenSize.height * 0.015,
+        ),
+      ],
+    );
+  }
+
+  patrocinadorDesktop(Size screenSize) {
+    return Column(
+      children: [
+        Text(
+          'Senior',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: screenSize.width * 0.03,
+            fontFamily: 'Jura',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 40),
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            PatrocinadoresContainer(
+              asset: './lib/assets/patrocinadores/aiqfome.png',
+            ),
+            PatrocinadoresContainer(
+              asset: './lib/assets/patrocinadores/softfocus.png',
+            ),
+            PatrocinadoresContainer(
+              asset: './lib/assets/patrocinadores/softfocus.png',
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

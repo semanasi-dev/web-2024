@@ -35,13 +35,13 @@ dependencies:
   url_launcher: ^6.1.8
   flutter_hooks: ^0.20.5
   flutter_screenutil: ^5.9.3
-  smooth_page_indicator: ^1.1.0
   carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   cupertino_icons: ^1.0.6
+  flutter_image_compress: ^2.3.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -69,12 +69,16 @@ flutter:
     - ./lib/assets/Celular_small.png
     - ./lib/assets/Componentes-Banner-MaterCode.png
     - ./lib/assets/competicao.png
-    - ./lib/assets/alexandro.jpg
-    - ./lib/assets/thiago.jpg
-    - ./lib/assets/confira.png
-    - ./lib/assets/patrocinadores.png
-    - ./lib/assets/aiqfome.png
-    - ./lib/assets/softfocus.png
+    - ./lib/assets/palestrantes/alexandro.jpg
+    - ./lib/assets/palestrantes/thiago.jpg
+    - ./lib/assets/palestrantes/confira_mobile.png
+    - ./lib/assets/palestrantes/confira_desktop.png
+    - ./lib/assets/patrocinadores/patrocinadores.png
+    - ./lib/assets/patrocinadores/aiqfome.png
+    - ./lib/assets/patrocinadores/softfocus.png
+    - ./lib/assets/realizacao/realizacao.png
+    - ./lib/assets/realizacao/unimater.png
+    - ./lib/assets/realizacao/sistemas.png
  
   fonts:
     - family: PressStart2P

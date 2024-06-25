@@ -31,35 +31,38 @@ class NavBarHome extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              DropdownMenu(
-                buttonTitleStyle: TextStyle(
-                  color: Colors.white,
-                  fontSize: Utils.isMobile(context)
-                      ? screenSize.height * 0.025
-                      : screenSize.height * 0.030,
-                ),
-                dropdownWidth: Utils.isMobile(context)
-                    ? screenSize.height * 0.2
-                    : screenSize.height * 0.3,
-                buttonTitle: 'Navegação',
-                dropdownItems: const [
-                  ListTile(
-                    mouseCursor: SystemMouseCursors.click,
-                    title: Text('Open', style: TextStyle(color: Colors.white)),
-                  ),
-                  ListTile(
-                    mouseCursor: SystemMouseCursors.click,
-                    title: Text('New', style: TextStyle(color: Colors.white)),
-                  )
-                ],
-              ),
-              const Icon(
-                Icons.keyboard_arrow_down_outlined,
-                color: Colors.white,
-              )
-            ],
+          // Row(
+          //   children: [
+          //     DropdownMenu(
+          //       buttonTitleStyle: TextStyle(
+          //         color: Colors.white,
+          //         fontSize: Utils.isMobile(context)
+          //             ? screenSize.height * 0.025
+          //             : screenSize.height * 0.030,
+          //       ),
+          //       dropdownWidth: Utils.isMobile(context)
+          //           ? screenSize.height * 0.2
+          //           : screenSize.height * 0.3,
+          //       buttonTitle: 'Navegação',
+          //       dropdownItems: const [
+          //         ListTile(
+          //           mouseCursor: SystemMouseCursors.click,
+          //           title: Text('Open', style: TextStyle(color: Colors.white)),
+          //         ),
+          //         ListTile(
+          //           mouseCursor: SystemMouseCursors.click,
+          //           title: Text('New', style: TextStyle(color: Colors.white)),
+          //         )
+          //       ],
+          //     ),
+          //     const Icon(
+          //       Icons.keyboard_arrow_down_outlined,
+          //       color: Colors.white,
+          //     )
+          //   ],
+          // ),
+          Expanded(
+            child: Container(),
           ),
           SizedBox(
             height: 40,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:semanaacademica2024/utils/utils.dart';
 import 'package:semanaacademica2024/widgets/foguete_animado.dart';
 import 'package:semanaacademica2024/widgets/hover_button.dart';
@@ -46,7 +45,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                   Colors.transparent,
                   Color(0xFF5AC7EE),
                 ],
-                stops: [0.0, 0.50, 0.65, 1],
+                stops: [0.0, 0.50, 0.65, 85.0],
               ),
             ),
           ),
@@ -62,7 +61,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
 
   Widget desktopScreen(Size screenSize) {
     return Padding(
-      padding: const EdgeInsets.all(50),
+      padding: const EdgeInsets.fromLTRB(50, 50, 50, 0),
       child: Column(
         children: [
           Row(
@@ -289,60 +288,63 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
           ),
         ),
         const SizedBox(height: 20),
-        Column(
-          children: items.map((item) {
-            return ListTile(
-              leading: const Icon(
-                Icons.circle,
-                size: 8,
-                color: Colors.white,
-              ),
-              title: Text(
-                item,
-                style: TextStyle(
-                  fontSize: screenSize.width * 0.015,
+        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Column(
+            children: items.map((item) {
+              return ListTile(
+                leading: const Icon(
+                  Icons.circle,
+                  size: 8,
                   color: Colors.white,
-                  fontFamily: 'Jura',
                 ),
-              ),
-            );
-          }).toList(),
-        ),
-        Container(
-          padding: EdgeInsets.only(right: screenSize.width * 0.26),
-          child: Column(
-            children: [
-              HoverButton(
-                texto: 'Quero participar',
-                cores: const [
-                  Color(0xFF4CC9F0),
-                  Color(0xFF5458FE),
-                  Color(0xFF853BF7),
-                ],
-                bold: true,
-                fonte: 'Jura',
-                onPressed: () {
-                  Utils.launchURL(
-                      'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
-                },
-              ),
-              const SizedBox(height: 20),
-              HoverButton(
-                texto: 'Ver mais',
-                cores: const [
-                  Color(0xFF4CC9F0),
-                  Color(0xFF4CC9F0),
-                ],
-                bold: true,
-                fonte: 'Jura',
-                onPressed: () {
-                  Utils.launchURL(
-                      'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
-                },
-              ),
-            ],
+                title: Text(
+                  item,
+                  style: TextStyle(
+                    fontSize: screenSize.width * 0.015,
+                    color: Colors.white,
+                    fontFamily: 'Jura',
+                  ),
+                ),
+              );
+            }).toList(),
           ),
-        ),
+          const SizedBox(height: 10),
+          Container(
+            padding: const EdgeInsets.only(left: 50),
+            child: Column(
+              children: [
+                HoverButton(
+                  texto: 'Quero participar',
+                  cores: const [
+                    Color(0xFF4CC9F0),
+                    Color(0xFF5458FE),
+                    Color(0xFF853BF7),
+                  ],
+                  bold: true,
+                  fonte: 'Jura',
+                  onPressed: () {
+                    Utils.launchURL(
+                        'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+                  },
+                ),
+                const SizedBox(height: 20),
+                HoverButton(
+                  texto: 'Ver mais',
+                  cores: const [
+                    Color(0xFF4CC9F0),
+                    Color(0xFF4CC9F0),
+                  ],
+                  bold: true,
+                  fonte: 'Jura',
+                  onPressed: () {
+                    Utils.launchURL(
+                        'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+                  },
+                ),
+              ],
+            ),
+          ),
+        ]),
       ],
     );
   }

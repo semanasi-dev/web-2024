@@ -33,8 +33,6 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   url_launcher: ^6.1.8
-  flutter_hooks: ^0.20.5
-  flutter_screenutil: ^5.9.3
   carousel_slider: ^4.2.1
 
 dev_dependencies:
@@ -75,11 +73,16 @@ flutter:
     - ./lib/assets/palestrantes/confira_desktop.png
     - ./lib/assets/patrocinadores/patrocinadores.png
     - ./lib/assets/patrocinadores/aiqfome.png
+    - ./lib/assets/patrocinadores/viasoft.jpg
     - ./lib/assets/patrocinadores/softfocus.png
+    - ./lib/assets/patrocinadores/ids.jpg
     - ./lib/assets/realizacao/realizacao.png
     - ./lib/assets/realizacao/unimater.png
     - ./lib/assets/realizacao/sistemas.png
- 
+    - ./lib/assets/patrocinadores/sinnc.jpg
+    - ./lib/assets/patrocinadores/bv.png 
+    - ./lib/assets/logo.png
+     
   fonts:
     - family: PressStart2P
       fonts:

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:semanaacademica2024/enum/enum.dart';
 import 'package:semanaacademica2024/screens/mater_game_screen.dart';
 import 'package:semanaacademica2024/screens/palestrantes_screen.dart';
@@ -17,6 +16,25 @@ class ScreenMain extends StatefulWidget {
 }
 
 class ScreenMainState extends State<ScreenMain> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(const AssetImage('./lib/assets/foguete.png'), context);
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(const AssetImage('./lib/assets/estrelas.png'), context);
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(const AssetImage('./lib/assets/poligonos.jpeg'), context);
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(
+          const AssetImage('./lib/assets/Componentes-Banner-MaterCode.png'),
+          context);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     DeviceType deviceType = Utils.getDeviceType(context);

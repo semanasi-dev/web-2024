@@ -89,6 +89,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
   desktop(Size screenSize) {
     return Container(
       width: screenSize.width * 0.2,
+      height: screenSize.width * 0.28,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         gradient: const LinearGradient(

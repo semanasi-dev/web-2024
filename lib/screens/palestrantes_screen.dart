@@ -138,33 +138,31 @@ class PalestrantesPageState extends State<PalestrantesPage> {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            height: screenSize.height * 0.050,
-          ),
           Image.asset(
             './lib/assets/palestrantes/confira_desktop.png',
             width: screenSize.width * 0.40,
           ),
           SizedBox(
-            height: screenSize.height * 0.030,
+            height: MediaQuery.of(context).size.height * 0.04,
           ),
-          SizedBox(
-            width: double.infinity,
+          AspectRatio(
+            aspectRatio: 16 / 6.1,
             child: CarouselSlider(
               items: listaPalestrantes
                   .map(
-                    (e) => e,
+                    (palestrante) => Wrap(
+                      children: [palestrante],
+                    ),
                   )
                   .toList(),
               options: CarouselOptions(
-                height: screenSize.height * 0.75,
                 initialPage: 0,
                 autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 5),
-                autoPlayCurve: Curves.fastOutSlowIn,
                 enlargeCenterPage: true,
-                viewportFraction: 0.7,
+                autoPlayInterval: const Duration(seconds: 5),
+                viewportFraction: 0.65,
                 onPageChanged: (index, reason) {
                   setState(() {
                     currentPage = index;
@@ -173,13 +171,7 @@ class PalestrantesPageState extends State<PalestrantesPage> {
               ),
             ),
           ),
-          SizedBox(
-            height: screenSize.height * 0.02,
-          ),
           buildCarouselIndicators(),
-          SizedBox(
-            height: screenSize.height * 0.02,
-          ),
         ],
       ),
     );
@@ -192,8 +184,8 @@ class PalestrantesPageState extends State<PalestrantesPage> {
         for (int i = 0; i < listaPalestrantes.length; i++)
           Container(
             margin: const EdgeInsets.all(5),
-            height: i == currentPage ? 17 : 13,
-            width: i == currentPage ? 17 : 13,
+            height: i == currentPage ? 13 : 10,
+            width: i == currentPage ? 13 : 10,
             decoration: BoxDecoration(
               color: i == currentPage ? Colors.grey : Colors.black,
               shape: BoxShape.circle,

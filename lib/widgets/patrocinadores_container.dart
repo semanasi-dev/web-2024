@@ -21,36 +21,38 @@ class PatrocinadoresContainerState extends State<PatrocinadoresContainer> {
   }
 
   mobile(Size screenSize) {
-    return Container(
-      width: screenSize.width * 0.45,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        gradient: const LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            Color(0xFF8F07FC),
-            Color(0xFF4FECFF),
+    return Expanded(
+      child: Container(
+        width: screenSize.width * 0.45,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          gradient: const LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Color(0xFF8F07FC),
+              Color(0xFF4FECFF),
+            ],
+          ),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.white,
+              spreadRadius: 4,
+              blurRadius: 4,
+              offset: Offset(0, 1),
+            ),
           ],
         ),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.white,
-            spreadRadius: 4,
-            blurRadius: 4,
-            offset: Offset(0, 1),
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(widget.asset),
-                fit: BoxFit.cover,
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(widget.asset),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -61,8 +63,8 @@ class PatrocinadoresContainerState extends State<PatrocinadoresContainer> {
 
   desktop(Size screenSize) {
     return Container(
-      width: screenSize.width * 0.15,
-      height: screenSize.height * 0.30,
+      width: screenSize.width * 0.18,
+      height: screenSize.height * 0.32,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         gradient: const LinearGradient(

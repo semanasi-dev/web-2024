@@ -10,6 +10,9 @@ class GradientContainer extends StatefulWidget {
   final String? diaDaSemana;
   final String? ddMMyyyy;
   final List<Palestrante>? palestrantes;
+  final String? senioridade;
+  final String? asset1;
+  final String? asset2;
 
   final PalestrantesPatrocinadores? tela;
 
@@ -19,6 +22,9 @@ class GradientContainer extends StatefulWidget {
     this.diaDaSemana,
     this.ddMMyyyy,
     this.palestrantes,
+    this.senioridade,
+    this.asset1,
+    this.asset2,
   });
 
   @override
@@ -37,7 +43,6 @@ class GradientContainerState extends State<GradientContainer> {
 
   mobileScreen(Size screenSize) {
     return Container(
-      width: screenSize.width * 0.65,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         gradient: const LinearGradient(
@@ -65,7 +70,7 @@ class GradientContainerState extends State<GradientContainer> {
       ),
       child: widget.tela == PalestrantesPatrocinadores.palestrantes
           ? palestranteDesktop(screenSize)
-          : patrocinadorDesktop(screenSize),
+          : patrocinadorDesktop(screenSize, widget.asset1!, widget.asset2!),
     );
   }
 
@@ -104,41 +109,41 @@ class GradientContainerState extends State<GradientContainer> {
   }
 
   palestranteDesktop(Size screenSize) {
-    return Expanded(
-      child: Column(
-        children: [
-          const SizedBox(height: 20),
-          TextoComBorda(
-            text: widget.diaDaSemana!,
-            fontFamily: 'Cristik',
-            borderColor: const Color(0xFF5C8ED3),
-            textColor: Colors.white,
-            fontSize: screenSize.width * 0.020,
-          ),
-          TextoComBorda(
-            text: widget.ddMMyyyy!,
-            fontFamily: 'Jura',
-            borderColor: const Color(0xFF5C8ED3),
-            textColor: Colors.white,
-            fontSize: screenSize.width * 0.020,
-          ),
-          const SizedBox(height: 20),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                PalestranteContainer(
-                  palestrante: widget.palestrantes![0],
-                ),
-                PalestranteContainer(
-                  palestrante: widget.palestrantes![1],
-                ),
-              ],
+    return Column(
+      children: [
+        Column(
+          children: [
+            const SizedBox(height: 20),
+            TextoComBorda(
+              text: widget.diaDaSemana!,
+              fontFamily: 'Cristik',
+              borderColor: const Color(0xFF5C8ED3),
+              textColor: Colors.white,
+              fontSize: screenSize.width * 0.020,
             ),
-          ),
-          const SizedBox(height: 20),
-        ],
-      ),
+            TextoComBorda(
+              text: widget.ddMMyyyy!,
+              fontFamily: 'Jura',
+              borderColor: const Color(0xFF5C8ED3),
+              textColor: Colors.white,
+              fontSize: screenSize.width * 0.020,
+            ),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            PalestranteContainer(
+              palestrante: widget.palestrantes![0],
+            ),
+            PalestranteContainer(
+              palestrante: widget.palestrantes![1],
+            ),
+          ],
+        ),
+        const SizedBox(height: 30),
+      ],
     );
   }
 
@@ -146,7 +151,7 @@ class GradientContainerState extends State<GradientContainer> {
     return Column(
       children: [
         Text(
-          'Senior',
+          widget.senioridade!,
           textDirection: TextDirection.ltr,
           style: TextStyle(
             color: Colors.white,
@@ -174,11 +179,11 @@ class GradientContainerState extends State<GradientContainer> {
     );
   }
 
-  patrocinadorDesktop(Size screenSize) {
+  Widget patrocinadorDesktop(Size screenSize, String asset1, String asset2) {
     return Column(
       children: [
         Text(
-          'Senior',
+          widget.senioridade!,
           style: TextStyle(
             color: Colors.white,
             fontSize: screenSize.width * 0.03,
@@ -186,20 +191,20 @@ class GradientContainerState extends State<GradientContainer> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(height: 40),
-        const Row(
+        SizedBox(height: screenSize.height * 0.01),
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             PatrocinadoresContainer(
-              asset: './lib/assets/patrocinadores/aiqfome.png',
+              asset: asset1,
             ),
             PatrocinadoresContainer(
-              asset: './lib/assets/patrocinadores/softfocus.png',
-            ),
-            PatrocinadoresContainer(
-              asset: './lib/assets/patrocinadores/softfocus.png',
+              asset: asset2,
             ),
           ],
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.055,
         ),
       ],
     );

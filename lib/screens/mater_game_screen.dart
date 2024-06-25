@@ -187,10 +187,12 @@ class QrCodeContainerState extends State<QrCodeContainer> {
   }
 
   desktop(Size screenSize) {
-    return Stack(
-      children: [
-        Expanded(
-          child: Positioned.fill(
+    return SizedBox(
+      height: screenSize.height * 1.2,
+      width: double.infinity,
+      child: Stack(
+        children: [
+          Positioned.fill(
             child: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -207,194 +209,195 @@ class QrCodeContainerState extends State<QrCodeContainer> {
               ),
             ),
           ),
-        ),
-        Container(
-          color: Colors.transparent,
-          padding: const EdgeInsets.only(left: 50, right: 50),
-          child: Row(
-            children: [
-              SizedBox(
-                height: screenSize.height * 1.2,
-                width: screenSize.width * 0.5,
-                child: Image.asset(
-                  './lib/assets/Componentes-Banner-MaterCode.png',
+          Container(
+            color: Colors.transparent,
+            padding: const EdgeInsets.only(left: 50, right: 50),
+            child: Row(
+              children: [
+                SizedBox(
+                  height: screenSize.height * 1.2,
+                  width: screenSize.width * 0.5,
+                  child: Image.asset(
+                    './lib/assets/Componentes-Banner-MaterCode.png',
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.asset('./lib/assets/competicao.png',
-                        height: screenSize.height * 0.15,
-                        width: double.infinity),
-                    const SizedBox(height: 20),
-                    Text(
-                      'Durante a semana, vai rolar uma competição para ver quem encontra mais MaterCodes espalhados pelo ambiente do evento. Os ganhadores vão receber seus prêmios ao final da semana.',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: screenSize.width * 0.015,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Jura',
-                      ),
-                    ),
-                    const SizedBox(height: 30),
-                    Text(
-                      'Se encontrar um, não perca sua chance: pegue seu telefone e se garanta no placar!',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: screenSize.width * 0.015,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Jura',
-                      ),
-                    ),
-                    Text(
-                      'Detalhes:',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: MediaQuery.of(context).size.width * 0.015,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Jura',
-                      ),
-                    ),
-                    SizedBox(
-                      height: screenSize.height * 0.020,
-                    ),
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.circle,
-                          size: 8,
-                          color: Colors.black,
-                        ),
-                        SizedBox(
-                          width: screenSize.width * 0.020,
-                        ),
-                        Text(
-                          'Horário de inicio',
-                          style: TextStyle(
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.015,
-                              color: Colors.black,
-                              fontFamily: 'Jura',
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.circle,
-                          size: 8,
-                          color: Colors.black,
-                        ),
-                        SizedBox(
-                          width: screenSize.width * 0.020,
-                        ),
-                        Text(
-                          'Informação',
-                          style: TextStyle(
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.015,
-                              color: Colors.black,
-                              fontFamily: 'Jura',
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.circle,
-                          size: 8,
-                          color: Colors.black,
-                        ),
-                        SizedBox(
-                          width: screenSize.width * 0.020,
-                        ),
-                        Text(
-                          'Locais',
-                          style: TextStyle(
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.015,
-                              color: Colors.black,
-                              fontFamily: 'Jura',
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.circle,
-                          size: 8,
-                          color: Colors.black,
-                        ),
-                        SizedBox(
-                          width: screenSize.width * 0.020,
-                        ),
-                        Text(
-                          'Regras',
-                          style: TextStyle(
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.015,
-                              color: Colors.black,
-                              fontFamily: 'Jura',
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Center(
-                      child: SizedBox(
-                        width: screenSize.width * 0.24,
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            SizedBox(
-                              width: screenSize.width * 0.22,
-                              child: HoverButton(
-                                cores: const [
-                                  Color(0xFF4CC9F0),
-                                  Color(0xFF5458FE),
-                                  Color(0xFF853BF7),
-                                ],
-                                texto: 'Ler MaterCode',
-                                bold: true,
-                                fonte: 'Jura',
-                                shadowColor: const Color(0xFF4CC9F0),
-                                onPressed: () {},
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Image.asset(
-                                './lib/assets/Celular_small.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Center(
-                      child: Text(
-                        '(Exclusivo para celulares)',
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset('./lib/assets/competicao.png',
+                          height: screenSize.height * 0.15,
+                          width: double.infinity),
+                      const SizedBox(height: 20),
+                      Text(
+                        'Durante a semana, vai rolar uma competição para ver quem encontra mais MaterCodes espalhados pelo ambiente do evento. Os ganhadores vão receber seus prêmios ao final da semana.',
                         style: TextStyle(
-                            fontSize: MediaQuery.of(context).size.width * 0.015,
-                            color: Colors.black,
-                            fontFamily: 'Jura',
-                            fontWeight: FontWeight.bold),
+                          color: Colors.black,
+                          fontSize: screenSize.width * 0.015,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Jura',
+                        ),
                       ),
-                    )
-                  ],
+                      const SizedBox(height: 30),
+                      Text(
+                        'Se encontrar um, não perca sua chance: pegue seu telefone e se garanta no placar!',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: screenSize.width * 0.015,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Jura',
+                        ),
+                      ),
+                      Text(
+                        'Detalhes:',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: MediaQuery.of(context).size.width * 0.015,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Jura',
+                        ),
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.020,
+                      ),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.circle,
+                            size: 8,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            width: screenSize.width * 0.020,
+                          ),
+                          Text(
+                            'Horário de inicio',
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.015,
+                                color: Colors.black,
+                                fontFamily: 'Jura',
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.circle,
+                            size: 8,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            width: screenSize.width * 0.020,
+                          ),
+                          Text(
+                            'Informação',
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.015,
+                                color: Colors.black,
+                                fontFamily: 'Jura',
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.circle,
+                            size: 8,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            width: screenSize.width * 0.020,
+                          ),
+                          Text(
+                            'Locais',
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.015,
+                                color: Colors.black,
+                                fontFamily: 'Jura',
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.circle,
+                            size: 8,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            width: screenSize.width * 0.020,
+                          ),
+                          Text(
+                            'Regras',
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.015,
+                                color: Colors.black,
+                                fontFamily: 'Jura',
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      Center(
+                        child: SizedBox(
+                          width: screenSize.width * 0.24,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              SizedBox(
+                                width: screenSize.width * 0.22,
+                                child: HoverButton(
+                                  cores: const [
+                                    Color(0xFF4CC9F0),
+                                    Color(0xFF5458FE),
+                                    Color(0xFF853BF7),
+                                  ],
+                                  texto: 'Ler MaterCode',
+                                  bold: true,
+                                  fonte: 'Jura',
+                                  shadowColor: const Color(0xFF4CC9F0),
+                                  onPressed: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Image.asset(
+                                  './lib/assets/Celular_small.png',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: Text(
+                          '(Exclusivo para celulares)',
+                          style: TextStyle(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.015,
+                              color: Colors.black,
+                              fontFamily: 'Jura',
+                              fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 30,
-        )
-      ],
+          const SizedBox(
+            height: 30,
+          )
+        ],
+      ),
     );
   }
 }

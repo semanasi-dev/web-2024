@@ -77,87 +77,97 @@ class ScreenMainState extends State<ScreenMain> {
             const QrCodeContainer(),
             const PalestrantesPage(),
             const PatrocinadoresPage(),
-            Stack(
-              children: [
-                Positioned.fill(
-                  child: Container(
-                    width: double.infinity,
-                    height: screenSize.height * 0.01,
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color(0xFF8569DA),
-                          Colors.white,
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                    height: screenSize.height * 0.35,
-                    child: Image.asset(
-                      './lib/assets/realizacao/realizacao.png',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: screenSize.height * 0.01,
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [
-                          Color(0xFF94DEFB),
-                          Color(0xFF7B51FF),
-                          Color(0xFFEC32F8),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    color: Colors.grey.withOpacity(0.75),
-                    height: screenSize.height * 0.09,
-                    width: double.infinity,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Semana Academica 2024',
-                          style: TextStyle(
-                              fontSize: screenSize.width * 0.010,
-                              color: Colors.white,
-                              fontFamily: 'Jura',
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          '© Todos os direitos reservados.',
-                          style: TextStyle(
-                              fontSize: screenSize.width * 0.010,
-                              color: Colors.white,
-                              fontFamily: 'Jura',
-                              fontWeight: FontWeight.bold),
-                        ),
+            footerDesktop(screenSize),
+          ],
+        ),
+      ),
+    );
+  }
+
+  footerDesktop(Size screenSize) {
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Stack(
+            children: [
+              Positioned.fill(
+                child: Container(
+                  width: double.infinity,
+                  height: screenSize.height * 0.01,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color(0xFF8569DA),
+                        Colors.white,
                       ],
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
-        ),
+              Align(
+                alignment: Alignment.center,
+                child: SizedBox(
+                  height: screenSize.height * 0.35,
+                  child: Image.asset(
+                    './lib/assets/realizacao/realizacao.png',
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: double.infinity,
+                height: screenSize.height * 0.01,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      Color(0xFF94DEFB),
+                      Color(0xFF7B51FF),
+                      Color(0xFFEC32F8),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                color: Colors.grey.withOpacity(0.75),
+                height: screenSize.height * 0.09,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Semana Academica 2024',
+                      style: TextStyle(
+                          fontSize: screenSize.width * 0.010,
+                          color: Colors.white,
+                          fontFamily: 'Jura',
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      '© Todos os direitos reservados.',
+                      style: TextStyle(
+                          fontSize: screenSize.width * 0.010,
+                          color: Colors.white,
+                          fontFamily: 'Jura',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -223,88 +233,100 @@ class ScreenMainState extends State<ScreenMain> {
             const QrCodeContainer(),
             const PalestrantesPage(),
             const PatrocinadoresPage(),
-            Stack(
-              children: [
-                Positioned.fill(
-                  child: Container(
-                    width: double.infinity,
-                    height: screenSize.height * 0.005,
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color(0xFF8569DA),
-                          Colors.white,
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                    height: screenSize.height * 0.2,
-                    child: Image.asset(
-                      './lib/assets/realizacao/realizacao.png',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
+            footerMobile(screenSize),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget footerMobile(Size screenSize) {
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Stack(
+            children: [
+              Positioned.fill(
+                child: Container(
                   width: double.infinity,
-                  height: screenSize.height * 0.01,
+                  height: screenSize.height * 0.005,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
                       colors: [
-                        Color(0xFF94DEFB),
-                        Color(0xFF7B51FF),
-                        Color(0xFFEC32F8),
+                        Color(0xFF8569DA),
+                        Colors.white,
                       ],
                     ),
                   ),
                 ),
-                Container(
-                  color: Colors.grey.withOpacity(0.75),
-                  height: screenSize.height * 0.075,
-                  width: double.infinity,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Semana Academica 2024',
-                        style: TextStyle(
-                            fontSize: screenSize.width * 0.032,
-                            color: Colors.white,
-                            fontFamily: 'Jura',
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        '© Todos os direitos reservados.',
-                        style: TextStyle(
-                            fontSize: screenSize.width * 0.032,
-                            color: Colors.white,
-                            fontFamily: 'Jura',
-                            fontWeight: FontWeight.bold),
-                      ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: SizedBox(
+                  height: screenSize.height * 0.2,
+                  child: Image.asset(
+                    './lib/assets/realizacao/realizacao.png',
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: double.infinity,
+                height: screenSize.height * 0.01,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      Color(0xFF94DEFB),
+                      Color(0xFF7B51FF),
+                      Color(0xFFEC32F8),
                     ],
                   ),
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+              Container(
+                color: Colors.grey.withOpacity(0.75),
+                height: screenSize.height * 0.075,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Semana Academica 2024',
+                      style: TextStyle(
+                          fontSize: screenSize.width * 0.032,
+                          color: Colors.white,
+                          fontFamily: 'Jura',
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      '© Todos os direitos reservados.',
+                      style: TextStyle(
+                          fontSize: screenSize.width * 0.032,
+                          color: Colors.white,
+                          fontFamily: 'Jura',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

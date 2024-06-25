@@ -76,34 +76,37 @@ class GradientContainerState extends State<GradientContainer> {
 
   palestranteMobile(Size screenSize) {
     return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(height: screenSize.height * 0.03),
-          TextoComBorda(
-            text: widget.diaDaSemana!,
-            fontFamily: 'Cristik',
-            borderColor: const Color(0xFF5C8ED3),
-            textColor: Colors.white,
-            fontSize: screenSize.width * 0.050,
-          ),
-          TextoComBorda(
-            text: widget.ddMMyyyy!,
-            fontFamily: 'Jura',
-            borderColor: const Color(0xFF5C8ED3),
-            textColor: Colors.white,
-            fontSize: screenSize.width * 0.040,
-          ),
-          SizedBox(height: screenSize.height * 0.03),
-          PalestranteContainer(
-            palestrante: widget.palestrantes![0],
-          ),
-          SizedBox(height: screenSize.height * 0.03),
-          PalestranteContainer(
-            palestrante: widget.palestrantes![1],
-          ),
-          SizedBox(height: screenSize.height * 0.03),
-        ],
+      child: SizedBox(
+        width: screenSize.width * 0.55,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: screenSize.height * 0.03),
+            TextoComBorda(
+              text: widget.diaDaSemana!,
+              fontFamily: 'Cristik',
+              borderColor: const Color(0xFF5C8ED3),
+              textColor: Colors.white,
+              fontSize: screenSize.width * 0.050,
+            ),
+            TextoComBorda(
+              text: widget.ddMMyyyy!,
+              fontFamily: 'Jura',
+              borderColor: const Color(0xFF5C8ED3),
+              textColor: Colors.white,
+              fontSize: screenSize.width * 0.040,
+            ),
+            SizedBox(height: screenSize.height * 0.03),
+            PalestranteContainer(
+              palestrante: widget.palestrantes![0],
+            ),
+            SizedBox(height: screenSize.height * 0.03),
+            PalestranteContainer(
+              palestrante: widget.palestrantes![1],
+            ),
+            SizedBox(height: screenSize.height * 0.03),
+          ],
+        ),
       ),
     );
   }
@@ -148,38 +151,41 @@ class GradientContainerState extends State<GradientContainer> {
   }
 
   patrocinadorMobile(Size screenSize) {
-    return Column(
-      children: [
-        Text(
-          widget.senioridade!,
-          textDirection: TextDirection.ltr,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: screenSize.width * 0.06,
-            fontFamily: 'Jura',
-            fontWeight: FontWeight.bold,
+    return SizedBox(
+      width: screenSize.width * 0.55,
+      child: Column(
+        children: [
+          Text(
+            widget.senioridade!,
+            textDirection: TextDirection.ltr,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: screenSize.width * 0.06,
+              fontFamily: 'Jura',
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        SizedBox(
-          height: screenSize.height * 0.01,
-        ),
-        const PatrocinadoresContainer(
-          asset: './lib/assets/patrocinadores/aiqfome.png',
-        ),
-        SizedBox(
-          height: screenSize.height * 0.03,
-        ),
-        const PatrocinadoresContainer(
-          asset: './lib/assets/patrocinadores/softfocus.png',
-        ),
-        SizedBox(
-          height: screenSize.height * 0.015,
-        ),
-      ],
+          SizedBox(
+            height: screenSize.height * 0.01,
+          ),
+          const PatrocinadoresContainer(
+            asset: './lib/assets/patrocinadores/aiqfome.png',
+          ),
+          SizedBox(
+            height: screenSize.height * 0.03,
+          ),
+          const PatrocinadoresContainer(
+            asset: './lib/assets/patrocinadores/softfocus.png',
+          ),
+          SizedBox(
+            height: screenSize.height * 0.025,
+          ),
+        ],
+      ),
     );
   }
 
-  Widget patrocinadorDesktop(Size screenSize, String asset1, String asset2) {
+  patrocinadorDesktop(Size screenSize, String asset1, String asset2) {
     return Column(
       children: [
         Text(

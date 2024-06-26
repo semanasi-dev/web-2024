@@ -146,7 +146,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
             ],
           ),
           const SizedBox(height: 20),
-          Text(
+          SelectableText(
             'Bem vindo á semana acadêmica 2024!',
             textDirection: TextDirection.ltr,
             style: TextStyle(
@@ -157,7 +157,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
             ),
           ),
           const SizedBox(height: 20),
-          Text(
+          SelectableText(
             'Já pensou em estar na vanguarda das próximas grandes inovações tecnológicas? Prepare-se para uma semana que vai despertar sua curiosidade e expandir seus horizontes com:',
             textDirection: TextDirection.ltr,
             style: TextStyle(
@@ -176,7 +176,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                     size: 8,
                     color: Colors.white,
                   ),
-                  title: Text(
+                  title: SelectableText(
                     item,
                     style: TextStyle(
                       fontSize: screenSize.width * 0.035,
@@ -270,7 +270,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
           width: 50,
         ),
         const SizedBox(height: 20),
-        Text(
+        SelectableText(
           'Bem vindo á semana acadêmica 2024!',
           style: TextStyle(
             color: Colors.white,
@@ -279,7 +279,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
           ),
         ),
         const SizedBox(height: 20),
-        Text(
+        SelectableText(
           'Já pensou em estar na vanguarda das próximas grandes\ninovações tecnológicas? Prepare-se para uma semana que vai despertar sua curiosidade e expandir seus horizontes com:',
           style: TextStyle(
             color: Colors.white,
@@ -297,7 +297,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
                   size: 8,
                   color: Colors.white,
                 ),
-                title: Text(
+                title: SelectableText(
                   item,
                   style: TextStyle(
                     fontSize: screenSize.width * 0.015,

@@ -56,7 +56,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
                 ),
               ),
             ),
-            Text(
+            SelectableText(
               widget.palestrante.nome,
               style: TextStyle(
                 color: Colors.white,
@@ -64,7 +64,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
                 fontFamily: 'Jura',
               ),
             ),
-            Text(
+            SelectableText(
               widget.palestrante.tema,
               style: TextStyle(
                 color: Colors.white,
@@ -72,7 +72,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
                 fontFamily: 'Jura',
               ),
             ),
-            Text(
+            SelectableText(
               widget.palestrante.horarios,
               style: TextStyle(
                 color: Colors.white,
@@ -121,7 +121,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
               ),
             ),
           ),
-          Text(
+          SelectableText(
             widget.palestrante.nome,
             style: TextStyle(
               color: Colors.white,
@@ -129,7 +129,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
               fontFamily: 'Jura',
             ),
           ),
-          Text(
+          SelectableText(
             widget.palestrante.tema,
             textDirection: TextDirection.ltr,
             textAlign: TextAlign.center,
@@ -139,7 +139,7 @@ class PalestranteContainerState extends State<PalestranteContainer> {
               fontFamily: 'Jura',
             ),
           ),
-          Text(
+          SelectableText(
             widget.palestrante.horarios,
             style: TextStyle(
               color: Colors.white,

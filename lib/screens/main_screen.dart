@@ -134,7 +134,7 @@ class ScreenMainState extends State<ScreenMain> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
+                        SelectableText(
                           'Semana Academica 2024',
                           style: TextStyle(
                               fontSize: screenSize.width * 0.010,
@@ -142,7 +142,7 @@ class ScreenMainState extends State<ScreenMain> {
                               fontFamily: 'Jura',
                               fontWeight: FontWeight.bold),
                         ),
-                        Text(
+                        SelectableText(
                           '© Todos os direitos reservados.',
                           style: TextStyle(
                               fontSize: screenSize.width * 0.010,
@@ -282,7 +282,7 @@ class ScreenMainState extends State<ScreenMain> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
+                      SelectableText(
                         'Semana Academica 2024',
                         style: TextStyle(
                             fontSize: screenSize.width * 0.032,
@@ -290,7 +290,7 @@ class ScreenMainState extends State<ScreenMain> {
                             fontFamily: 'Jura',
                             fontWeight: FontWeight.bold),
                       ),
-                      Text(
+                      SelectableText(
                         '© Todos os direitos reservados.',
                         style: TextStyle(
                             fontSize: screenSize.width * 0.032,

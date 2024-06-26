@@ -150,7 +150,7 @@ class GradientContainerState extends State<GradientContainer> {
   patrocinadorMobile(Size screenSize) {
     return Column(
       children: [
-        Text(
+        SelectableText(
           widget.senioridade!,
           textDirection: TextDirection.ltr,
           style: TextStyle(
@@ -182,7 +182,7 @@ class GradientContainerState extends State<GradientContainer> {
   Widget patrocinadorDesktop(Size screenSize, String asset1, String asset2) {
     return Column(
       children: [
-        Text(
+        SelectableText(
           widget.senioridade!,
           style: TextStyle(
             color: Colors.white,

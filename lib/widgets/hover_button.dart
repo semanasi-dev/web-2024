@@ -74,7 +74,7 @@ class HoverButtonState extends State<HoverButton> {
                 : [],
           ),
           alignment: Alignment.center,
-          child: Text(
+          child: SelectableText(
             widget.texto,
             style: TextStyle(
               color: Colors.white,

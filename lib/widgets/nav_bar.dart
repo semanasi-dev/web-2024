@@ -47,11 +47,11 @@ class NavBarHome extends StatelessWidget {
           //       dropdownItems: const [
           //         ListTile(
           //           mouseCursor: SystemMouseCursors.click,
-          //           title: Text('Open', style: TextStyle(color: Colors.white)),
+          //           title: SelectableText('Open', style: TextStyle(color: Colors.white)),
           //         ),
           //         ListTile(
           //           mouseCursor: SystemMouseCursors.click,
-          //           title: Text('New', style: TextStyle(color: Colors.white)),
+          //           title: SelectableText('New', style: TextStyle(color: Colors.white)),
           //         )
           //       ],
           //     ),
@@ -146,7 +146,8 @@ class DropdownMenuState extends State<DropdownMenu> {
             width: 100,
             child: GestureDetector(
               onTap: () {},
-              child: Text(widget.buttonTitle, style: widget.buttonTitleStyle),
+              child: SelectableText(widget.buttonTitle,
+                  style: widget.buttonTitleStyle),
             ),
           ),
         ),

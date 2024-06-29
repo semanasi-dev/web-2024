@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/main_screen.dart';
+import 'package:semanaacademica2024/screens/tela_principal/principal_screen.dart';
 
 void main() => runApp(const MyApp());
 

@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:semanaacademica2024/utils/utils.dart';
 import 'package:semanaacademica2024/widgets/foguete_animado.dart';
+import 'package:semanaacademica2024/widgets/hover_button.dart';
 import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 
 class InfoDesktop extends StatefulWidget {
@@ -28,14 +27,28 @@ class _InfoDesktopState extends State<InfoDesktop> {
                 fit: BoxFit.cover,
               ),
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                colunaEsquerda(screenSize),
-                colunaDaDireita(screenSize),
-              ],
+            Container(
+              padding: EdgeInsets.only(
+                left: screenSize.width * 0.07,
+                top: screenSize.width * 0.02,
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  colunaEsquerda(screenSize),
+                  colunaDaDireita(screenSize),
+                ],
+              ),
             ),
+            Container(
+              width: double.infinity,
+              height: 300,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Colors.transparent, Colors.black])),
+            )
           ],
         ),
       ),
@@ -43,94 +56,238 @@ class _InfoDesktopState extends State<InfoDesktop> {
   }
 
   colunaEsquerda(Size screenSize) {
-    return Container(
-      padding: EdgeInsets.only(top: screenSize.height * 0.05),
-      child: Column(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextoComBorda(
-                text: 'SEMANA',
-                fontFamily: 'Cristik',
-                fontSize: screenSize.width * 0.053,
-                textColor: Colors.white,
-                borderColor: const Color(0xFF935CAB),
-              ),
-              TextoComBorda(
-                text: 'ACADEMICA',
-                fontFamily: 'Cristik',
-                fontSize: screenSize.width * 0.053,
-                textColor: Colors.white,
-                borderColor: const Color(0xFF935CAB),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  TextoComBorda(
-                    text: 'O QUE NUNCA TE CONTARAM',
-                    fontSize: screenSize.width * 0.0115,
-                    textColor: Colors.white,
-                    borderColor: const Color(0xFF935CAB),
-                  ),
-                  TextoComBorda(
-                    text: 'SOBRE A SUA CARREIRA',
-                    fontSize: screenSize.width * 0.0115,
-                    textColor: Colors.white,
-                    borderColor: const Color(0xFF935CAB),
-                  ),
-                ],
-              )
-            ],
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SelectableText(
-                'Bem vindo á semana acadêmica 2024!',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: screenSize.width * 0.02,
-                  fontFamily: 'Jura',
+    return Column(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextoComBorda(
+              text: 'SEMANA',
+              fontFamily: 'Cristik',
+              fontSize: screenSize.width * 0.053,
+              textColor: Colors.white,
+              borderColor: const Color(0xFF935CAB),
+            ),
+            TextoComBorda(
+              text: 'ACADEMICA',
+              fontFamily: 'Cristik',
+              fontSize: screenSize.width * 0.053,
+              textColor: Colors.white,
+              borderColor: const Color(0xFF935CAB),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TextoComBorda(
+                  text: 'O QUE NUNCA TE CONTARAM',
+                  fontSize: screenSize.width * 0.0115,
+                  textColor: Colors.white,
+                  borderColor: const Color(0xFF935CAB),
                 ),
-              ),
-              SelectableText(
-                'Já pensou em estar na vanguarda das próximas grandes\ninovações tecnolómagicas? Prepare-se para uma semana que vai\ndespertar sua curiosidade e expandir seus horizontes com:',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: screenSize.width * 0.015,
-                  fontFamily: 'Jura',
+                TextoComBorda(
+                  text: 'SOBRE A SUA CARREIRA',
+                  fontSize: screenSize.width * 0.0115,
+                  textColor: Colors.white,
+                  borderColor: const Color(0xFF935CAB),
                 ),
+              ],
+            )
+          ],
+        ),
+        SizedBox(
+          height: screenSize.height * 0.04,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SelectableText(
+              'Bem vindo á semana acadêmica 2024!',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: screenSize.width * 0.026,
+                fontFamily: 'Jura',
               ),
-            ],
-          )
-        ],
-      ),
+            ),
+            SizedBox(
+              height: screenSize.height * 0.04,
+            ),
+            SelectableText(
+              'Já pensou em estar na vanguarda das próximas grandes\ninovações tecnolómagicas? Prepare-se para uma semana que vai\ndespertar sua curiosidade e expandir seus horizontes com:',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: screenSize.width * 0.016,
+                fontFamily: 'Jura',
+              ),
+            ),
+            SizedBox(
+              height: screenSize.height * 0.04,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.circle,
+                      size: screenSize.height * 0.016,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: screenSize.width * 0.005,
+                    ),
+                    Text(
+                      'Palestras de quem domina o assunto',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: MediaQuery.of(context).size.width * 0.02,
+                        fontFamily: 'Jura',
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.circle,
+                      size: screenSize.height * 0.016,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: screenSize.width * 0.005,
+                    ),
+                    Text(
+                      'Troca de ideias',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: MediaQuery.of(context).size.width * 0.02,
+                        fontFamily: 'Jura',
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.circle,
+                      size: screenSize.height * 0.016,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: screenSize.width * 0.005,
+                    ),
+                    Text(
+                      'Networking',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: MediaQuery.of(context).size.width * 0.02,
+                        fontFamily: 'Jura',
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.circle,
+                      size: screenSize.height * 0.016,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: screenSize.width * 0.005,
+                    ),
+                    Text(
+                      'Diversao e jogos',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: MediaQuery.of(context).size.width * 0.02,
+                        fontFamily: 'Jura',
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.circle,
+                      size: screenSize.height * 0.016,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: screenSize.width * 0.005,
+                    ),
+                    Text(
+                      'Sorteios e brindes',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: MediaQuery.of(context).size.width * 0.02,
+                        fontFamily: 'Jura',
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: screenSize.height * 0.02,
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: screenSize.height * 0.02),
+                  child: Column(
+                    children: [
+                      HoverButton(
+                        texto: 'Quero participar',
+                        cores: const [
+                          Color(0xFF4CC9F0),
+                          Color(0xFF5458FE),
+                          Color(0xFF853BF7),
+                        ],
+                        bold: true,
+                        fonte: 'Jura',
+                        onPressed: () {
+                          Utils.launchURL(
+                              'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+                        },
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.02,
+                      ),
+                      HoverButton(
+                        texto: 'Ver mais',
+                        cores: const [
+                          Color(0xFF4CC9F0),
+                          Color(0xFF4CC9F0),
+                        ],
+                        bold: true,
+                        fonte: 'Jura',
+                        onPressed: () {
+                          Utils.launchURL(
+                              'https://materdei.jacad.com.br/academico/eventos/programacao-do-evento/45');
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ],
     );
   }
 
   colunaDaDireita(Size screenSize) {
-    return SizedBox(
-      width: screenSize.width * 0.45,
-      child: Stack(
-        children: [
-          Positioned(
-            left: screenSize.width * 0.30,
-            child: Image.asset(
-              './lib/assets/Estrelas.png',
-              height: screenSize.height * 0.25,
-              width: screenSize.width * 0.15,
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: screenSize.height * 0.08),
-            child: FogueteAnimado(
-              mult: 0.65,
-              isSmallScreen: Utils.isMobile(context),
-            ),
-          ),
-        ],
-      ),
+    return Stack(
+      alignment: Alignment.topRight,
+      children: [
+        Image.asset(
+          './lib/assets/Estrelas.png',
+          height: screenSize.height * 0.35,
+          width: screenSize.width * 0.15,
+        ),
+        FogueteAnimado(
+          mult: 0.80,
+          isSmallScreen: Utils.isMobile(context),
+        ),
+      ],
     );
   }
 }

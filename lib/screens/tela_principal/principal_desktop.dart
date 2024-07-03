@@ -12,12 +12,10 @@ class _PrincipalScreenDesktopState extends State<PrincipalScreenDesktop> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        children: [
-          Flexible(
-            child: InfoDesktop(),
-          )
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [InfoDesktop()],
+        ),
       ),
     );
   }

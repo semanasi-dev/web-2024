@@ -12,10 +12,18 @@ class PrincipalScreenMobile extends StatefulWidget {
 class _PrincipalScreenMobileState extends State<PrincipalScreenMobile> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [InfoMobile(), MaterGameMobile()],
+        child: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.0, 1.0],
+                  colors: [Colors.black, Colors.pink])),
+          child: const Column(
+            children: [InfoMobile(), MaterGameMobile()],
+          ),
         ),
       ),
     );

@@ -96,7 +96,7 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
               children: [
                 const Align(
                   alignment: Alignment.topLeft,
-                  child: FogueteAnimado(mult: 0.27, isSmallScreen: true),
+                  child: FogueteAnimado(mult: 0.27),
                 ),
                 Center(
                   child: Column(
@@ -359,23 +359,13 @@ class ContainerHomeTopState extends State<ContainerHomeTop> {
             child: Image.asset('./lib/assets/Estrelas.png'),
           ),
         ),
-        Padding(
+        const Padding(
           padding: const EdgeInsets.only(top: 150),
           child: FogueteAnimado(
             mult: 0.7,
-            isSmallScreen: MediaQuery.of(context).size.width < 800,
           ),
         ),
       ],
     );
-  }
-
-  void launchURL(String url) async {
-    Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 }

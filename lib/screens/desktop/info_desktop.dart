@@ -27,10 +27,23 @@ class _InfoDesktopState extends State<InfoDesktop> {
                 fit: BoxFit.cover,
               ),
             ),
+            Positioned.fill(
+              child: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Colors.transparent, Colors.black],
+                    stops: [0.85, 1.0],
+                  ),
+                ),
+              ),
+            ),
             Container(
               padding: EdgeInsets.only(
                 left: screenSize.width * 0.07,
                 top: screenSize.width * 0.02,
+                bottom: screenSize.width * 0.07,
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,15 +53,6 @@ class _InfoDesktopState extends State<InfoDesktop> {
                 ],
               ),
             ),
-            Container(
-              width: double.infinity,
-              height: 300,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [Colors.transparent, Colors.black])),
-            )
           ],
         ),
       ),
@@ -136,7 +140,7 @@ class _InfoDesktopState extends State<InfoDesktop> {
                     SizedBox(
                       width: screenSize.width * 0.005,
                     ),
-                    Text(
+                    SelectableText(
                       'Palestras de quem domina o assunto',
                       style: TextStyle(
                         color: Colors.white,
@@ -156,7 +160,7 @@ class _InfoDesktopState extends State<InfoDesktop> {
                     SizedBox(
                       width: screenSize.width * 0.005,
                     ),
-                    Text(
+                    SelectableText(
                       'Troca de ideias',
                       style: TextStyle(
                         color: Colors.white,
@@ -176,7 +180,7 @@ class _InfoDesktopState extends State<InfoDesktop> {
                     SizedBox(
                       width: screenSize.width * 0.005,
                     ),
-                    Text(
+                    SelectableText(
                       'Networking',
                       style: TextStyle(
                         color: Colors.white,
@@ -196,7 +200,7 @@ class _InfoDesktopState extends State<InfoDesktop> {
                     SizedBox(
                       width: screenSize.width * 0.005,
                     ),
-                    Text(
+                    SelectableText(
                       'Diversao e jogos',
                       style: TextStyle(
                         color: Colors.white,
@@ -216,7 +220,7 @@ class _InfoDesktopState extends State<InfoDesktop> {
                     SizedBox(
                       width: screenSize.width * 0.005,
                     ),
-                    Text(
+                    SelectableText(
                       'Sorteios e brindes',
                       style: TextStyle(
                         color: Colors.white,
@@ -285,7 +289,6 @@ class _InfoDesktopState extends State<InfoDesktop> {
         ),
         FogueteAnimado(
           mult: 0.80,
-          isSmallScreen: Utils.isMobile(context),
         ),
       ],
     );

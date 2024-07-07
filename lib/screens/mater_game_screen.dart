@@ -59,7 +59,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                     ),
                     Column(
                       children: [
-                        Text(
+                        SelectableText(
                           'Durante a semana, vai rolar uma competição para ver quem encontra mais MaterCodes espalhados pelo ambiente do evento. Os ganhadores vão receber seus prêmios ao final da semana.',
                           style: TextStyle(
                             color: Colors.black,
@@ -71,7 +71,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                         SizedBox(
                           height: screenSize.height * 0.035,
                         ),
-                        Text(
+                        SelectableText(
                           'Se encontrar um, não perca sua chance: pegue seu telefone e se garanta no placar!',
                           style: TextStyle(
                             color: Colors.black,
@@ -87,7 +87,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            SelectableText(
                               'Detalhes:',
                               style: TextStyle(
                                 color: Colors.black,
@@ -110,7 +110,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                                 SizedBox(
                                   width: screenSize.width * 0.020,
                                 ),
-                                Text(
+                                SelectableText(
                                   'Locais',
                                   style: TextStyle(
                                       fontSize: screenSize.width * 0.035,
@@ -130,7 +130,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                                 SizedBox(
                                   width: screenSize.width * 0.020,
                                 ),
-                                Text(
+                                SelectableText(
                                   'Horário de inicio',
                                   style: TextStyle(
                                       fontSize: screenSize.width * 0.035,
@@ -229,7 +229,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                           height: screenSize.height * 0.15,
                           width: double.infinity),
                       const SizedBox(height: 20),
-                      Text(
+                      SelectableText(
                         'Durante a semana, vai rolar uma competição para ver quem encontra mais MaterCodes espalhados pelo ambiente do evento. Os ganhadores vão receber seus prêmios ao final da semana.',
                         style: TextStyle(
                           color: Colors.black,
@@ -239,7 +239,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                         ),
                       ),
                       const SizedBox(height: 30),
-                      Text(
+                      SelectableText(
                         'Se encontrar um, não perca sua chance: pegue seu telefone e se garanta no placar!',
                         style: TextStyle(
                           color: Colors.black,
@@ -248,7 +248,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                           fontFamily: 'Jura',
                         ),
                       ),
-                      Text(
+                      SelectableText(
                         'Detalhes:',
                         style: TextStyle(
                           color: Colors.black,
@@ -270,7 +270,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                           SizedBox(
                             width: screenSize.width * 0.020,
                           ),
-                          Text(
+                          SelectableText(
                             'Horário de inicio',
                             style: TextStyle(
                                 fontSize:
@@ -291,7 +291,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                           SizedBox(
                             width: screenSize.width * 0.020,
                           ),
-                          Text(
+                          SelectableText(
                             'Informação',
                             style: TextStyle(
                                 fontSize:
@@ -312,7 +312,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                           SizedBox(
                             width: screenSize.width * 0.020,
                           ),
-                          Text(
+                          SelectableText(
                             'Locais',
                             style: TextStyle(
                                 fontSize:
@@ -333,7 +333,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                           SizedBox(
                             width: screenSize.width * 0.020,
                           ),
-                          Text(
+                          SelectableText(
                             'Regras',
                             style: TextStyle(
                                 fontSize:
@@ -377,7 +377,7 @@ class QrCodeContainerState extends State<QrCodeContainer> {
                         ),
                       ),
                       Center(
-                        child: Text(
+                        child: SelectableText(
                           '(Exclusivo para celulares)',
                           style: TextStyle(
                               fontSize:

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/info/info_desktop.dart';
+import 'package:semanaacademica2024/screens/desktop/info_desktop.dart';
 
 class PrincipalScreenDesktop extends StatefulWidget {
   const PrincipalScreenDesktop({super.key});

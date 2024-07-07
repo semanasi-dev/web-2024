@@ -34,9 +34,12 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
+                padding: const EdgeInsets.only(left: 50, right: 50),
                 child: Column(
                   children: [
+                    SizedBox(
+                      height: screenSize.height * 0.01,
+                    ),
                     Image.asset(
                       './lib/assets/competicao.png',
                     ),

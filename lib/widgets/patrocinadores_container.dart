@@ -21,43 +21,38 @@ class PatrocinadoresContainerState extends State<PatrocinadoresContainer> {
   }
 
   mobile(Size screenSize) {
-    return Expanded(
-      child: Container(
-        width: screenSize.width * 0.45,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          gradient: const LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(0xFF8F07FC),
-              Color(0xFF4FECFF),
-            ],
-          ),
-          boxShadow: const [
-            BoxShadow(
+    return Wrap(
+      alignment: WrapAlignment.center,
+      children: [
+        Container(
+          width: screenSize.width * 0.6,
+          height: screenSize.height * 0.30,
+          padding: const EdgeInsets.all(25),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(40),
+            border: Border.all(
               color: Colors.white,
-              spreadRadius: 4,
-              blurRadius: 4,
-              offset: Offset(0, 1),
+              width: 2.5,
             ),
-          ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(widget.asset),
-                  fit: BoxFit.cover,
-                ),
+            gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFF581584),
+                Color(0xFF84156C),
+              ],
+            ),
+          ),
+          child: Center(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                widget.asset,
               ),
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 

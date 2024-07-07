@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/utils/utils.dart';
 
-// ignore: must_be_immutable
 class HoverButton extends StatefulWidget {
   final List<Color>? cores;
   final String texto;
-  String? fonte;
-  bool? bold;
-  Color? shadowColor;
-  Function? onPressed;
+  final String? fonte;
+  final bool? bold;
+  final Color? shadowColor;
+  final Function? onPressed;
+  final double? tamanhoDoBotao;
 
-  HoverButton(
+  const HoverButton(
       {super.key,
       this.fonte,
       this.bold,
       this.shadowColor,
+      this.tamanhoDoBotao,
       required this.cores,
       required this.texto,
       required this.onPressed});

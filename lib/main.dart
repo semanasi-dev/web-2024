@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/main_screen.dart';
+import 'package:semanaacademica2024/screens/principal_screen.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(
+      const MyApp(),
+    );
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

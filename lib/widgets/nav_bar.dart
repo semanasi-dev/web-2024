@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:semanaacademica2024/utils/utils.dart';
 import 'package:semanaacademica2024/widgets/hover_button.dart';
 import 'dart:async';
 
 import 'package:url_launcher/url_launcher.dart';
-
-import '../utils/Utils.dart';
 
 class NavBarHome extends StatelessWidget {
   const NavBarHome({super.key});
@@ -21,46 +20,10 @@ class NavBarHome extends StatelessWidget {
           horizontal: Utils.isMobile(context)
               ? screenSize.width * 0.040
               : screenSize.width * 0.040),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [const Color(0xFF3B3959), Colors.black.withOpacity(0.9)],
-        ),
-      ),
+      color: const Color(0xFF252525),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Row(
-          //   children: [
-          //     DropdownMenu(
-          //       buttonTitleStyle: TextStyle(
-          //         color: Colors.white,
-          //         fontSize: Utils.isMobile(context)
-          //             ? screenSize.height * 0.025
-          //             : screenSize.height * 0.030,
-          //       ),
-          //       dropdownWidth: Utils.isMobile(context)
-          //           ? screenSize.height * 0.2
-          //           : screenSize.height * 0.3,
-          //       buttonTitle: 'Navegação',
-          //       dropdownItems: const [
-          //         ListTile(
-          //           mouseCursor: SystemMouseCursors.click,
-          //           title: Text('Open', style: TextStyle(color: Colors.white)),
-          //         ),
-          //         ListTile(
-          //           mouseCursor: SystemMouseCursors.click,
-          //           title: Text('New', style: TextStyle(color: Colors.white)),
-          //         )
-          //       ],
-          //     ),
-          //     const Icon(
-          //       Icons.keyboard_arrow_down_outlined,
-          //       color: Colors.white,
-          //     )
-          //   ],
-          // ),
           Expanded(
             child: Container(),
           ),
@@ -70,9 +33,8 @@ class NavBarHome extends StatelessWidget {
             child: HoverButton(
               texto: 'Inscreva-se!',
               cores: const [
-                Color(0xFF4CC9F0),
-                Color(0xFF5458FE),
-                Color(0xFF853BF7),
+                Color(0xFF535AFF),
+                Color(0xFF8C39F7),
               ],
               bold: true,
               onPressed: () {},

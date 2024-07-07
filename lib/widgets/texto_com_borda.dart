@@ -25,7 +25,7 @@ class _TextoComBordaState extends State<TextoComBorda> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Text(
+        SelectableText(
           widget.text,
           style: TextStyle(
             fontFamily: widget.fontFamily ?? 'PressStart2P',
@@ -37,7 +37,7 @@ class _TextoComBordaState extends State<TextoComBorda> {
           ),
           textAlign: TextAlign.start,
         ),
-        Text(
+        SelectableText(
           widget.text,
           style: TextStyle(
             fontFamily: widget.fontFamily ?? 'PressStart2P',

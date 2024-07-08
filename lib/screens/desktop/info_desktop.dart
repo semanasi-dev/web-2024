@@ -287,7 +287,7 @@ class _InfoDesktopState extends State<InfoDesktop> {
           height: screenSize.height * 0.35,
           width: screenSize.width * 0.15,
         ),
-        FogueteAnimado(
+        const FogueteAnimado(
           mult: 0.80,
         ),
       ],

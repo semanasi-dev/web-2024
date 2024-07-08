@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/principal_screen.dart';
+import 'package:semanaacademica2024/enum/enum.dart';
+import 'package:semanaacademica2024/screens/desktop/principal_desktop.dart';
+import 'package:semanaacademica2024/screens/mobile/principal_mobile.dart';
+import 'package:semanaacademica2024/screens/tablet/tablet.dart';
+import 'package:semanaacademica2024/utils/utils.dart';
 
 void main() => runApp(
       const MyApp(),
@@ -10,9 +14,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ScreenMain(),
-    );
+    DeviceType deviceType = Utils.getDeviceType(context);
+
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: LayoutBuilder(
+            builder: (context, constraints) {
+              switch (deviceType) {
+                case DeviceType.mobile:
+                  return const PrincipalScreenMobile();
+                case DeviceType.tablet:
+                  return const TabletMobile();
+                case DeviceType.desktop:
+                  return const PrincipalScreenDesktop();
+                default:
+                  return const PrincipalScreenDesktop();
+              }
+            },
+          ),
+        ));
   }
 }

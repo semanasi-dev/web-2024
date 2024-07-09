@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/model/palestrantes_model.dart';
-import 'package:semanaacademica2024/widgets/palestrante_container.dart';
+import 'package:semanaacademica2024/widgets/mobile/palestrante_container.dart';
 
 class PalestrantesMobile extends StatefulWidget {
   const PalestrantesMobile({super.key});
@@ -12,7 +12,7 @@ class PalestrantesMobile extends StatefulWidget {
 
 class _PalestrantesMobileState extends State<PalestrantesMobile> {
   List<Widget> listaDePalestrantes = [
-    PalestranteContainer(
+    PalestranteContainerMobile(
       palestrante: Palestrante(
           nome: 'Nome1',
           tema: 'Mentoria de Careira',
@@ -20,7 +20,7 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
           assetImage: './lib/assets/palestrantes/alexandro.jpg',
           diaDaSemana: 'Segunda-Feira'),
     ),
-    PalestranteContainer(
+    PalestranteContainerMobile(
       palestrante: Palestrante(
           nome: 'Nome1',
           tema: 'Liderança',
@@ -28,7 +28,7 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
           assetImage: './lib/assets/palestrantes/alexandro.jpg',
           diaDaSemana: 'Segunda-Feira'),
     ),
-    PalestranteContainer(
+    PalestranteContainerMobile(
       palestrante: Palestrante(
           nome: 'Nome1',
           tema: 'Inteligência Artificial',
@@ -36,7 +36,7 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
           assetImage: './lib/assets/palestrantes/alexandro.jpg',
           diaDaSemana: 'Terça-Feira'),
     ),
-    PalestranteContainer(
+    PalestranteContainerMobile(
       palestrante: Palestrante(
           nome: 'Thiago Reolon',
           tema: 'O Futuro da Análise de Dados: Tendências e Oportunidade',
@@ -44,7 +44,7 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
           assetImage: './lib/assets/palestrantes/thiago.jpg',
           diaDaSemana: 'Terça-Feira'),
     ),
-    PalestranteContainer(
+    PalestranteContainerMobile(
       palestrante: Palestrante(
           nome: 'Alexandro Hervis',
           tema: 'Arquitetura de Projetos',
@@ -52,7 +52,7 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
           assetImage: './lib/assets/palestrantes/alexandro.jpg',
           diaDaSemana: 'Quarta-Feira'),
     ),
-    PalestranteContainer(
+    PalestranteContainerMobile(
       palestrante: Palestrante(
           nome: 'Nome1',
           tema: 'Dev. Full Stack',

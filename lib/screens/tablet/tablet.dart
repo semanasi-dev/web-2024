@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TabletMobile extends StatefulWidget {
-  const TabletMobile({super.key});
+class PrincipalScreenTablet extends StatefulWidget {
+  const PrincipalScreenTablet({super.key});
 
   @override
-  State<TabletMobile> createState() => _TabletMobileState();
+  State<PrincipalScreenTablet> createState() => _PrincipalScreenTabletState();
 }
 
-class _TabletMobileState extends State<TabletMobile> {
+class _PrincipalScreenTabletState extends State<PrincipalScreenTablet> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;

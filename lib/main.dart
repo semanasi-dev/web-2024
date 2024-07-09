@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
                 case DeviceType.mobile:
                   return const PrincipalScreenMobile();
                 case DeviceType.tablet:
-                  return const TabletMobile();
+                  return const PrincipalScreenTablet();
                 case DeviceType.desktop:
                   return const PrincipalScreenDesktop();
                 default:

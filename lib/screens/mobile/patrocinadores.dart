@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:semanaacademica2024/widgets/patrocinadores_container.dart';
+import 'package:semanaacademica2024/widgets/mobile/patrocinadores_container.dart';
 
 class PatrocinadoresMobile extends StatefulWidget {
   const PatrocinadoresMobile({super.key});
@@ -11,45 +10,50 @@ class PatrocinadoresMobile extends StatefulWidget {
 }
 
 class PatrocinadoresMobileState extends State<PatrocinadoresMobile> {
-  List<PatrocinadoresContainer> listaDePatrocinadoresSenior = [
-    const PatrocinadoresContainer(
+  List<PatrocinadoresContainerMobile> listaDePatrocinadoresSenior = [
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/aiqfome.png'),
-    const PatrocinadoresContainer(asset: './lib/assets/patrocinadores/ids.jpg'),
-    const PatrocinadoresContainer(asset: './lib/assets/patrocinadores/bv.png'),
-    const PatrocinadoresContainer(
+    const PatrocinadoresContainerMobile(
+        asset: './lib/assets/patrocinadores/ids.jpg'),
+    const PatrocinadoresContainerMobile(
+        asset: './lib/assets/patrocinadores/bv.png'),
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/sinnc.jpg'),
-    const PatrocinadoresContainer(
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/softfocus.png'),
-    const PatrocinadoresContainer(
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/viasoft.jpg'),
   ];
 
-  List<PatrocinadoresContainer> listaDePatrocinadoresPlenos = [
-    const PatrocinadoresContainer(
+  List<PatrocinadoresContainerMobile> listaDePatrocinadoresPlenos = [
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/aiqfome.png'),
-    const PatrocinadoresContainer(asset: './lib/assets/patrocinadores/ids.jpg'),
-    const PatrocinadoresContainer(asset: './lib/assets/patrocinadores/bv.png'),
-    const PatrocinadoresContainer(
+    const PatrocinadoresContainerMobile(
+        asset: './lib/assets/patrocinadores/ids.jpg'),
+    const PatrocinadoresContainerMobile(
+        asset: './lib/assets/patrocinadores/bv.png'),
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/sinnc.jpg'),
-    const PatrocinadoresContainer(
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/softfocus.png'),
-    const PatrocinadoresContainer(
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/viasoft.jpg'),
   ];
 
-  List<PatrocinadoresContainer> listaDePatrocinadoresJuniors = [
-    const PatrocinadoresContainer(
+  List<PatrocinadoresContainerMobile> listaDePatrocinadoresJuniors = [
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/aiqfome.png'),
-    const PatrocinadoresContainer(asset: './lib/assets/patrocinadores/ids.jpg'),
-    const PatrocinadoresContainer(asset: './lib/assets/patrocinadores/bv.png'),
-    const PatrocinadoresContainer(
+    const PatrocinadoresContainerMobile(
+        asset: './lib/assets/patrocinadores/ids.jpg'),
+    const PatrocinadoresContainerMobile(
+        asset: './lib/assets/patrocinadores/bv.png'),
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/sinnc.jpg'),
-    const PatrocinadoresContainer(
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/softfocus.png'),
-    const PatrocinadoresContainer(
+    const PatrocinadoresContainerMobile(
         asset: './lib/assets/patrocinadores/viasoft.jpg'),
   ];
-
   int currentPage = 0;
 
   @override

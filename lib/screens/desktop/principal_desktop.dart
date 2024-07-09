@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/screens/desktop/info_desktop.dart';
 import 'package:semanaacademica2024/screens/desktop/mater_game.dart';
+import 'package:semanaacademica2024/screens/desktop/palestrantes.dart';
 
 class PrincipalScreenDesktop extends StatefulWidget {
   const PrincipalScreenDesktop({super.key});
@@ -35,7 +36,11 @@ class _PrincipalScreenDesktopState extends State<PrincipalScreenDesktop> {
             ),
           ),
           child: const Column(
-            children: [InfoDesktop(), MaterGameDesktop()],
+            children: [
+              InfoDesktop(),
+              MaterGameDesktop(),
+              PalestrantesDesktop()
+            ],
           ),
         ),
       ),

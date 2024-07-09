@@ -1,10 +1,18 @@
 enum PalestrantesPatrocinadores {
   palestrantes,
-  patrocinadores,
+  patrocinadores;
 }
 
 enum DeviceType {
   mobile,
   tablet,
-  desktop,
+  desktop;
+}
+
+enum DiaDaSemana {
+  segunda,
+  terca,
+  quarta,
+  quinta,
+  sexta;
 }

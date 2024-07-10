@@ -1,1 +1,84 @@
-2024/07/08-21:33:17.109 3b1e Reusing MANIFEST /tmp/flutter_tools.JPPXGG/flutter_tools_chrome_device.GTHVCZ/Default/shared_proto_db/MANIFEST-000001
+2024/07/09-21:01:43.366 234d Reusing MANIFEST /tmp/flutter_tools.NGKWSE/flutter_tools_chrome_device.CACCDG/Default/shared_proto_db/MANIFEST-000001
+2024/07/09-21:01:43.367 234d Recovering log #3
+2024/07/09-21:01:43.367 234d Level-0 table #3: started
+2024/07/09-21:01:43.369 234d Level-0 table #3: 23138 bytes OK
+2024/07/09-21:01:43.369 234d Recovering log #4
+2024/07/09-21:01:43.370 234d Level-0 table #4: started
+2024/07/09-21:01:43.373 234d Level-0 table #4: 135077 bytes OK
+2024/07/09-21:01:43.373 234d Recovering log #7
+2024/07/09-21:01:43.373 234d Level-0 table #5: started
+2024/07/09-21:01:43.375 234d Level-0 table #5: 128870 bytes OK
+2024/07/09-21:01:43.375 234d Recovering log #10
+2024/07/09-21:01:43.376 234d Level-0 table #8: started
+2024/07/09-21:01:43.381 234d Level-0 table #8: 128531 bytes OK
+2024/07/09-21:01:43.381 234d Recovering log #13
+2024/07/09-21:01:43.382 234d Level-0 table #11: started
+2024/07/09-21:01:43.385 234d Level-0 table #11: 123793 bytes OK
+2024/07/09-21:01:43.385 234d Recovering log #16
+2024/07/09-21:01:43.386 234d Level-0 table #14: started
+2024/07/09-21:01:43.389 234d Level-0 table #14: 134773 bytes OK
+2024/07/09-21:01:43.389 234d Recovering log #19
+2024/07/09-21:01:43.389 234d Level-0 table #17: started
+2024/07/09-21:01:43.392 234d Level-0 table #17: 133329 bytes OK
+2024/07/09-21:01:43.392 234d Recovering log #23
+2024/07/09-21:01:43.392 234d Level-0 table #20: started
+2024/07/09-21:01:43.395 234d Level-0 table #20: 115024 bytes OK
+2024/07/09-21:01:43.395 234d Recovering log #26
+2024/07/09-21:01:43.395 234d Level-0 table #24: started
+2024/07/09-21:01:43.397 234d Level-0 table #24: 131840 bytes OK
+2024/07/09-21:01:43.397 234d Recovering log #29
+2024/07/09-21:01:43.398 234d Level-0 table #27: started
+2024/07/09-21:01:43.401 234d Level-0 table #27: 132515 bytes OK
+2024/07/09-21:01:43.401 234d Recovering log #32
+2024/07/09-21:01:43.402 234d Level-0 table #30: started
+2024/07/09-21:01:43.404 234d Level-0 table #30: 133922 bytes OK
+2024/07/09-21:01:43.404 234d Recovering log #36
+2024/07/09-21:01:43.405 234d Level-0 table #33: started
+2024/07/09-21:01:43.408 234d Level-0 table #33: 116987 bytes OK
+2024/07/09-21:01:43.408 234d Recovering log #39
+2024/07/09-21:01:43.410 234d Level-0 table #37: started
+2024/07/09-21:01:43.413 234d Level-0 table #37: 124620 bytes OK
+2024/07/09-21:01:43.414 234d Recovering log #42
+2024/07/09-21:01:43.414 234d Level-0 table #40: started
+2024/07/09-21:01:43.418 234d Level-0 table #40: 134170 bytes OK
+2024/07/09-21:01:43.419 234d Recovering log #45
+2024/07/09-21:01:43.419 234d Reusing old log /tmp/flutter_tools.NGKWSE/flutter_tools_chrome_device.CACCDG/Default/shared_proto_db/000045.log 
+2024/07/09-21:01:43.421 234d Delete type=2 #21
+2024/07/09-21:01:43.421 234d Delete type=0 #16
+2024/07/09-21:01:43.421 234d Delete type=0 #4
+2024/07/09-21:01:43.421 234d Delete type=2 #47
+2024/07/09-21:01:43.421 234d Delete type=0 #36
+2024/07/09-21:01:43.421 234d Delete type=0 #42
+2024/07/09-21:01:43.421 234d Delete type=0 #10
+2024/07/09-21:01:43.421 234d Delete type=0 #23
+2024/07/09-21:01:43.421 234d Delete type=0 #26
+2024/07/09-21:01:43.421 234d Delete type=0 #7
+2024/07/09-21:01:43.421 234d Delete type=0 #13
+2024/07/09-21:01:43.421 234d Delete type=2 #34
+2024/07/09-21:01:43.421 234d Delete type=0 #32
+2024/07/09-21:01:43.421 234d Delete type=0 #39
+2024/07/09-21:01:43.421 234d Delete type=0 #29
+2024/07/09-21:01:43.421 234d Delete type=2 #43
+2024/07/09-21:01:43.421 234d Delete type=0 #19
+2024/07/09-21:01:43.421 234d Delete type=0 #3
+2024/07/09-21:01:43.423 234e Compacting 14@0 + 0@1 files
+2024/07/09-21:01:43.442 234e Generated table #46@0: 940 keys, 257855 bytes
+2024/07/09-21:01:43.442 234e Compacted 14@0 + 0@1 files => 257855 bytes
+2024/07/09-21:01:43.445 234e compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/07/09-21:02:46.956 234e Level-0 table #48: started
+2024/07/09-21:02:46.963 234e Level-0 table #48: 152212 bytes OK
+2024/07/09-21:02:46.966 234e Delete type=2 #14
+2024/07/09-21:02:46.966 234e Delete type=2 #37
+2024/07/09-21:02:46.966 234e Delete type=0 #45
+2024/07/09-21:02:46.966 234e Delete type=2 #8
+2024/07/09-21:02:46.966 234e Delete type=2 #30
+2024/07/09-21:02:46.966 234e Delete type=2 #4
+2024/07/09-21:02:46.966 234e Delete type=2 #33
+2024/07/09-21:02:46.966 234e Delete type=2 #17
+2024/07/09-21:02:46.966 234e Delete type=2 #5
+2024/07/09-21:02:46.966 234e Delete type=2 #11
+2024/07/09-21:02:46.966 234e Delete type=2 #20
+2024/07/09-21:02:46.966 234e Delete type=2 #27
+2024/07/09-21:02:46.966 234e Delete type=2 #3
+2024/07/09-21:02:46.966 234e Delete type=2 #40
+2024/07/09-21:02:46.966 234e Delete type=2 #24

@@ -38,7 +38,7 @@ class _PalestrantesDesktopState extends State<PalestrantesDesktop> {
       ),
       palestrante2: Palestrante(
         nome: 'Thiago Reolon',
-        tema: 'O Futuro da Análise de Dados: Tendências e Oportunidade',
+        tema: 'O Futuro da Análise de Dados:\nTendências e Oportunidade',
         horarios: '20:50 ás 21:30',
         assetImage: './lib/assets/palestrantes/thiago.jpg',
       ),
@@ -71,39 +71,58 @@ class _PalestrantesDesktopState extends State<PalestrantesDesktop> {
         Container(
           width: double.infinity,
           color: const Color(0xFF581584),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          child: Stack(
             children: [
-              SizedBox(
-                height: screenSize.height * 0.01,
-              ),
-              Image.asset('./lib/assets/palestrantes/confira_desktop.png'),
-              CarouselSlider(
-                items: listaDePalestrantes
-                    .map(
-                      (item) => Center(child: item),
-                    )
-                    .toList(),
-                options: CarouselOptions(
-                  aspectRatio: 27 / 9,
-                  initialPage: 0,
-                  autoPlay: true,
-                  autoPlayInterval: const Duration(seconds: 5),
-                  viewportFraction: 0.7,
-                  onPageChanged: (index, reason) {
-                    setState(
-                      () {
-                        currentPage = index;
-                      },
-                    );
-                  },
+              Positioned.fill(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Color(0xFFF72585),
+                      ],
+                      stops: [0.75, 1.0],
+                    ),
+                  ),
                 ),
               ),
-              buildCarouselIndicators(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: screenSize.height * 0.02,
+                  ),
+                  Image.asset('./lib/assets/palestrantes/confira_desktop.png'),
+                  CarouselSlider(
+                    items: listaDePalestrantes
+                        .map(
+                          (item) => Center(child: item),
+                        )
+                        .toList(),
+                    options: CarouselOptions(
+                      aspectRatio: 27 / 10,
+                      initialPage: 0,
+                      autoPlay: true,
+                      autoPlayInterval: const Duration(seconds: 5),
+                      viewportFraction: 0.7,
+                      onPageChanged: (index, reason) {
+                        setState(
+                          () {
+                            currentPage = index;
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                  buildCarouselIndicators(),
+                ],
+              ),
             ],
           ),
-        )
+        ),
       ],
     );
   }
@@ -115,8 +134,8 @@ class _PalestrantesDesktopState extends State<PalestrantesDesktop> {
         for (int i = 0; i < listaDePalestrantes.length; i++)
           Container(
             margin: const EdgeInsets.all(5),
-            height: i == currentPage ? 13 : 10,
-            width: i == currentPage ? 13 : 10,
+            height: i == currentPage ? 18 : 15,
+            width: i == currentPage ? 18 : 15,
             decoration: BoxDecoration(
               color: i == currentPage ? Colors.grey : Colors.black,
               shape: BoxShape.circle,

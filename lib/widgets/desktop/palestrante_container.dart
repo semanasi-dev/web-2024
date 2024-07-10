@@ -27,16 +27,26 @@ class _PalestranteContainerDesktopState
     return Wrap(
       children: [
         Container(
-          padding: const EdgeInsets.all(25.0),
+          width: screenSize.width * 0.53,
+          padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
           decoration: BoxDecoration(
             color: Colors.black,
             borderRadius: BorderRadiusDirectional.circular(50),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white.withOpacity(0.75),
+                spreadRadius: 8,
+                blurRadius: 18,
+                offset: const Offset(0, 3),
+              ),
+            ],
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   containerPalestrante(
                     screenSize,
@@ -71,52 +81,70 @@ class _PalestranteContainerDesktopState
     return Wrap(
       children: [
         Container(
-          width: screenSize.height * 0.4,
           decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.black,
-                  Color(0xFF581584),
-                ],
-              ),
-              borderRadius: BorderRadiusDirectional.circular(50)),
+            gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.black,
+                Color(0xFF581584),
+              ],
+            ),
+            border: Border.all(
+              color: Colors.white,
+              width: 2.5,
+            ),
+            borderRadius: BorderRadiusDirectional.circular(30),
+          ),
           padding: const EdgeInsets.all(15.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(
+                height: screenSize.height * 0.02,
+              ),
               CircleAvatar(
-                radius: screenSize.width * 0.07,
+                radius: screenSize.width * 0.050,
                 backgroundImage: AssetImage(assetImage),
+              ),
+              SizedBox(
+                height: screenSize.height * 0.02,
               ),
               SelectableText(
                 textAlign: TextAlign.center,
                 nome,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: screenSize.width * 0.02,
+                  fontSize: screenSize.width * 0.015,
                   fontFamily: 'Jura',
                 ),
+              ),
+              SizedBox(
+                height: screenSize.height * 0.02,
               ),
               SelectableText(
                 textAlign: TextAlign.center,
                 tema,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: screenSize.width * 0.02,
+                  fontSize: screenSize.width * 0.015,
                   fontFamily: 'Jura',
                 ),
+              ),
+              SizedBox(
+                height: screenSize.height * 0.02,
               ),
               SelectableText(
                 textAlign: TextAlign.center,
                 horarios,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: screenSize.width * 0.02,
+                  fontSize: screenSize.width * 0.015,
                   fontFamily: 'Jura',
                 ),
+              ),
+              SizedBox(
+                height: screenSize.height * 0.02,
               ),
             ],
           ),

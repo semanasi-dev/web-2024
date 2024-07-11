@@ -71,55 +71,36 @@ class _PalestrantesDesktopState extends State<PalestrantesDesktop> {
         Container(
           width: double.infinity,
           color: const Color(0xFF581584),
-          child: Stack(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Positioned.fill(
-                child: Container(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.transparent,
-                        Color(0xFFF72585),
-                      ],
-                      stops: [0.75, 1.0],
-                    ),
-                  ),
+              SizedBox(
+                height: screenSize.height * 0.02,
+              ),
+              Image.asset('./lib/assets/palestrantes/confira_desktop.png'),
+              CarouselSlider(
+                items: listaDePalestrantes
+                    .map(
+                      (item) => Center(child: item),
+                    )
+                    .toList(),
+                options: CarouselOptions(
+                  aspectRatio: 27 / 10,
+                  initialPage: 0,
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 5),
+                  viewportFraction: 0.7,
+                  onPageChanged: (index, reason) {
+                    setState(
+                      () {
+                        currentPage = index;
+                      },
+                    );
+                  },
                 ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: screenSize.height * 0.02,
-                  ),
-                  Image.asset('./lib/assets/palestrantes/confira_desktop.png'),
-                  CarouselSlider(
-                    items: listaDePalestrantes
-                        .map(
-                          (item) => Center(child: item),
-                        )
-                        .toList(),
-                    options: CarouselOptions(
-                      aspectRatio: 27 / 10,
-                      initialPage: 0,
-                      autoPlay: true,
-                      autoPlayInterval: const Duration(seconds: 5),
-                      viewportFraction: 0.7,
-                      onPageChanged: (index, reason) {
-                        setState(
-                          () {
-                            currentPage = index;
-                          },
-                        );
-                      },
-                    ),
-                  ),
-                  buildCarouselIndicators(),
-                ],
-              ),
+              buildCarouselIndicators(),
             ],
           ),
         ),

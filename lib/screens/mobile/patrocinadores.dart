@@ -74,7 +74,7 @@ class PatrocinadoresMobileState extends State<PatrocinadoresMobile> {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [Colors.transparent, Colors.white],
-                      stops: [0.70, 1.0],
+                      stops: [0.60, 1.0],
                     ),
                   ),
                 ),

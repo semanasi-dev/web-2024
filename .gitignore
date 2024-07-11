@@ -92,4 +92,5 @@ coverage/
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
-# End of https://www.toptal.com/developers/gitignore/api/flutter,dart
+.log
+.old

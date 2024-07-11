@@ -17,22 +17,23 @@ class MyApp extends StatelessWidget {
     DeviceType deviceType = Utils.getDeviceType(context);
 
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          body: LayoutBuilder(
-            builder: (context, constraints) {
-              switch (deviceType) {
-                case DeviceType.mobile:
-                  return const PrincipalScreenMobile();
-                case DeviceType.tablet:
-                  return const PrincipalScreenTablet();
-                case DeviceType.desktop:
-                  return const PrincipalScreenDesktop();
-                default:
-                  return const PrincipalScreenDesktop();
-              }
-            },
-          ),
-        ));
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            switch (deviceType) {
+              case DeviceType.mobile:
+                return const PrincipalScreenMobile();
+              case DeviceType.tablet:
+                return const PrincipalScreenTablet();
+              case DeviceType.desktop:
+                return const PrincipalScreenDesktop();
+              default:
+                return const PrincipalScreenDesktop();
+            }
+          },
+        ),
+      ),
+    );
   }
 }

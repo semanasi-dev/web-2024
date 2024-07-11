@@ -31,7 +31,7 @@ class _PalestranteContainerDesktopState
           padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
           decoration: BoxDecoration(
             color: Colors.black,
-            borderRadius: BorderRadiusDirectional.circular(50),
+            borderRadius: BorderRadiusDirectional.circular(20),
             boxShadow: [
               BoxShadow(
                 color: Colors.white.withOpacity(0.75),

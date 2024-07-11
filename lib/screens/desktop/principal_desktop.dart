@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:semanaacademica2024/screens/desktop/footer.dart';
 import 'package:semanaacademica2024/screens/desktop/info_desktop.dart';
 import 'package:semanaacademica2024/screens/desktop/mater_game.dart';
 import 'package:semanaacademica2024/screens/desktop/palestrantes.dart';
+import 'package:semanaacademica2024/screens/desktop/realizacao.dart';
+
+import 'patrocinadores.dart';
 
 class PrincipalScreenDesktop extends StatefulWidget {
   const PrincipalScreenDesktop({super.key});
@@ -22,16 +26,17 @@ class _PrincipalScreenDesktopState extends State<PrincipalScreenDesktop> {
               end: Alignment.bottomCenter,
               stops: [
                 0.0,
-                0.1,
-                // 0.70,
-                // 0.80,
+                0.50,
+                0.60,
+                0.70,
+                1,
               ],
               colors: [
                 Colors.black,
                 Color(0xFF581584),
-                // Color(0xFF581584),
-                // Color(0xFFF72585),
-                // Colors.white,
+                Color(0xFF581584),
+                Color(0xFFF72585),
+                Colors.white,
               ],
             ),
           ),
@@ -39,7 +44,10 @@ class _PrincipalScreenDesktopState extends State<PrincipalScreenDesktop> {
             children: [
               InfoDesktop(),
               MaterGameDesktop(),
-              PalestrantesDesktop()
+              PalestrantesDesktop(),
+              PatrocinadoresDesktop(),
+              RealizacaoDesktop(),
+              FooterDesktop(),
             ],
           ),
         ),

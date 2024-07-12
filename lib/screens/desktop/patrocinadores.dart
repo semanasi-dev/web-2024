@@ -74,9 +74,10 @@ class _PatrocinadoresDesktopState extends State<PatrocinadoresDesktop> {
                   SizedBox(
                     height: screenSize.height * 0.015,
                   ),
-                  Image.asset('./lib/assets/patrocinadores/patrocinadores.png'),
-                  SizedBox(
-                    height: screenSize.height * 0.015,
+                  Image.asset(
+                    './lib/assets/patrocinadores/patrocinadores.png',
+                    width: screenSize.width * 0.30,
+                    fit: BoxFit.cover,
                   ),
                   CarouselSlider(
                     items: listaDePatrocinadores

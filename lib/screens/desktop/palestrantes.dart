@@ -78,7 +78,11 @@ class _PalestrantesDesktopState extends State<PalestrantesDesktop> {
               SizedBox(
                 height: screenSize.height * 0.02,
               ),
-              Image.asset('./lib/assets/palestrantes/confira_desktop.png'),
+              Image.asset(
+                './lib/assets/palestrantes/confira_desktop.png',
+                width: screenSize.width * 0.35,
+                fit: BoxFit.cover,
+              ),
               CarouselSlider(
                 items: listaDePalestrantes
                     .map(
@@ -86,7 +90,7 @@ class _PalestrantesDesktopState extends State<PalestrantesDesktop> {
                     )
                     .toList(),
                 options: CarouselOptions(
-                  aspectRatio: 27 / 10,
+                  aspectRatio: 29 / 9,
                   initialPage: 0,
                   autoPlay: true,
                   autoPlayInterval: const Duration(seconds: 5),

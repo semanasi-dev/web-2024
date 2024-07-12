@@ -55,21 +55,21 @@ class _PatrocinadoresContainerDesktopState
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
                       widget.assets[0],
-                      width: 250,
+                      width: screenSize.width * 0.13,
                     ),
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
                       widget.assets[1],
-                      width: 250,
+                      width: screenSize.width * 0.13,
                     ),
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
                       widget.assets[2],
-                      width: 250,
+                      width: screenSize.width * 0.13,
                     ),
                   ),
                 ],

@@ -10,6 +10,8 @@ class RealizacaoDesktop extends StatefulWidget {
 class _RealizacaoDesktopState extends State<RealizacaoDesktop> {
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+
     return Wrap(
       children: [
         Container(
@@ -19,8 +21,14 @@ class _RealizacaoDesktopState extends State<RealizacaoDesktop> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset('./lib/assets/realizacao/unimater.png'),
-              Image.asset('./lib/assets/realizacao/sistemas.png'),
+              Image.asset(
+                './lib/assets/realizacao/unimater.png',
+                width: screenSize.width * 0.5,
+              ),
+              Image.asset(
+                './lib/assets/realizacao/sistemas.png',
+                width: screenSize.width * 0.5,
+              ),
             ],
           ),
         )

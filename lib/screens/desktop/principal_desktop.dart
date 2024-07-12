@@ -26,16 +26,12 @@ class _PrincipalScreenDesktopState extends State<PrincipalScreenDesktop> {
               end: Alignment.bottomCenter,
               stops: [
                 0.0,
-                0.50,
-                0.60,
-                0.70,
+                0.80,
                 1,
               ],
               colors: [
                 Colors.black,
                 Color(0xFF581584),
-                Color(0xFF581584),
-                Color(0xFFF72585),
                 Colors.white,
               ],
             ),

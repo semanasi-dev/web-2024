@@ -27,7 +27,7 @@ class _PrincipalScreenDesktopState extends State<PrincipalScreenDesktop> {
               stops: [
                 0.0,
                 0.80,
-                1,
+                0.90,
               ],
               colors: [
                 Colors.black,

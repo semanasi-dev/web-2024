@@ -1,18 +1,15 @@
 import 'package:flutter/widgets.dart';
 
 class FogueteAnimado extends StatefulWidget {
-  final double mult;
-  const FogueteAnimado({super.key, required this.mult});
+  const FogueteAnimado({super.key});
 
   @override
-  // ignore: no_logic_in_create_state
-  FogueteAnimadoState createState() => FogueteAnimadoState(mult);
+  FogueteAnimadoState createState() => FogueteAnimadoState();
 }
 
 class FogueteAnimadoState extends State<FogueteAnimado>
     with SingleTickerProviderStateMixin {
-  double mult;
-  FogueteAnimadoState(this.mult);
+  FogueteAnimadoState();
   late AnimationController controller;
   late Animation<double> animation;
 
@@ -40,14 +37,20 @@ class FogueteAnimadoState extends State<FogueteAnimado>
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+
     return AnimatedBuilder(
       animation: animation,
       builder: (context, child) {
         return Transform.translate(
           offset: Offset(0, animation.value),
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * mult,
-            child: Image.asset('./lib/assets/Foguete.png'),
+            height: screenSize.height * 0.8,
+            width: screenSize.width * 0.4,
+            child: Image.asset(
+              './lib/assets/Foguete.png',
+              fit: BoxFit.fill,
+            ),
           ),
         );
       },

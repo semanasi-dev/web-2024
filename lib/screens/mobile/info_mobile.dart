@@ -54,9 +54,7 @@ class _InfoMobileState extends State<InfoMobile> {
                             right: screenSize.height * 0.3,
                             child: const Align(
                               alignment: Alignment.centerLeft,
-                              child: FogueteAnimado(
-                                mult: 0.80,
-                              ),
+                              child: FogueteAnimado(),
                             ),
                           ),
                           Positioned.fill(

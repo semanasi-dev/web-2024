@@ -280,15 +280,19 @@ class _InfoDesktopState extends State<InfoDesktop> {
 
   colunaDaDireita(Size screenSize) {
     return Stack(
-      alignment: Alignment.topRight,
       children: [
-        Image.asset(
-          './lib/assets/Estrelas.png',
-          height: screenSize.height * 0.35,
-          width: screenSize.width * 0.15,
+        Align(
+          alignment: Alignment.topLeft,
+          child: Image.asset(
+            './lib/assets/Estrelas.png',
+            height: screenSize.height * 0.35,
+            width: screenSize.width * 0.17,
+            fit: BoxFit.fill,
+          ),
         ),
-        const FogueteAnimado(
-          mult: 0.80,
+        Padding(
+          padding: EdgeInsets.only(top: screenSize.height * 0.25),
+          child: const FogueteAnimado(),
         ),
       ],
     );

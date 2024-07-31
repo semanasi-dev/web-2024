@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:semanaacademica2024/enum/enum.dart';
+import 'package:semanaacademica2024/enum/device_type.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Utils {

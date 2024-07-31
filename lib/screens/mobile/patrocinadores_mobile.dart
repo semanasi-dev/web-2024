@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/widgets/mobile/patrocinadores_container.dart';
+import 'package:semanaacademica2024/widgets/mobile/patrocinadores_container_mobile.dart';
 
 class PatrocinadoresMobile extends StatefulWidget {
   const PatrocinadoresMobile({super.key});

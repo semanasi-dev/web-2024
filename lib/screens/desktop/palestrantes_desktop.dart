@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/enum/enum.dart';
+import 'package:semanaacademica2024/enum/dia_da_semana_enum.dart';
 import 'package:semanaacademica2024/model/palestrantes_model.dart';
-import 'package:semanaacademica2024/widgets/desktop/palestrante_container.dart';
+import 'package:semanaacademica2024/widgets/desktop/palestrante_container_desktop.dart';
 
 class PalestrantesDesktop extends StatefulWidget {
   const PalestrantesDesktop({super.key});

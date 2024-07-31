@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/model/palestrantes_model.dart';
-import 'package:semanaacademica2024/widgets/mobile/palestrante_container.dart';
+import 'package:semanaacademica2024/widgets/mobile/palestrante_container_mobile.dart';
 
 class PalestrantesMobile extends StatefulWidget {
   const PalestrantesMobile({super.key});

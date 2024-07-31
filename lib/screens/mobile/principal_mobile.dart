@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/mobile/footer.dart';
+import 'package:semanaacademica2024/screens/mobile/footer_mobile.dart';
 import 'package:semanaacademica2024/screens/mobile/info_mobile.dart';
-import 'package:semanaacademica2024/screens/mobile/mater_game.dart';
-import 'package:semanaacademica2024/screens/mobile/palestrantes.dart';
-import 'package:semanaacademica2024/screens/mobile/patrocinadores.dart';
-import 'package:semanaacademica2024/screens/mobile/realizacao.dart';
+import 'package:semanaacademica2024/screens/mobile/mater_game_mobile.dart';
+import 'package:semanaacademica2024/screens/mobile/palestrantes_mogile.dart';
+import 'package:semanaacademica2024/screens/mobile/patrocinadores_mobile.dart';
+import 'package:semanaacademica2024/screens/mobile/realizacao_mobile.dart';
 
 class PrincipalScreenMobile extends StatefulWidget {
   const PrincipalScreenMobile({super.key});

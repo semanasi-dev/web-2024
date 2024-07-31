@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/enum/enum.dart';
+import 'package:semanaacademica2024/enum/device_type.dart';
 import 'package:semanaacademica2024/screens/desktop/principal_desktop.dart';
 import 'package:semanaacademica2024/screens/mobile/principal_mobile.dart';
 import 'package:semanaacademica2024/screens/tablet/tablet.dart';

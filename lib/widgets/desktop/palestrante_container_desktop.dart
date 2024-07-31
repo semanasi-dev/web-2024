@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/enum/enum.dart';
+import 'package:semanaacademica2024/enum/dia_da_semana_enum.dart';
 import 'package:semanaacademica2024/model/palestrantes_model.dart';
 
 class PalestranteContainerDesktop extends StatefulWidget {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:semanaacademica2024/screens/desktop/footer.dart';
+import 'package:semanaacademica2024/screens/desktop/footer_desktop.dart';
 import 'package:semanaacademica2024/screens/desktop/info_desktop.dart';
-import 'package:semanaacademica2024/screens/desktop/mater_game.dart';
-import 'package:semanaacademica2024/screens/desktop/palestrantes.dart';
-import 'package:semanaacademica2024/screens/desktop/realizacao.dart';
+import 'package:semanaacademica2024/screens/desktop/mater_game_desktop.dart';
+import 'package:semanaacademica2024/screens/desktop/palestrantes_desktop.dart';
+import 'package:semanaacademica2024/screens/desktop/realizacao_desktop.dart';
 
-import 'patrocinadores.dart';
+import 'patrocinadores_dektop.dart';
 
 class PrincipalScreenDesktop extends StatefulWidget {
   const PrincipalScreenDesktop({super.key});

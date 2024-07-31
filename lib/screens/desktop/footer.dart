@@ -13,6 +13,7 @@ class _FooterDesktopState extends State<FooterDesktop> {
     Size screenSize = MediaQuery.of(context).size;
 
     return Wrap(
+      alignment: WrapAlignment.center,
       children: [
         Container(
           width: double.infinity,

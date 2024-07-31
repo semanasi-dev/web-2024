@@ -16,37 +16,35 @@ class PrincipalScreenMobile extends StatefulWidget {
 class _PrincipalScreenMobileState extends State<PrincipalScreenMobile> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [
-                0.0,
-                0.50,
-                0.70,
-                0.80,
-              ],
-              colors: [
-                Colors.black,
-                Color(0xFF581584),
-                Color(0xFFF72585),
-                Colors.white,
-              ],
-            ),
-          ),
-          child: const Column(
-            children: [
-              InfoMobile(),
-              MaterGameMobile(),
-              PalestrantesMobile(),
-              PatrocinadoresMobile(),
-              RealizacaoMobile(),
-              FooterMobile()
+    return SingleChildScrollView(
+      child: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [
+              0.0,
+              0.50,
+              0.70,
+              0.80,
+            ],
+            colors: [
+              Colors.black,
+              Color(0xFF581584),
+              Color(0xFFF72585),
+              Colors.white,
             ],
           ),
+        ),
+        child: const Column(
+          children: [
+            InfoMobile(),
+            MaterGameMobile(),
+            PalestrantesMobile(),
+            PatrocinadoresMobile(),
+            RealizacaoMobile(),
+            FooterMobile()
+          ],
         ),
       ),
     );

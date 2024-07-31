@@ -16,7 +16,7 @@ class _InfoDesktopState extends State<InfoDesktop> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
 
-    return Wrap(children: [
+    return Wrap(alignment: WrapAlignment.center, children: [
       SizedBox(
         width: double.infinity,
         child: Stack(

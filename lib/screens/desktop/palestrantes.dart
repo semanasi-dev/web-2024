@@ -67,6 +67,7 @@ class _PalestrantesDesktopState extends State<PalestrantesDesktop> {
     Size screenSize = MediaQuery.of(context).size;
 
     return Wrap(
+      alignment: WrapAlignment.center,
       children: [
         Container(
           width: double.infinity,
@@ -90,7 +91,7 @@ class _PalestrantesDesktopState extends State<PalestrantesDesktop> {
                     )
                     .toList(),
                 options: CarouselOptions(
-                  aspectRatio: 29 / 9,
+                  aspectRatio: 35 / 12,
                   initialPage: 0,
                   autoPlay: true,
                   autoPlayInterval: const Duration(seconds: 5),

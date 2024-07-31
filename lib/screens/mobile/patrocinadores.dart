@@ -61,6 +61,7 @@ class PatrocinadoresMobileState extends State<PatrocinadoresMobile> {
     Size screenSize = MediaQuery.of(context).size;
 
     return Wrap(
+      alignment: WrapAlignment.center,
       children: [
         Container(
           color: const Color(0xFFF72585),

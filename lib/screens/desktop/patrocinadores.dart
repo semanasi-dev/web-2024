@@ -11,7 +11,7 @@ class PatrocinadoresDesktop extends StatefulWidget {
 
 class _PatrocinadoresDesktopState extends State<PatrocinadoresDesktop> {
   List<PatrocinadoresContainerDesktop> listaDePatrocinadores = [
-    PatrocinadoresContainerDesktop(
+    const PatrocinadoresContainerDesktop(
       senioridade: 'Seniors',
       assets: [
         './lib/assets/patrocinadores/aiqfome.png',
@@ -19,7 +19,7 @@ class _PatrocinadoresDesktopState extends State<PatrocinadoresDesktop> {
         './lib/assets/patrocinadores/softfocus.png'
       ],
     ),
-    PatrocinadoresContainerDesktop(
+    const PatrocinadoresContainerDesktop(
       senioridade: 'Plenos',
       assets: [
         './lib/assets/patrocinadores/aiqfome.png',
@@ -27,7 +27,7 @@ class _PatrocinadoresDesktopState extends State<PatrocinadoresDesktop> {
         './lib/assets/patrocinadores/softfocus.png'
       ],
     ),
-    PatrocinadoresContainerDesktop(
+    const PatrocinadoresContainerDesktop(
       senioridade: 'Juniors',
       assets: [
         './lib/assets/patrocinadores/aiqfome.png',
@@ -43,6 +43,7 @@ class _PatrocinadoresDesktopState extends State<PatrocinadoresDesktop> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Wrap(
+      alignment: WrapAlignment.center,
       children: [
         Container(
           decoration: const BoxDecoration(

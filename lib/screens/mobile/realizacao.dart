@@ -13,6 +13,7 @@ class _RealizacaoMobileState extends State<RealizacaoMobile> {
     Size screenSize = MediaQuery.of(context).size;
 
     return Wrap(
+      alignment: WrapAlignment.center,
       children: [
         Container(
           color: Colors.white,

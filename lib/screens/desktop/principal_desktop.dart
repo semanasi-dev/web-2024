@@ -17,35 +17,33 @@ class PrincipalScreenDesktop extends StatefulWidget {
 class _PrincipalScreenDesktopState extends State<PrincipalScreenDesktop> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [
-                0.0,
-                0.80,
-                0.90,
-              ],
-              colors: [
-                Colors.black,
-                Color(0xFF581584),
-                Colors.white,
-              ],
-            ),
-          ),
-          child: const Column(
-            children: [
-              InfoDesktop(),
-              MaterGameDesktop(),
-              PalestrantesDesktop(),
-              PatrocinadoresDesktop(),
-              RealizacaoDesktop(),
-              FooterDesktop(),
+    return SingleChildScrollView(
+      child: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [
+              0.0,
+              0.80,
+              0.90,
+            ],
+            colors: [
+              Colors.black,
+              Color(0xFF581584),
+              Colors.white,
             ],
           ),
+        ),
+        child: const Column(
+          children: [
+            InfoDesktop(),
+            MaterGameDesktop(),
+            PalestrantesDesktop(),
+            PatrocinadoresDesktop(),
+            RealizacaoDesktop(),
+            FooterDesktop(),
+          ],
         ),
       ),
     );

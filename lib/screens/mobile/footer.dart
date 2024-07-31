@@ -13,6 +13,7 @@ class _FooterMobileState extends State<FooterMobile> {
     Size screenSize = MediaQuery.of(context).size;
 
     return Wrap(
+      alignment: WrapAlignment.center,
       children: [
         Container(
           width: double.infinity,

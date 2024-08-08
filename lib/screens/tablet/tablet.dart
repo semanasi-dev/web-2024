@@ -26,10 +26,10 @@ class _PrincipalScreenTabletState extends State<PrincipalScreenTablet> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SelectableText(
-                  'Desculpa mas ainda nao temos reponsividade para tablets',
+                  'Desculpe, mas ainda nao temos reponsividade para tablets',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: screenSize.height * 0.023,
+                      fontSize: screenSize.aspectRatio * 25,
                       fontFamily: 'Jura',
                       fontWeight: FontWeight.bold),
                 ),

@@ -73,7 +73,7 @@ class _InfoDesktopState extends State<InfoDesktop> {
               borderColor: const Color(0xFF935CAB),
             ),
             TextoComBorda(
-              text: 'ACADEMICA',
+              text: 'ACADÊMICA',
               fontFamily: 'Cristik',
               fontSize: screenSize.width * 0.053,
               textColor: Colors.white,

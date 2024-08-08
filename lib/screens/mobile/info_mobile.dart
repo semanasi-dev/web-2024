@@ -74,14 +74,14 @@ class _InfoMobileState extends State<InfoMobile> {
                               TextoComBorda(
                                 text: 'SEMANA',
                                 fontFamily: 'Cristik',
-                                fontSize: screenSize.width * 0.13,
+                                fontSize: screenSize.aspectRatio * 80,
                                 textColor: Colors.white,
                                 borderColor: const Color(0xFF935CAB),
                               ),
                               TextoComBorda(
-                                text: 'ACADEMICA',
+                                text: 'ACADÊMICA',
                                 fontFamily: 'Cristik',
-                                fontSize: screenSize.width * 0.13,
+                                fontSize: screenSize.aspectRatio * 70,
                                 textColor: Colors.white,
                                 borderColor: const Color(0xFF935CAB),
                               ),
@@ -94,7 +94,7 @@ class _InfoMobileState extends State<InfoMobile> {
                       'Bem vindo á semana acadêmica 2024!',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: screenSize.width * 0.044,
+                          fontSize: screenSize.aspectRatio * 35,
                           fontFamily: 'Jura',
                           fontWeight: FontWeight.bold),
                     ),
@@ -105,7 +105,7 @@ class _InfoMobileState extends State<InfoMobile> {
                       'Já pensou em estar na vanguarda das próximas grandes inovações tecnolómagicas?\nPrepare-se para uma semana que vai despertar sua curiosidade e expandir seus horizontes com:',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: screenSize.width * 0.050,
+                          fontSize: screenSize.aspectRatio * 40,
                           fontFamily: 'Jura',
                           fontWeight: FontWeight.bold),
                     ),
@@ -120,7 +120,7 @@ class _InfoMobileState extends State<InfoMobile> {
                           children: [
                             Icon(
                               Icons.circle,
-                              size: screenSize.height * 0.010,
+                              size: screenSize.aspectRatio * 10,
                               color: Colors.white,
                             ),
                             SizedBox(
@@ -130,7 +130,7 @@ class _InfoMobileState extends State<InfoMobile> {
                               'Palestras de quem domina o assunto',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: screenSize.width * 0.04,
+                                fontSize: screenSize.aspectRatio * 30,
                                 fontFamily: 'Jura',
                               ),
                             ),
@@ -140,7 +140,7 @@ class _InfoMobileState extends State<InfoMobile> {
                           children: [
                             Icon(
                               Icons.circle,
-                              size: screenSize.height * 0.010,
+                              size: screenSize.aspectRatio * 10,
                               color: Colors.white,
                             ),
                             SizedBox(
@@ -150,7 +150,7 @@ class _InfoMobileState extends State<InfoMobile> {
                               'Troca de ideias',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: screenSize.width * 0.04,
+                                fontSize: screenSize.aspectRatio * 30,
                                 fontFamily: 'Jura',
                               ),
                             ),
@@ -160,7 +160,7 @@ class _InfoMobileState extends State<InfoMobile> {
                           children: [
                             Icon(
                               Icons.circle,
-                              size: screenSize.height * 0.010,
+                              size: screenSize.aspectRatio * 10,
                               color: Colors.white,
                             ),
                             SizedBox(
@@ -170,7 +170,7 @@ class _InfoMobileState extends State<InfoMobile> {
                               'Networking',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: screenSize.width * 0.04,
+                                fontSize: screenSize.aspectRatio * 30,
                                 fontFamily: 'Jura',
                               ),
                             ),
@@ -180,7 +180,7 @@ class _InfoMobileState extends State<InfoMobile> {
                           children: [
                             Icon(
                               Icons.circle,
-                              size: screenSize.height * 0.010,
+                              size: screenSize.aspectRatio * 10,
                               color: Colors.white,
                             ),
                             SizedBox(
@@ -190,7 +190,7 @@ class _InfoMobileState extends State<InfoMobile> {
                               'Diversao e jogos',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: screenSize.width * 0.04,
+                                fontSize: screenSize.aspectRatio * 30,
                                 fontFamily: 'Jura',
                               ),
                             ),
@@ -200,7 +200,7 @@ class _InfoMobileState extends State<InfoMobile> {
                           children: [
                             Icon(
                               Icons.circle,
-                              size: screenSize.height * 0.010,
+                              size: screenSize.aspectRatio * 10,
                               color: Colors.white,
                             ),
                             SizedBox(
@@ -210,7 +210,7 @@ class _InfoMobileState extends State<InfoMobile> {
                               'Sorteios e brindes',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: screenSize.width * 0.04,
+                                fontSize: screenSize.aspectRatio * 30,
                                 fontFamily: 'Jura',
                               ),
                             ),

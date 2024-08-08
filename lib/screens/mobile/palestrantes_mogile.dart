@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/model/palestrantes_model.dart';
 import 'package:semanaacademica2024/widgets/mobile/palestrante_container_mobile.dart';
+import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 
 class PalestrantesMobile extends StatefulWidget {
   const PalestrantesMobile({super.key});
@@ -39,7 +40,7 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
     PalestranteContainerMobile(
       palestrante: Palestrante(
           nome: 'Thiago Reolon',
-          tema: 'O Futuro da Análise de Dados: Tendências e Oportunidade',
+          tema: 'O Futuro da Análise de Dados:\nTendências e Oportunidade',
           horarios: '20:50 ás 21:30',
           assetImage: './lib/assets/palestrantes/thiago.jpg',
           diaDaSemana: 'Terça-Feira'),
@@ -63,6 +64,7 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
   ];
 
   int currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
@@ -87,11 +89,21 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
                 ),
               ),
               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: screenSize.height * 0.01,
+                    height: screenSize.height * 0.03,
                   ),
-                  Image.asset('./lib/assets/palestrantes/confira_mobile.png'),
+                  TextoComBorda(
+                    text: 'Confira a programação',
+                    fontFamily: 'Cristik',
+                    fontSize: screenSize.aspectRatio * 35,
+                    textColor: Colors.white,
+                    borderColor: const Color(0xFF935CAB),
+                  ),
+                  SizedBox(
+                    height: screenSize.height * 0.03,
+                  ),
                   CarouselSlider(
                     items: listaDePalestrantes
                         .map(
@@ -99,7 +111,6 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
                         )
                         .toList(),
                     options: CarouselOptions(
-                      aspectRatio: 1 / 1,
                       initialPage: 0,
                       autoPlay: true,
                       autoPlayInterval: const Duration(seconds: 5),
@@ -112,6 +123,9 @@ class _PalestrantesMobileState extends State<PalestrantesMobile> {
                         );
                       },
                     ),
+                  ),
+                  SizedBox(
+                    height: screenSize.height * 0.03,
                   ),
                   buildCarouselIndicators(),
                   SizedBox(

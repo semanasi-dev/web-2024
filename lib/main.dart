@@ -20,20 +20,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SafeArea(
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              switch (deviceType) {
-                case DeviceType.mobile:
-                  return const PrincipalScreenMobile();
-                case DeviceType.tablet:
-                  return const PrincipalScreenTablet();
-                case DeviceType.desktop:
-                  return const PrincipalScreenDesktop();
-                default:
-                  return const PrincipalScreenDesktop();
-              }
-            },
-          ),
+          child: switch (deviceType) {
+            DeviceType.mobile => const PrincipalScreenMobile(),
+            DeviceType.tablet => const PrincipalScreenTablet(),
+            DeviceType.desktop => const PrincipalScreenDesktop(),
+          },
         ),
       ),
     );

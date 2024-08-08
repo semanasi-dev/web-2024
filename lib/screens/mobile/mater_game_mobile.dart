@@ -50,7 +50,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                       'Durante a semana, vai rolar uma competição para ver quem encontra mais MaterCodes espalhados pelo ambiente do evento. Os ganhadores vão receber seus prêmios ao final da semana.',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: MediaQuery.of(context).size.width * 0.05,
+                        fontSize: screenSize.aspectRatio * 40,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Jura',
                       ),
@@ -62,7 +62,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                       'Se encontrar um, não perca sua chance: pegue seu telefone e se garanta no placar!',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: MediaQuery.of(context).size.width * 0.05,
+                        fontSize: screenSize.aspectRatio * 40,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Jura',
                       ),
@@ -81,7 +81,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                               children: [
                                 Icon(
                                   Icons.circle,
-                                  size: screenSize.height * 0.010,
+                                  size: screenSize.aspectRatio * 10,
                                   color: Colors.white,
                                 ),
                                 SizedBox(
@@ -91,7 +91,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                                   'Horário de início',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: screenSize.width * 0.04,
+                                    fontSize: screenSize.aspectRatio * 30,
                                     fontFamily: 'Jura',
                                   ),
                                 ),
@@ -101,7 +101,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                               children: [
                                 Icon(
                                   Icons.circle,
-                                  size: screenSize.height * 0.010,
+                                  size: screenSize.aspectRatio * 10,
                                   color: Colors.white,
                                 ),
                                 SizedBox(
@@ -111,7 +111,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                                   'Quando',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: screenSize.width * 0.04,
+                                    fontSize: screenSize.aspectRatio * 30,
                                     fontFamily: 'Jura',
                                   ),
                                 ),
@@ -121,7 +121,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                               children: [
                                 Icon(
                                   Icons.circle,
-                                  size: screenSize.height * 0.010,
+                                  size: screenSize.aspectRatio * 10,
                                   color: Colors.white,
                                 ),
                                 SizedBox(
@@ -131,7 +131,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                                   'Locais',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: screenSize.width * 0.04,
+                                    fontSize: screenSize.aspectRatio * 30,
                                     fontFamily: 'Jura',
                                   ),
                                 ),
@@ -141,7 +141,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                               children: [
                                 Icon(
                                   Icons.circle,
-                                  size: screenSize.height * 0.010,
+                                  size: screenSize.aspectRatio * 10,
                                   color: Colors.white,
                                 ),
                                 SizedBox(
@@ -151,7 +151,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                                   'Locais',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: screenSize.width * 0.04,
+                                    fontSize: screenSize.aspectRatio * 30,
                                     fontFamily: 'Jura',
                                   ),
                                 ),
@@ -161,7 +161,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                               children: [
                                 Icon(
                                   Icons.circle,
-                                  size: screenSize.height * 0.010,
+                                  size: screenSize.aspectRatio * 10,
                                   color: Colors.white,
                                 ),
                                 SizedBox(
@@ -171,7 +171,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                                   'Locais',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: screenSize.width * 0.04,
+                                    fontSize: screenSize.aspectRatio * 30,
                                     fontFamily: 'Jura',
                                   ),
                                 ),
@@ -181,7 +181,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                               children: [
                                 Icon(
                                   Icons.circle,
-                                  size: screenSize.height * 0.010,
+                                  size: screenSize.aspectRatio * 10,
                                   color: Colors.white,
                                 ),
                                 SizedBox(
@@ -191,7 +191,7 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                                   'Locais',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: screenSize.width * 0.04,
+                                    fontSize: screenSize.aspectRatio * 30,
                                     fontFamily: 'Jura',
                                   ),
                                 ),
@@ -216,12 +216,15 @@ class _MaterGameMobileState extends State<MaterGameMobile> {
                     SizedBox(
                       height: screenSize.height * 0.01,
                     ),
-                    const SelectableText(
-                      '(Exclusivo para celulares)',
-                      style: TextStyle(color: Colors.white),
+                    Opacity(
+                      opacity: 0.5,
+                      child: const SelectableText(
+                        '(Exclusivo para celulares)',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     SizedBox(
-                      height: screenSize.height * 0.035,
+                      height: screenSize.height * 0.015,
                     ),
                   ],
                 ),

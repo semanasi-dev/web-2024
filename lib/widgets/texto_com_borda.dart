@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TextoComBorda extends StatefulWidget {
   final String text;
@@ -27,8 +28,7 @@ class _TextoComBordaState extends State<TextoComBorda> {
       children: [
         SelectableText(
           widget.text,
-          style: TextStyle(
-            fontFamily: widget.fontFamily ?? 'PressStart2P',
+          style: GoogleFonts.pressStart2p(
             fontSize: widget.fontSize,
             foreground: Paint()
               ..style = PaintingStyle.stroke
@@ -39,8 +39,7 @@ class _TextoComBordaState extends State<TextoComBorda> {
         ),
         SelectableText(
           widget.text,
-          style: TextStyle(
-            fontFamily: widget.fontFamily ?? 'PressStart2P',
+          style: GoogleFonts.pressStart2p(
             fontSize: widget.fontSize,
             color: widget.textColor,
           ),

@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/widgets/mobile/patrocinadores_container_mobile.dart';
+import 'package:semanaacademica2024/widgets/texto_com_borda.dart';
 
 class PatrocinadoresMobile extends StatefulWidget {
   const PatrocinadoresMobile({super.key});
@@ -86,7 +87,13 @@ class PatrocinadoresMobileState extends State<PatrocinadoresMobile> {
                   SizedBox(
                     height: screenSize.height * 0.01,
                   ),
-                  Image.asset('./lib/assets/patrocinadores/patrocinadores.png'),
+                  TextoComBorda(
+                    text: 'Patrocinadores',
+                    fontFamily: 'Cristik',
+                    fontSize: screenSize.aspectRatio * 50,
+                    textColor: Colors.white,
+                    borderColor: const Color(0xFF935CAB),
+                  ),
                   SizedBox(
                     height: screenSize.height * 0.02,
                   ),
@@ -94,7 +101,7 @@ class PatrocinadoresMobileState extends State<PatrocinadoresMobile> {
                     'Seniors',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: screenSize.width * 0.09,
+                        fontSize: screenSize.aspectRatio * 50,
                         fontFamily: 'Jura',
                         fontWeight: FontWeight.bold),
                   ),
@@ -124,7 +131,7 @@ class PatrocinadoresMobileState extends State<PatrocinadoresMobile> {
                     'Plenos',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: screenSize.width * 0.09,
+                        fontSize: screenSize.aspectRatio * 50,
                         fontFamily: 'Jura',
                         fontWeight: FontWeight.bold),
                   ),
@@ -154,7 +161,7 @@ class PatrocinadoresMobileState extends State<PatrocinadoresMobile> {
                     'Juniors',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: screenSize.width * 0.09,
+                        fontSize: screenSize.aspectRatio * 50,
                         fontFamily: 'Jura',
                         fontWeight: FontWeight.bold),
                   ),

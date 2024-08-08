@@ -45,7 +45,7 @@ class FogueteAnimadoState extends State<FogueteAnimado>
         return Transform.translate(
           offset: Offset(0, animation.value),
           child: SizedBox(
-            height: screenSize.height * 0.8,
+            height: screenSize.height * 0.9,
             width: screenSize.width * 0.4,
             child: Image.asset(
               './lib/assets/Foguete.png',

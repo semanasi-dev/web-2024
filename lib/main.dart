@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:semanaacademica2024/enum/device_type.dart';
 import 'package:semanaacademica2024/screens/desktop/principal_desktop.dart';
-import 'package:semanaacademica2024/screens/mobile/principal_mobile.dart';
+import 'package:semanaacademica2024/screens/mobile/mobile_screen.dart';
 import 'package:semanaacademica2024/screens/tablet/tablet.dart';
 import 'package:semanaacademica2024/utils/utils.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: switch (deviceType) {
-            DeviceType.mobile => const PrincipalScreenMobile(),
+            DeviceType.mobile => const PrincipalMobile(),
             DeviceType.tablet => const PrincipalScreenTablet(),
             DeviceType.desktop => const PrincipalScreenDesktop(),
           },
